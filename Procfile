@@ -1,1 +1,1 @@
-web: gunicorn PROJ_NAME.wsgi
+web: gunicorn LUCID_WAVES.wsgi
