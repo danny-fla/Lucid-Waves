@@ -1,19 +1,20 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
-
 class PostList(generic.ListView):
+    # Display a list of blog posts
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
-    
 
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
+        # Display a single blog post and its comments
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -34,6 +35,7 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        # Handle posting a new comment on a blog post
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -63,3 +65,16 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+class PostLike(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        # Handle liking or unliking a blog post
+        post = get_object_or_404(Post, slug=slug)
+        
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
