@@ -4,12 +4,14 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
+
 class PostList(generic.ListView):
     # Display a list of blog posts
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class PostDetail(View):
 
@@ -51,7 +53,9 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+
         else:
+            # Only initialize the form when it's not valid
             comment_form = CommentForm()
 
         return render(
@@ -62,16 +66,17 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": comment_form  # Use the initialized form here
             },
         )
 
+
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         # Handle liking or unliking a blog post
         post = get_object_or_404(Post, slug=slug)
-        
+
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
