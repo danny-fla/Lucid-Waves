@@ -1,9 +1,15 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from .models import Post
 from .forms import CommentForm
+
+
+def landing_page(request):
+    return render(request, 'landing_page.html')
 
 
 class PostList(generic.ListView):
@@ -15,12 +21,14 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    
     def get(self, request, slug, *args, **kwargs):
         # Display a single blog post and its comments
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        post_with_comment_count = Post.objects.annotate(comment_count=Count('comments')).get(slug=slug)
+        post_with_comment_count = Post.objects.annotate(
+            comment_count=Count('comments')).get(slug=slug
+            )
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -38,13 +46,21 @@ class PostDetail(View):
             },
         )
 
+
+    @method_decorator(csrf_exempt)
     def post(self, request, slug, *args, **kwargs):
         # Handle posting a new comment on a blog post
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        liked = post.likes.filter(id=request.user.id).exists()  # Simplified
+
+        # Toggle the like status
+        if liked:
+            post.likes.remove(request.user)
+            liked = False
+        else:
+            post.likes.add(request.user)
             liked = True
 
         comment_form = CommentForm(data=request.POST)
@@ -85,3 +101,5 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
