@@ -34,8 +34,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu104.gitpod.io', 'LUCID_WAVES.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['LUCID_WAVES.herokuapp.com', 'localhost',  '8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu105.gitpod.io']
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 # Application definition
 
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -96,6 +101,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -103,6 +109,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'LUCID_WAVES.wsgi.application'
 
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': 'f1bb1e0347d7b0005163',
+            'secret': 'fb82e7cf6924e40ba0bd5fd2ddd41e75f2e6d09f',
+            'key': ''
+        },
+        'LOGIN_CALLBACK_URL': 'https://8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu105.gitpod.io/accounts/github/login/callback',  # Set your callback URL here
+    }
+}
+
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
