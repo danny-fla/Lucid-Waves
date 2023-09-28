@@ -30,7 +30,7 @@ class Post(models.Model):
         return self.likes.count()
     
     def comment_count(self):
-        return self.comment_set.count()
+        return self.comments.filter(approved=True).count()
 
 
 class Comment(models.Model):
