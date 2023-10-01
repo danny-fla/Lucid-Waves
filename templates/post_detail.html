@@ -35,23 +35,12 @@
                 <div class="row">
 
                     <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
+                        <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
+                            <i class="fas fa-heart"></i> Like
+                        </button>
+                        <span id="likes-count" class="text-secondary">{{ post.number_of_likes }}</span> Likes                        
                     </div>
+
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
@@ -90,18 +79,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-1">
-            <strong>
-                <button
-                    id="like-button"
-                    data-post-id="{{ post.id }}"
-                    class="btn-like{% if liked %} liked{% endif %}">
-                    <i class="fas fa-heart"></i>
-                </button>
-            <!-- The number of likes goes before the closing strong tag -->
-            <span class="text-secondary" id="likes-count">{{ post.number_of_likes }}</span>
-            </strong>
-        </div>
+    
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
@@ -127,42 +105,39 @@
     </div>
 </div>
 <script>
-    console.log("hello")
-    document.addEventListener("DOMContentLoaded", function () {
-  const likeButton = document.getElementById("like-button");
-  const likesCount = document.getElementById("likes-count");
+ document.addEventListener("DOMContentLoaded", function(){
+    const likeButton = document.getElementById("like-button");
+    const likesCount = document.getElementById("likes-count");
 
-  likeButton.addEventListener("click", function () {
-    const postId = likeButton.dataset.postId;
-    const liked = likeButton.classList.contains("liked");
+    likeButton.addEventListener("click", function(){
+        const postId = likeButton.dataset.postId;
+        const liked = likeButton.classList.contains("liked");
 
-    fetch(`/like-post/${postId}/`, {
-      method: liked ? "DELETE" : "POST",
-      headers: {
-        "X-CSRFToken": getCookie("csrftoken"),
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          if (liked) {
-            likeButton.classList.remove("liked");
-            likesCount.textContent = data.likes_count;
-          } else {
-            likeButton.classList.add("liked");
-            likesCount.textContent = data.likes_count;
-          }
-        }
-      })
-      .catch((error) => console.error("Error:", error));
-  });
-
-  // Function to get CSRF token from cookies
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-  }
-});
+        fetch(`/like-post/${postId}/`, {
+            method: liked ? "DELETE" : "POST",
+            headers: {
+                "X-CSRFToken": getCookie("csrftoken"),
+            },
+        })
+        .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    if (liked) {
+                        likeButton.classList.remove("liked");
+                    } else {
+                        likeButton.classList.add("liked");
+                    }
+                    likesCount.textContent = data.likes_count;
+                }
+            })
+            .catch((error) => console.error("Error:", error));
+    });
+    // Function to get CSRF token from cookies
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+ });
 </script>
 {% endblock content %}

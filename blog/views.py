@@ -88,18 +88,24 @@ class PostDetail(View):
             },
         )
 
-
-class PostLike(View):
-
-    def post(self, request, slug, *args, **kwargs):
-        # Handle liking or unliking a blog post
-        post = get_object_or_404(Post, slug=slug)
-
+def like_post(request, post_id):
+    # Toggle the like status for the post
+    post = get_object_or_404(Post, id=post_id)
+    if request.user.is_authenticated:
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            liked = False
         else:
             post.likes.add(request.user)
+            liked = True
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        likes_count = post.likes.count()
 
+        return JsonResponse({"success": True, "likes_count": likes_count})
+    else:
+        return JsonResponse({"success": False, "error": "User is not authenticated"})
+
+
+
+   
 
