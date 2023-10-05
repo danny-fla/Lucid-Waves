@@ -1,27 +1,28 @@
 {% extends 'base.html' %} {% block content %}
 
 {% load crispy_forms_tags %}
-
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" width="100%">
-                {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
-        </div>
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-7">
+        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            class="d-block mx-lg-auto img-fluid" alt="sufer" width="600" height="400" loading="lazy">
     </div>
+    <div class="col-lg-5">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 post-title">{{ post.title }}</h1>
+        <p class="lead post-subtitle"><em>{{ post.author }} | {{ post.created_on }}
+        <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
+            <i class="fas fa-heart"></i> <strong id="likes-count"
+                class="text-secondary">{{ post.number_of_likes }}</strong>
+        </button>
+        {% with comments.count as total_comments %}
+        <strong class="text-secondary"><i class="far fa-comments"></i>
+            <!-- Our total_comments variable goes before the closing strong tag -->
+            {{ total_comments }}</strong>
+        {% endwith %}
+    </em></p>
+    </div>
+
 </div>
+
 
 <div class="container">
     <div class="row">
@@ -33,19 +34,12 @@
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
-                        <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
-                            <i class="fas fa-heart"></i> <strong id="likes-count" class="text-secondary">{{ post.number_of_likes }}</strong>
-                        </button>                
-                    </div>
-
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
+                        <button id="like-button" data-post-id="{{ post.id }}"
+                            class="btn-like{% if liked %} liked{% endif %}">
+                            <i class="fas fa-heart"></i> <strong id="likes-count"
+                                class="text-secondary">{{ post.number_of_likes }}</strong>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -73,16 +67,18 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
-                    <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}" class="btn-like{% if likedComment %} likedComment{% endif %}">
-                        <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}" class="text-secondary">{{ comment.number_of_likes }}</strong>
+                    <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}"
+                        class="btn-like{% if likedComment %} likedComment{% endif %}">
+                        <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}"
+                            class="text-secondary">{{ comment.number_of_likes }}</strong>
                     </button>
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-        
-    
+
+
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
@@ -91,7 +87,7 @@
                     Your comment is awaiting approval.
                 </div>
                 {% else %}
-                
+
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
@@ -108,81 +104,79 @@
     </div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
-    const likeButton = document.getElementById("like-button");
-    const likesCount = document.getElementById("likes-count");
+    document.addEventListener("DOMContentLoaded", function () {
+        const likeButton = document.getElementById("like-button");
+        const likesCount = document.getElementById("likes-count");
 
-    likeButton.addEventListener("click", function(){
-        const postId = likeButton.dataset.postId;
-        const liked = likeButton.classList.contains("liked");
+        likeButton.addEventListener("click", function () {
+            const postId = likeButton.dataset.postId;
+            const liked = likeButton.classList.contains("liked");
 
-        fetch(`/like-post/${postId}/`, {
-            method: liked ? "DELETE" : "POST",
-            headers: {
-                "X-CSRFToken": getCookie("csrftoken"),
-            },
-        })
-        .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    if (liked) {
-                        likeButton.classList.remove("liked");
-                    } else {
-                        likeButton.classList.add("liked");
+            fetch(`/like-post/${postId}/`, {
+                    method: liked ? "DELETE" : "POST",
+                    headers: {
+                        "X-CSRFToken": getCookie("csrftoken"),
+                    },
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        if (liked) {
+                            likeButton.classList.remove("liked");
+                        } else {
+                            likeButton.classList.add("liked");
+                        }
+                        likesCount.textContent = data.likes_count;
                     }
-                    likesCount.textContent = data.likes_count;
-                }
-            })
-            .catch((error) => console.error("Error:", error));
-    });
-    // Function to get CSRF token from cookies
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(";").shift();
-    }
- });
-
-document.addEventListener("DOMContentLoaded", function(){
-    const commentLikeButtons = document.querySelectorAll(".btn-like"); // Select all comment like buttons
-    
-    commentLikeButtons.forEach(function(commentLikeButton) {
-        commentLikeButton.addEventListener("click", function(){
-            const commentId = commentLikeButton.dataset.commentId;
-            const likedComment = commentLikeButton.classList.contains("likedComment");
-
-            fetch(`/like-comment/${commentId}/`, {
-                method: likedComment ? "DELETE" : "POST",
-                headers: {
-                    "X-CSRFToken": getCookie("csrftoken"),
-                },
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    if (likedComment) {
-                        commentLikeButton.classList.remove("likedComment");
-                    } else {
-                        commentLikeButton.classList.add("likedComment");
-                    }
-                    // Update the likes count for the specific comment
-                    const commentLikesCount = document.getElementById(`comment-likes-count-${commentId}`);
-                    commentLikesCount.textContent = data.comment_likes_count;
-                }
-            })
-            .catch((error) => console.error("Error:", error));
+                })
+                .catch((error) => console.error("Error:", error));
         });
+        // Function to get CSRF token from cookies
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
     });
 
-    // Function to get CSRF token from cookies
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(";").shift();
-    }
-});
+    document.addEventListener("DOMContentLoaded", function () {
+        const commentLikeButtons = document.querySelectorAll(".btn-like"); // Select all comment like buttons
 
+        commentLikeButtons.forEach(function (commentLikeButton) {
+            commentLikeButton.addEventListener("click", function () {
+                const commentId = commentLikeButton.dataset.commentId;
+                const likedComment = commentLikeButton.classList.contains("likedComment");
 
- 
+                fetch(`/like-comment/${commentId}/`, {
+                        method: likedComment ? "DELETE" : "POST",
+                        headers: {
+                            "X-CSRFToken": getCookie("csrftoken"),
+                        },
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            if (likedComment) {
+                                commentLikeButton.classList.remove("likedComment");
+                            } else {
+                                commentLikeButton.classList.add("likedComment");
+                            }
+                            // Update the likes count for the specific comment
+                            const commentLikesCount = document.getElementById(
+                                `comment-likes-count-${commentId}`);
+                            commentLikesCount.textContent = data.comment_likes_count;
+                        }
+                    })
+                    .catch((error) => console.error("Error:", error));
+            });
+        });
+
+        // Function to get CSRF token from cookies
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+    });
 </script>
 {% endblock content %}
