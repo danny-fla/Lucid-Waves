@@ -36,9 +36,8 @@
 
                     <div class="col-1">
                         <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
-                            <i class="fas fa-heart"></i> Like
-                        </button>
-                        <span id="likes-count" class="text-secondary">{{ post.number_of_likes }}</span> Likes                        
+                            <i class="fas fa-heart"></i> <strong id="likes-count" class="text-secondary">{{ post.number_of_likes }}</strong>
+                        </button>                
                     </div>
 
                     <div class="col-1">
@@ -58,7 +57,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -74,11 +73,15 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
+                    <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}" class="btn-like{% if likedComment %} likedComment{% endif %}">
+                        <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}" class="text-secondary">{{ comment.number_of_likes }}</strong>
+                    </button>
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
+        
     
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
@@ -105,7 +108,7 @@
     </div>
 </div>
 <script>
- document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     const likeButton = document.getElementById("like-button");
     const likesCount = document.getElementById("likes-count");
 
@@ -139,5 +142,47 @@
         if (parts.length === 2) return parts.pop().split(";").shift();
     }
  });
+
+document.addEventListener("DOMContentLoaded", function(){
+    const commentLikeButtons = document.querySelectorAll(".btn-like"); // Select all comment like buttons
+    
+    commentLikeButtons.forEach(function(commentLikeButton) {
+        commentLikeButton.addEventListener("click", function(){
+            const commentId = commentLikeButton.dataset.commentId;
+            const likedComment = commentLikeButton.classList.contains("likedComment");
+
+            fetch(`/like-comment/${commentId}/`, {
+                method: likedComment ? "DELETE" : "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                },
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    if (likedComment) {
+                        commentLikeButton.classList.remove("likedComment");
+                    } else {
+                        commentLikeButton.classList.add("likedComment");
+                    }
+                    // Update the likes count for the specific comment
+                    const commentLikesCount = document.getElementById(`comment-likes-count-${commentId}`);
+                    commentLikesCount.textContent = data.comment_likes_count;
+                }
+            })
+            .catch((error) => console.error("Error:", error));
+        });
+    });
+
+    // Function to get CSRF token from cookies
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+});
+
+
+ 
 </script>
 {% endblock content %}
