@@ -30,10 +30,10 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-    
+
     def comment_count(self):
         return self.comments.filter(approved=True).count()
-    
+
     def get_absolute_url(self):
         return reverse('home')
 

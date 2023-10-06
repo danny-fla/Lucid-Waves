@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 def landing_page(request):
@@ -15,9 +15,9 @@ def landing_page(request):
 
 class AddPostView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'add_post.html'
-    fields = ('title', 'author', 'content')
-
+    #fields = ('title', 'slug', 'author', 'excerpt', 'content', 'header_image')
 
 
 # Display a list of blog posts using a generic ListView
