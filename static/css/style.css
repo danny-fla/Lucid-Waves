@@ -38,7 +38,13 @@ body {
     font-style: italic;
 }
 
-/*---------------------------------------------------------- navbar end */
+/*---------------------------------------------------------- Blog view page */
+
+.image-container-wrapper {
+    margin-left: 0px; /* Adjust the value to control the amount of whitespace */
+}
+
+/*----------------------------------------------------------  */
 
 .brand {
     font-family: Lato, sans-serif;
@@ -178,3 +184,4 @@ body {
     background: transparent;
     border: none;
 }
+

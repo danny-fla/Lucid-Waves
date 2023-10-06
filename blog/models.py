@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
+    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
@@ -31,6 +33,9 @@ class Post(models.Model):
     
     def comment_count(self):
         return self.comments.filter(approved=True).count()
+    
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class Comment(models.Model):

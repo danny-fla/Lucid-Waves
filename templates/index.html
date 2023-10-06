@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <br>
 <div class="row featurette">
     {% for post in post_list %}
     <div class="col-md-12 mb-4">
         <div class="row">
             <!-- Image and Title (col-md-5) -->
-            <div class="col-md-5">
+            <div class="col-md-3 image-container-wrapper">
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
                     <img class="card-img-top"
@@ -22,7 +23,7 @@
             </div>
 
             <!-- Excerpt, Date, Likes, and Comments (col-md-7) -->
-            <div class="col-md-7">
+            <div class="col-md-9">
                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
                     <h2 class="card-title">{{ post.title }}</h2>
                 </a>

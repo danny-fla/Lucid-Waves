@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
@@ -10,6 +11,13 @@ from .forms import CommentForm
 
 def landing_page(request):
     return render(request, 'landing_page.html')
+
+
+class AddPostView(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = ('title', 'author', 'content')
+
 
 
 # Display a list of blog posts using a generic ListView
