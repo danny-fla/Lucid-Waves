@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+
+<h1>Edit post</h1>
+<br>
+
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Edit</button>
+    </form>
+</div>
+
+<script>
+    var name = "{{ user.id }}";
+
+    document.getElementById("elder").value = name;
+
+</script>
+
+{% endblock content %}
