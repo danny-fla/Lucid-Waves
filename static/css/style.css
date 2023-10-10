@@ -44,7 +44,14 @@ body {
     margin-left: 0px; /* Adjust the value to control the amount of whitespace */
 }
 
-/*----------------------------------------------------------  */
+/*---------------------------------------------------------- Add Post Page */
+#add-post-page-title {
+    text-align: center;
+}
+
+.add-text-form {
+    margin: 10rem;
+}
 
 .brand {
     font-family: Lato, sans-serif;

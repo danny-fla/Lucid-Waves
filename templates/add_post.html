@@ -1,13 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
 {% load crispy_forms_tags %}
-
-<h1>Create a new post</h1>
 <br>
+<h1 id="add-post-page-title">Create a new post</h1>
+
 
 <div class="form-group">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 1.3em;" class="add-text-form">
         {% csrf_token %}
+        {{ form|crispy }}
         {{ form.media }}
         {{ form.as_p }}
         <button class="btn btn-secondary">Post</button>
