@@ -10,12 +10,15 @@
             <!-- Image and Title (col-md-5) -->
             <div class="col-md-3 image-container-wrapper">
                 <div class="image-container">
+                    <a href="{% url 'post_detail' post.slug %}"class="post-link">
                     {% if "placeholder" in post.featured_image.url %}
+                   
                     <img class="card-img-top"
                         src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
                     {% else %}
                     <img class="card-img-top" src="{{ post.featured_image.url }}">
                     {% endif %}
+                    </a>
                     <div class="image-flash">
                         <p class="author">Author: {{ post.author }}</p>
                     </div>
