@@ -23,32 +23,35 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
+    
+
+
     <!-- Navigation -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <!-- Add the Lucid Waves logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <span class="brand">Lucid<span class="blue-waves">Waves</span></span>
+                <span class="brand"><span class="special-letters">L</span>UCID<span class="special-letters">W</span>AVES</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'landing_page' %}">landing</a>
+                        <a class="nav-link" href="{% url 'landing_page' %}">Landing</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add_post' %}">Add Post</a>
+                        <a class ="nav-link" href="{% url 'add_post' %}">Add Post</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -63,6 +66,7 @@
         </div>
     </nav>
     
+    
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -76,7 +80,7 @@
         </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0 main-bg" id="main-content">
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
