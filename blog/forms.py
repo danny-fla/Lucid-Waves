@@ -1,4 +1,4 @@
-from .models import Comment
+from .models import Comment, GalleryImage
 from django import forms
 
 
@@ -19,3 +19,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
+
+
+class GalleryImageForm(forms.ModelForm):
+    class Meta:
+        model = GalleryImage
+        fields = ('image', 'caption')

@@ -60,3 +60,10 @@ class Comment(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+
+class GalleryImage(models.Model):
+    image = models.ImageField(upload_to='gallery/')
+    caption = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.caption

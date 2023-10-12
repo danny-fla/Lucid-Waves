@@ -5,8 +5,8 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from .models import Post, Comment
-from .forms import CommentForm
+from .models import Post, Comment, GalleryImage
+from .forms import CommentForm, GalleryImageForm
 
 
 def landing_page(request):
@@ -20,7 +20,19 @@ class AddPostView(CreateView):
     fields = ('__all__')
 
 
+def gallery(request):
+    images = GalleryImage.objects.all()
+    return render(request, 'gallery.html', {'images': images})
 
+def upload_image(request):
+    if request.method == 'POST':
+        form = GalleryImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('gallery')
+    else:
+        form = GalleryImageForm()
+    return render(request, 'gallery/upload_image.html', {'form': form})
 
 
 # Display a list of blog posts using a generic ListView
