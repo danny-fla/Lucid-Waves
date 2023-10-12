@@ -1,5 +1,26 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %} 
 
 {% block content %}
-<h1>home page</h1>
+
+<div class="hero">
+
+    <nav>
+        <a href="{% url 'home' %}">
+            <i class="fa-solid fa-water logo"></i>
+        </a>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">POPULAR PLACES</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </nav>
+    <div class="hero-content">
+        <h1>LUCIDWAVES</h1>
+    </div>
+</div>
+
+
+
 {%endblock%}

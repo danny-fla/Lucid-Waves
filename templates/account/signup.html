@@ -5,31 +5,36 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Up" %}</h3>
-
-            <p>{% blocktrans %}Welcome back to Lucid Waves. Do you already have an account? Then please <a
-                    class="link" href="{{ login_url }}">sign in</a> instead.{% endblocktrans %}</p>
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center mb-4 text-primary"><strong>{% trans "Sign Up" %}</strong></h3>
+            <p class="text-center">
+                {% blocktrans %}
+                Welcome back to Lucid Waves. Already have an member? Then please
+                <a class="link" href="{{ login_url }}">sign in</a> instead.
+                {% endblocktrans %}
+            </p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-6 offset-md-3">
             <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                <button class="btn btn-primary btn-block mt-4">{% trans "Sign Up" %}</button>
             </form>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
+        <div class="col-md-6 offset-md-3">
             {# Add GitHub Sign-up Button Here #}
-            <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-primary">Sign up with <i class="fa-brands fa-github"></i></a>
+            <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark btn-block mt-3">
+                Sign up with GitHub <i class="fab fa-github"></i>
+            </a>
         </div>
     </div>
 </div>
