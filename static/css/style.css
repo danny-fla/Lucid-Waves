@@ -274,6 +274,10 @@ nav ul li a {
     border: none;
 }
 
+.sign-in-alert {
+    background-color: #fff;
+}
+
 
 /* ---------------------------------------------- footer */
 .footer {
