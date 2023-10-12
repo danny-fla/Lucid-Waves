@@ -26,16 +26,17 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-primary btn-block mt-4">{% trans "Sign In" %}</button>
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            {# Add GitHub Sign-up Button Here #}
-            <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark btn-block mt-3">
-                Sign in with GitHub <i class="fab fa-github"></i>
-            </a>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-primary" form="login_form" type="submit">{% trans "Sign In" %}</button>
+                <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark">
+                    Sign in with GitHub <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>
