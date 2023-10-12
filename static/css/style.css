@@ -240,18 +240,18 @@ nav ul li a {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #007BFF;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #007BFF;
 }
 
 .link {
-    color: #23BBBB;
+    color: #007BFF;
     text-decoration: none;
 }
 
@@ -262,14 +262,14 @@ nav ul li a {
 }
 
 .btn-like {
-    color: #E84610;
+    color: red;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #EE1D1D ;
     background: transparent;
     border: none;
 }
