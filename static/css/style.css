@@ -7,25 +7,44 @@ body {
 
 /*---------------------------------------------------------- navbar start */
 
-.special-letters {
-    color: #007BFF;
-    font-weight: bold;
-    font-size: 1.9rem;
-}
-
-.navbar {
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+.banner {
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    background: url("https://res.cloudinary.com/dsi5hhbty/image/upload/v1697194968/hero_nix6zp.jpg");
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
 }
 
 .navbar-brand {
+    font-family: Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+/* .special-letters {
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 1.9rem;
+} */
+
+/* .navbar {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+} */
+
+/* .navbar-brand {
     margin-left: 12rem;
     font-size: 1.9rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-}
+} */
 
 
-.nav-link {
+/* .nav-link {
     color: #333;
     font-weight: bold;
 }
@@ -37,7 +56,7 @@ body {
 .navbar-text {
     font-size: 1.1rem;
     font-style: italic;
-}
+} */
 
 /*---------------------------------------------------------- Blog view page */
 #main-content {
@@ -69,80 +88,6 @@ body {
 
 /*---------------------------------------------------------- Landing Page */
 
-.hero{
-    margin: 0;
-    width: 100%;
-    height: 120vh;
-    /* background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3)); */
-    position: relative;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1.5rem 8%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    color: #fff;
-    font-size: 3.5rem;
-}
-
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1em;
-}
-
-.hero-content {
-    text-align: center;
-    position: relative;
-}
-
-.hero-content h1 {
-    font-size: 3.5em;
-    color: #fff;
-    /* background-color: red; */
-    font-weight: 500;
-    z-index: 1;
-}
-
-.back-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-@media (min-aspect-ratio: 1.6/1){
-    .hero-img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-aspect-ratio: 1.7/1){
-    .hero-img {
-        width: auto;
-        height: 100%;
-    }
-}
 
 
 /* ------------------------------------------------------------------------*/

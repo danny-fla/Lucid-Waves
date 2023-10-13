@@ -23,20 +23,41 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- <nav>
-        <a href="{% url 'home' %}">
-            <i class="fa-solid fa-water logo"></i>
-        </a>
-        <ul>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            <li><a href="{% url 'landing_page' %}">BLOG</a></li>
-            <li><a href="#">POPULAR PLACES</a></li>
-            <li><a href="{% url 'account_login' %}">LOGIN</a></li>
-            <li><a href="{% url 'account_signup' %}">Register</a></li>
-        </ul>
-    </nav> -->
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid banner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar ">
+                    <div class="navbar-brand">
+                        WAV<i class="fa-solid fa-water"></i>S 
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">HOTSPOTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BLOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">REGISTER</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="brand"><span class="special-letters">L</span>UCID<span class="special-letters">W</span>AVES</span>
@@ -75,7 +96,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     
     
     <div class="container">
