@@ -4,7 +4,7 @@
 <html class="h-100">
 
 <head>
-    <title>Lucid Waves</title>
+    <title>Waves</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -27,10 +27,14 @@
     <div class="container-fluid banner">
         <div class="row">
             <div class="col-md-12">
-                <div class="navbar ">
+                <nav class="navbar navbar-md">
                     <div class="navbar-brand">
-                        WAV<i class="fa-solid fa-water"></i>S 
+                        WAV<i class="fa-solid fa-water"></i>S
                     </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#">HOME</a>
@@ -48,7 +52,8 @@
                             <a class="nav-link" href="#">REGISTER</a>
                         </li>
                     </ul>
-                </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
@@ -97,8 +102,8 @@
             </div>
         </div>
     </nav> -->
-    
-    
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -140,16 +145,16 @@
         </div>
     </footer>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    setTimeout(function () {
-        let messages = document.getElementsByClassName('msg');
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 2500);
-</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementsByClassName('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 </body>
 
 </html>

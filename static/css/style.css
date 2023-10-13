@@ -11,19 +11,46 @@ body {
     color: #fff;
     height: 100vh;
     width: 100%;
-    background: url("https://res.cloudinary.com/dsi5hhbty/image/upload/v1697194968/hero_nix6zp.jpg");
+    background: url("https://res.cloudinary.com/dsi5hhbty/image/upload/v1697196314/overlay_i8zqsm.png"), url("https://res.cloudinary.com/dsi5hhbty/image/upload/v1697194968/hero_nix6zp.jpg");
     background-position: center;
     background-size: cover;
     /* background-attachment: fixed; */
     background-repeat: no-repeat;
 }
 
-.navbar-brand {
-    font-family: Tahoma, sans-serif;
-    font-weight: 700;
+.banner .navbar {
+    margin-top: 5%;
 }
 
+.banner .navbar-brand {
+    color: #fff;
+    font-size: 1.8em;
+    margin-left: 4%;
+    font-family: Tahoma, sans-serif;
+    font-weight: 800;
+}
 
+.banner .nav {
+    margin-right: 5%;
+}
+
+.banner .nav li a {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+.banner .info a {
+    margin-left: 50%;
+    margin-top: 40%;
+    transform: translatey(-15%);
+    transform: translatex(-15%);
+    color: #fff;
+    background-color: #aaa;
+}
+
+.banner .info a:hover {
+    background: #445261;
+}
 
 
 /* .special-letters {
