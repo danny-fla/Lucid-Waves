@@ -37,20 +37,29 @@
                     <div class="collapse navbar-collapse" id="mynav">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">HOME</a>
+                                <a class="nav-link" href="{% url 'home' %}">HOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">HOTSPOTS</a>
+                                <a class="nav-link" href="{% url 'gallery' %}">HOTSPOTS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">BLOG</a>
+                                <a class="nav-link" href="{% url 'landing_page' %}">BLOG</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">LOGIN</a>
+                                <a class ="nav-link" href="{% url 'add_post' %}">ADD POST</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">REGISTER</a>
+                                <a class="nav-link" href="{% url 'account_signup' %}">REGISTER</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>
