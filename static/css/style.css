@@ -45,7 +45,41 @@ body {
     
 }
 
+/*---------------------------------------------------------- Home page */
 
+.welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    color: #fff;
+}
+
+.welcome-message h1{
+    font-family: Tahoma, sans-serif;
+    font-weight: 800;
+    font-size: 6em;
+}
+
+.welcome-message a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    color: #fff;
+    border: 1.5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+    padding: 0.8em 3em;
+    font-family: Tahoma, sans-serif;
+    font-weight: 800;
+    margin-top: 1em;
+}
+
+.welcome-message a:hover {
+    background-color: rgba(250, 102, 3, 0.87);
+}
 
 /*---------------------------------------------------------- Blog view page */
 #main-content {
@@ -80,9 +114,9 @@ body {
 
 
 /* ------------------------------------------------------------------------*/
-.thin {
+/* .thin {
     font-weight: 300;
-}
+} */
 
 .light-bg {
     background-color: #fff;

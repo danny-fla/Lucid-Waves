@@ -10,7 +10,7 @@ from .forms import CommentForm, GalleryImageForm
 
 
 def landing_page(request):
-    return render(request, 'landing_page.html')
+    return render(request, 'index.html')
 
 
 class AddPostView(CreateView):
@@ -23,6 +23,7 @@ class AddPostView(CreateView):
 def gallery(request):
     images = GalleryImage.objects.all()
     return render(request, 'gallery.html', {'images': images})
+
 
 def upload_image(request):
     if request.method == 'POST':
@@ -40,7 +41,7 @@ class PostList(generic.ListView):
     # Display a list of blog posts
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'blog.html'
     paginate_by = 6
 
 

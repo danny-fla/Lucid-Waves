@@ -1,68 +1,10 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %} 
 
 {% block content %}
 
-<br>
-<div class="row featurette">
-    {% for post in post_list %}
-    <div class="col-md-12 mb-4">
-        <div class="row">
-            <!-- Image and Title (col-md-5) -->
-            <div class="col-md-3 image-container-wrapper">
-                <div class="image-container">
-                    <a href="{% url 'post_detail' post.slug %}"class="post-link">
-                    {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top"
-                        src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
-                    {% else %}
-                    <img class="card-img-top" src="{{ post.featured_image.url }}">
-                    {% endif %}
-                    </a>
-                    <div class="image-flash">
-                        <p class="author">Author: {{ post.author }}</p>
-                    </div>
-                </div>
-            </div>
+<div class="welcome-message">
+    <h1>WAV<i class="fa-solid fa-water"></i>S</h1>
+    <a href="">JUMP IN</a>
+</div>
 
-            <!-- Excerpt, Date, Likes, and Comments (col-md-7) -->
-            <div class="col-md-9">
-                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                </a>
-                <p class="card-text">{{ post.excerpt }}</p>
-                <p class="card-text text-muted h6">
-                    {{ post.created_on}}
-                    <i class="far fa-heart"></i>
-                    {{ post.number_of_likes }}
-                    <i class="fa-solid fa-comments"></i>
-                    {{ post.comment_count }}
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-{% if forloop.counter|divisibleby:3 %}
-</div>
-<div class="row">
-    {% endif %}
-    {% endfor %}
-
-</div>
-</div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-        {% endif %}
-    </ul>
-</nav>
-{% endif %}
-</div>
 {%endblock%}

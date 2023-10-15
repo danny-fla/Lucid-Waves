@@ -4,8 +4,8 @@ from .views import AddPostView
 
 
 urlpatterns = [
-    path('', views.PostList.as_view(), name='home'),
-    path('landing_page/', views.landing_page, name='landing_page'),
+    path('', views.landing_page, name='home'),
+    path('blog/', views.PostList.as_view(), name='blog'),
     path('gallery/', views.gallery, name='gallery'),
     path('upload/', views.upload_image, name='upload_image'),
     path('add_post/', AddPostView.as_view(), name='add_post'),
