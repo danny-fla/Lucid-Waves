@@ -20,20 +20,11 @@ class AddPostView(CreateView):
     fields = ('__all__')
 
 
-def gallery(request):
-    images = GalleryImage.objects.all()
-    return render(request, 'gallery.html', {'images': images})
+class GalleryList(generic.ListView):
+    model = GalleryImage
+    template_name = 'gallery.html'
+    paginate_by = 12
 
-
-def upload_image(request):
-    if request.method == 'POST':
-        form = GalleryImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('gallery')
-    else:
-        form = GalleryImageForm()
-    return render(request, 'gallery/upload_image.html', {'form': form})
 
 
 # Display a list of blog posts using a generic ListView
