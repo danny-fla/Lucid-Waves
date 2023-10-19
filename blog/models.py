@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -62,8 +63,9 @@ class Comment(models.Model):
 
 
 class GalleryImage(models.Model):
-    image = models.ImageField(upload_to='gallery/')
-    caption = models.CharField(max_length=200)
+    caption = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    image = CloudinaryField('gallery-image', default='placeholder')
 
     def __str__(self):
         return self.caption
