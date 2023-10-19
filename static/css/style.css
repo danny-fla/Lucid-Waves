@@ -125,12 +125,57 @@ body {
 }
 
 /*---------------------------------------------------------- Landing Page */
-/* .jumbotron{
-position: relative;
-} */
+.testimonial {
+    
+}
 
+.testimonial-title {
+    font-size: 1rem;
+}
 
 /* ------------------------------------------------------------------- Gallery-----*/
+
+.container {
+    padding: 1rem;
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.caption {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.thumbnail:hover {
+    transform: translateY(4px);
+    
+}
+
+ .gallery-img-container:hover .overlay{
+    opacity: 1;
+}
+
 
 
 .light-bg {

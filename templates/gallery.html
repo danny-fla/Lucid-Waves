@@ -2,41 +2,27 @@
 
 {% block content %}
 
+<div class="container">
 
-
-
-<div class="container-fluid">
     <div class="row">
-        <!-- Gallery Image Column -->
-        <div class="col-md-12">
-            <div class="row">
-                {% for gallery_image in galleryimage_list %} 
-                <div class="col-md-4">
-                    <div class="card mb-">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in gallery_image.image.url %}
-                                <img class="card-img-top" 
-                                src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
-                                {% else %}
-                                <img class="card-img-top"
-                                src="{{ gallery_image.image.url}}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">{{ gallery_image.caption }}</p>
-                                </div>
-                            </div>
-                        </div>
+        {% for gallery_image in galleryimage_list %} 
+        <div class="col-lg-4 col-sm-6">
+            <div class="thumbnail">
+                <div class="gallery-img-container">
+                    {% if "placeholder" in gallery_image.image.url %}
+                    <img class="gallery-image "
+                        src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+                    {% else %}
+                    <img class="gallery-image" src="{{ gallery_image.image.url}}">
+                    <div class="overlay">
+                        <p class="caption">{{ gallery_image.caption }}</p>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
-       
-
-        
-
         {% endfor %}
     </div>
-</div>
+    </div>
 
 {% endblock %}
