@@ -7,13 +7,13 @@
     <div class="row">
         {% for gallery_image in galleryimage_list %} 
         <div class="col-lg-4 col-sm-6">
-            <div class="thumbnail">
+            <div class="thumbnail ">
                 <div class="gallery-img-container">
                     {% if "placeholder" in gallery_image.image.url %}
-                    <img class="gallery-image "
+                    <img class="gallery-image"
                         src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
                     {% else %}
-                    <img class="gallery-image" src="{{ gallery_image.image.url}}">
+                    <img class="gallery-image" src="{{ gallery_image.image.url}}" loading="lazy">
                     <div class="overlay">
                         <p class="caption">{{ gallery_image.caption }}</p>
                     </div>

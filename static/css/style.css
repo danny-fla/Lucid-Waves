@@ -1,19 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 body {
+    margin: 0;
     background-color: #F9FAFC;
     font-family: 'quicksand', sans-serif;
+    
+}
+
+.logo {
+    font-family: Tahoma, sans-serif;
+    font-weight: 800;
 }
 
 /*---------------------------------------------------------- navbar start */
 
 
-#hero {
+/* #hero {
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url("https://res.cloudinary.com/dsi5hhbty/image/upload/v1697204860/waves_ormags.jpg") no-repeat center center;
     background-size: cover;
-}
+} */
 
 
 .banner {
@@ -33,10 +40,6 @@ body {
     margin-top: 5%;
 }
 
-/* .home-nav{
-    position: absolute;
-    background-color: red;
-} */
 
 .banner .navbar-brand {
     color: #fff;
@@ -133,10 +136,37 @@ body {
     font-size: 1rem;
 }
 
+.features {
+    text-align: center;
+}
+
+.feature-col {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.features  a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8em;
+    color: #fff;
+    border: 1.5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+    padding: 0.8em 3em;
+    font-family: Tahoma, sans-serif;
+    font-weight: 800;
+    margin-top: 1em;
+}
+
+.features a:hover {
+    background-color: rgba(250, 102, 3, 0.87);
+}
+
 /* ------------------------------------------------------------------- Gallery-----*/
 
 .container {
-    padding: 1rem;
+    padding: 0rem;
 }
 
 .gallery-image {
@@ -147,7 +177,6 @@ body {
 
 .overlay {
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -170,6 +199,10 @@ body {
 .thumbnail:hover {
     transform: translateY(4px);
     
+}
+
+.gallery-img-container{
+    position: relative;
 }
 
  .gallery-img-container:hover .overlay{
@@ -254,7 +287,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #007BFF;
+    color: rgba(250, 102, 3, 0.87);
 }
 
 .post-title {
@@ -268,18 +301,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #007BFF;
+    background-color: rgba(250, 102, 3, 0.87);
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #007BFF;
+    color: rgba(250, 102, 3, 0.87);
 }
 
 .link {
-    color: #007BFF;
+    color: rgba(250, 102, 3, 0.87);
     text-decoration: none;
 }
 
@@ -309,11 +342,19 @@ body {
 
 /* ---------------------------------------------- footer */
 .footer {
-    background-color: hsla(0, 0%, 0%, 0.556);
+    background-color: hsla(0, 2%, 8%, 0.943);
+    margin: 1rem;
 }
 
-.footer-logo {
+.footer a {
+    text-decoration: none;
     color: #fff;
-    font-size: 3rem;
+    font-size: 2rem;
+    
+}
+
+.social-link {
+    padding: 1rem;
+    
 }
 
