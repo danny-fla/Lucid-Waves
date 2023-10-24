@@ -29,4 +29,3 @@ class CommentAdmin(admin.ModelAdmin):
 class GalleryImageAdmin(SummernoteModelAdmin):
 
     prepopulated_fields = {'slug': ('caption', )}
-    summernote_fields = ('caption')
