@@ -3,10 +3,21 @@
 {% load crispy_forms_tags %}
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="col-10 col-sm-8 col-lg-7">
-        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            class="d-block mx-lg-auto img-fluid" alt="sufer" width="600" height="400" loading="lazy">
+    <div class="header-image-container col-10 col-sm-8 col-lg-7">
+        {% if "placeholder" in post.header_image.url %}
+        <img class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy"
+            src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        {% else %}
+        <img class="card-img-top" src="{{ post.header_image.url }}">
+        {% endif %}
     </div>
+
+
+
+    <!-- <div class="col-10 col-sm-8 col-lg-7">
+        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy">
+    </div> -->
     <div class="col-lg-5">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 post-title">{{ post.title }}</h1>
         <p class="lead post-subtitle"><em>{{ post.author }} | {{ post.created_on }}
@@ -89,6 +100,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
+                    <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
