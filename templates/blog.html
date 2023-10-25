@@ -36,7 +36,7 @@
                     {{ post.number_of_likes }}
                     <i class="fa-solid fa-comments"></i>
                     {{ post.comment_count }}
-                    <small><a href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
                 </p>
             </div>
         </div>

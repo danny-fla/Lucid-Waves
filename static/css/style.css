@@ -12,6 +12,11 @@ body {
     font-weight: 800;
 }
 
+.edit-link {
+    text-decoration: none;
+    color: rgba(250, 102, 3, 0.87);
+}
+
 /*---------------------------------------------------------- navbar start */
 
 

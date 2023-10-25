@@ -50,7 +50,7 @@
                             <i class="fas fa-heart"></i> <strong id="likes-count"
                                 class="text-secondary">{{ post.number_of_likes }}</strong>
                         </button>
-                        <small><a href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                        <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
                     </div>
                 </div>
             </div>
