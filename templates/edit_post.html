@@ -2,15 +2,17 @@
 
 {% load crispy_forms_tags %}
 
-<h1>Edit post</h1>
 <br>
+<h1 id="edit-post-page-title">Edit Post</h1>
+
 
 <div class="form-group">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
         {% csrf_token %}
+        <!-- {{form|crispy }}           **BUG**  -->
         {{ form.media }}
         {{ form.as_p }}
-        <button class="btn btn-secondary">Edit</button>
+        <button class="btn btn-secondary">Update</button>
     </form>
 </div>
 
@@ -20,5 +22,6 @@
     document.getElementById("elder").value = name;
 
 </script>
+
 
 {% endblock content %}

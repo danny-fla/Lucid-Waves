@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
@@ -20,11 +20,16 @@ class AddPostView(CreateView):
     fields = ('__all__')
 
 
+class EditPostView(UpdateView):
+    model = Post
+    template_name = 'edit_post.html'
+    fields = ['title','header_image','slug','featured_image','excerpt','content']
+
+
 class GalleryList(generic.ListView):
     model = GalleryImage
     template_name = 'gallery.html'
     paginate_by = 12
-
 
 
 # Display a list of blog posts using a generic ListView

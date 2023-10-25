@@ -112,7 +112,7 @@ body {
 /*---------------------------------------------------------- Add Post Page */
 
 
-#add-post-page-title {
+#add-post-page-title, #edit-post-page-title{
     text-align: center;
 }
 
