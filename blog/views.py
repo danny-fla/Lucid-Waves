@@ -23,7 +23,9 @@ class AddPostView(CreateView):
 class EditPostView(UpdateView):
     model = Post
     template_name = 'edit_post.html'
-    fields = ['title','header_image','slug','featured_image','excerpt','content']
+    fields = [
+        'title', 'header_image', 'slug', 'featured_image', 'excerpt', 'content'
+        ]
 
 
 class GalleryList(generic.ListView):

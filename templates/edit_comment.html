@@ -11,6 +11,9 @@
         <img class="card-img-top" src="{{ post.header_image.url }}" style="width: 300px; height: 200px;">
         {% endif %}
     </div>
+
+
+
     <!-- <div class="col-10 col-sm-8 col-lg-7">
         <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy">
@@ -58,14 +61,7 @@
             <hr>
         </div>
     </div>
-    <div class="row" style="background-color: red;">
-        <div class="col-md-8 card mb-4 mt-3">
-            <h2>Comments</h2>
-        </div>
-        <div class="card-body" style="background-color: blue;">
-        </div>
-    </div>
-    <!-- <div class="row">
+    <div class="row">
         <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
@@ -83,8 +79,9 @@
                         <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}"
                             class="text-secondary">{{ comment.number_of_likes }}</strong>
                     </button>
+                    
                 </div>
-                
+
                 {% endfor %}
             </div>
         </div>
@@ -94,25 +91,25 @@
             <div class="card-body">
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval.
+                    Your edit is awaiting approval.
                 </div>
                 {% else %}
 
                 {% if user.is_authenticated %}
 
-                <h3>Leave a comment:</h3>
+                <h3>Edit Comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <br>
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-signup btn-lg">Update</button>
                 </form>
                 {% endif %}
                 {% endif %}
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
