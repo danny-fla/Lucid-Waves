@@ -75,14 +75,6 @@ body {
 
 /*---------------------------------------------------------- Home page */
 
-.welcome-message {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-}
 
 .welcome-message h1{
     font-family: Tahoma, sans-serif;
@@ -90,7 +82,7 @@ body {
     font-size: 6em;
 }
 
-.welcome-message a {
+.cta-btn {
     text-decoration: none;
     display: inline-block;
     font-size: 0.8em;
@@ -104,8 +96,9 @@ body {
     margin-top: 1em;
 }
 
-.welcome-message a:hover {
+.cta-btn:hover {
     background-color: rgba(250, 102, 3, 0.87);
+    color: #fff;
 }
 
 /*---------------------------------------------------------- Blog view page */
