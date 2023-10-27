@@ -28,6 +28,12 @@ class EditPostView(UpdateView):
         ]
 
 
+class AddCommentView(UpdateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = ['post', 'body']
+
+
 class GalleryList(generic.ListView):
     model = GalleryImage
     template_name = 'gallery.html'

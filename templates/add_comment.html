@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+<br>
+<h1 id="add-post-page-title">Create a Comment</h1>
+
+
+<div class="form-group">
+    <form method="POST" style="margin-top: 1em;" class="add-text-form">
+        {% csrf_token %}
+        <!-- {{form|crispy }}           **BUG**  -->
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Post Comment</button>
+    </form>
+</div>
+
+{% endblock content %}

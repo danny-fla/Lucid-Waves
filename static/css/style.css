@@ -12,12 +12,12 @@ body {
     font-weight: 800;
 }
 
-.edit-link {
+.edit-link, #add-comment-link {
     text-decoration: none;
     color: rgba(250, 102, 3, 0.87);
 }
 
-.edit-link:hover {
+.edit-link:hover, #add-comment-link:hover {
     color: #445261;
 }
 
@@ -97,6 +97,12 @@ body {
 
 .image-container-wrapper {
     margin-left: 0px; /* Adjust the value to control the amount of whitespace */
+}
+
+/*---------------------------------------------------------- Post detail page */
+
+#add-comment-link {
+
 }
 
 /*---------------------------------------------------------- Add Post Page */
