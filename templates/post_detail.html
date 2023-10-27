@@ -3,21 +3,13 @@
 {% load crispy_forms_tags %}
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="header-image-container col-10 col-sm-8 col-lg-7">
-        {% if "placeholder" in post.header_image.url %}
-        <img class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy"
-            src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
-        {% else %}
-        <img class="card-img-top" src="{{ post.header_image.url }}" style="width: 300px; height: 200px;">
-        {% endif %}
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="300" loading="lazy">
     </div>
-    <!-- <div class="col-10 col-sm-8 col-lg-7">
-        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy">
-    </div> -->
     <div class="col-lg-5">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 post-title">{{ post.title }}</h1>
-        <p class="lead post-subtitle"><em>{{ post.author }} | {{ post.created_on }}
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
+      <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
             <i class="fas fa-heart"></i> <strong id="likes-count"
                 class="text-secondary">{{ post.number_of_likes }}</strong>
@@ -27,10 +19,40 @@
             <!-- Our total_comments variable goes before the closing strong tag -->
             {{ total_comments }}</strong>
         {% endwith %}
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="header-image-container col-10 col-sm-8 col-lg-7">
+        {% if "placeholder" in post.header_image.url %}
+        <img class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy"
+            src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+        {% else %}
+        <img class="card-img-top" src="{{ post.header_image.url }}" style="width: 300px; height: 200px;">
+        {% endif %}
+    </div>
+    <div class="col-10 col-sm-8 col-lg-7">
+        <img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            class="d-block mx-lg-auto img-fluid" alt="sufer" width="auto" height="400" loading="lazy">
+    </div> -->
+    <!-- <div class="col-lg-5">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 post-title">{{ post.title }}</h1>
+        <p class="lead post-subtitle"><em>{{ post.author }} | {{ post.created_on }}
+        <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
+            <i class="fas fa-heart"></i> <strong id="likes-count"
+                class="text-secondary">{{ post.number_of_likes }}</strong>
+        </button>
+        {% with comments.count as total_comments %}
+        <strong class="text-secondary"><i class="far fa-comments"></i>
+            Our total_comments variable goes before the closing strong tag -->
+            <!-- {{ total_comments }}</strong>
+        {% endwith %}
     </em></p>
     </div>
 
-</div>
+</div> --> 
+
 
 
 <div class="container">

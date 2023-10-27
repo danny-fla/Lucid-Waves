@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% load static %}
 
 {% block content %}
+
 <div class="container-fluid banner">
     <div class="row">
         <div class="col-md-12">
@@ -54,45 +55,6 @@
     </p>
   </div>
 
-<div class="container px-4 py-5" id="hanging-icons">
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col d-flex align-items-start">
-            <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><i class="fa-solid fa-camera"></i></svg>
-            </div>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">GALLERY</h3>
-                <p>Discover breathtaking scenes captured by our talented photographers.
-                    Our gallery showcases a stunning collection of photographs, each a work of art. From picturesque
-                    landscapes to captivating moments, you'll find visual stories that will leave you in awe.
-                </p>
-                <br>
-                <a class="cta-btn" href="{% url 'gallery' %}" class="btn btn-primary">
-                    VIEW GALLERY
-                </a>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em">
-                    <i class="fa-solid fa-comments"></i>
-                </svg>
-            </div>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">BLOG</h3>
-                <p>Engage with captivating insights from our community of writers. Our blog features a rich tapestry of
-                    thought-provoking articles and inspiring narratives. From informative topics to enlightening
-                    stories, you'll discover content that sparks curiosity.</p>
-                <br>
-                <a class="cta-btn" href="{% url 'blog' %}" class="btn btn-primary">
-                    VIEW BLOG
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container px-4 py-5" id="custom-cards">
 
@@ -155,7 +117,45 @@
       </div>
     </div>
   </div>
-
+  <div class="container px-4 py-5" id="hanging-icons">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col d-flex align-items-start">
+            <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><i class="fa-solid fa-camera"></i></svg>
+            </div>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">GALLERY</h3>
+                <p>Discover breathtaking scenes captured by our talented photographers.
+                    Our gallery showcases a stunning collection of photographs, each a work of art. From picturesque
+                    landscapes to captivating moments, you'll find visual stories that will leave you in awe.
+                </p>
+                <br>
+                <a class="cta-btn" href="{% url 'gallery' %}" class="btn btn-primary">
+                    VIEW GALLERY
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div
+                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <i class="fa-solid fa-comments"></i>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">BLOG</h3>
+                <p>Engage with captivating insights from our community of writers. Our blog features a rich tapestry of
+                    thought-provoking articles and inspiring narratives. From informative topics to enlightening
+                    stories, you'll discover content that sparks curiosity.</p>
+                <br>
+                <a class="cta-btn" href="{% url 'blog' %}" class="btn btn-primary">
+                    VIEW BLOG
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {%endblock%}
