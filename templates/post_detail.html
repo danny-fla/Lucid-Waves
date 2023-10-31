@@ -64,11 +64,19 @@
                 </p>
                 <div class="row">
                     <div class="col">
+                        {% if liked %}
                         <button id="like-button" data-post-id="{{ post.id }}"
                             class="btn-like{% if liked %} liked{% endif %}">
                             <i class="fas fa-heart"></i> <strong id="likes-count"
                                 class="text-secondary">{{ post.number_of_likes }}</strong>
                         </button>
+                        {% else %}
+                        <button id="like-button" data-post-id="{{ post.id }}"
+                            class="btn-like{% if liked %} liked{% endif %}">
+                            <i class="far fa-heart"></i> <strong id="likes-count"
+                                class="text-secondary">{{ post.number_of_likes }}</strong>
+                        </button>
+                        {% endif %}
                         <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
                     </div>
                 </div>

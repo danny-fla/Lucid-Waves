@@ -30,8 +30,14 @@ class EditPostView(UpdateView):
 
 class AddCommentView(UpdateView):
     model = Comment
+    form_class = CommentForm
     template_name = 'add_comment.html'
-    fields = ['post', 'body']
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    success_url = 'post_detail'
 
 
 class GalleryList(generic.ListView):

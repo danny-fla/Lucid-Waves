@@ -48,7 +48,9 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    likes = models.ManyToManyField(User, related_name='comment_like', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='comment_like', blank=True
+        )
 
     class Meta:
         ordering = ['created_on']

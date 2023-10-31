@@ -20,6 +20,10 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+        widgets = {
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
 
 class GalleryImageForm(forms.ModelForm):
     class Meta:

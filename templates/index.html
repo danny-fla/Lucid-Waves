@@ -2,6 +2,83 @@
 
 {% block content %}
 
+
+<div class="container-fluid banner">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="navbar-brand">
+          WAV<i class="fa-solid fa-water"></i>S
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">HOME</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'gallery' %}">HOTSPOTS</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
+            </li>
+            <li class="nav-itemactive">
+              <a class="nav-link" href="{% url 'add_post' %}">ADD POST</a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'account_signup' %}">REGISTER</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">navinit</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="navbarCollapse">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">home</a> <span class="sr-only">(current)</span>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">news</a> 
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">gallery</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">contact</a> 
+    </li>
+  </ul>
+</div>
+
+</nav> -->
+
+
+
+
+
+<!-- 
 <div class="container-fluid banner">
     <div class="row">
         <div class="col-md-12">
@@ -9,9 +86,9 @@
                 <div class="navbar-brand">
                     WAV<i class="fa-solid fa-water"></i>S
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
                 <div class="collapse navbar-collapse" id="mynav">
                     <ul class="nav">
                         <li class="nav-item">
@@ -43,119 +120,139 @@
             </nav>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="position-relative p-5 text-center text-bg-dark bg-body">
-    <svg class="bi mt-5 mb-3" width="48" height="48"><use xlink:href="#check2-circle"></use></svg>
-    <h1 class="logo">WAV<i class="fa-solid fa-water"></i>S</h1>
-    <p class="col-lg-6 mx-auto mb-4 lead">
-        Our mission is to guide you in discovering the ocean's benefits, its picturesque landscapes, and the
-        exhilarating world of surf. Whether you seek relaxation, inspiration, or knowledge, 'Waves' is your portal
-        to the mesmerizing, calming, and invigorating world of the sea."
-    </p>
-  </div>
+  <svg class="bi mt-5 mb-3" width="48" height="48">
+    <use xlink:href="#check2-circle"></use>
+  </svg>
+  <h1 class="logo">WAV<i class="fa-solid fa-water"></i>S</h1>
+  <p class="col-lg-6 mx-auto mb-4 lead">
+    Our mission is to guide you in discovering the ocean's benefits, its picturesque landscapes, and the
+    exhilarating world of surf. Whether you seek relaxation, inspiration, or knowledge, 'Waves' is your portal
+    to the mesmerizing, calming, and invigorating world of the sea."
+  </p>
+</div>
 
 
 <div class="container px-4 py-5" id="custom-cards">
 
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img" style="background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/5043637/pexels-photo-5043637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-4">
-            <p class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"The ocean has been my refuge for years. Every visit is a reminder that nature's embrace is the best medicine."</p>
-            <ul class="d-flex list-unstyled mt-auto">
-              
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Jane Waters</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>Dublin</small>
-              </li>
-            </ul>
-          </div>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
+        style="background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/5043637/pexels-photo-5043637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-4">
+          <p class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"The ocean has been my refuge for years. Every visit is a
+            reminder that nature's embrace is the best medicine."</p>
+          <ul class="d-flex list-unstyled mt-auto">
+
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill"></use>
+              </svg>
+              <small>Jane Waters</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#calendar3"></use>
+              </svg>
+              <small>Dublin</small>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/4319752/pexels-photo-4319752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"Studying the ocean's mysteries has revealed its incredible potential for medicine, food, and renewable
-                energy."</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Dr. Maria Coleman</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>Galway</small>
-              </li>
-            </ul>
-          </div>
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
+        style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/4319752/pexels-photo-4319752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"Studying the ocean's mysteries has revealed its incredible
+            potential for medicine, food, and renewable
+            energy."</h3>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill"></use>
+              </svg>
+              <small>Dr. Maria Coleman</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#calendar3"></use>
+              </svg>
+              <small>Galway</small>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img" style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/3876426/pexels-photo-3876426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"As a surfer, the ocean is my playground and my sanctuary. The ocean isn't just water; it's my soul's
-                home."</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Mike Freeman</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>Donegal</small>
-              </li>
-            </ul>
-          </div>
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
+        style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/3876426/pexels-photo-3876426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"As a surfer, the ocean is my playground and my sanctuary.
+            The ocean isn't just water; it's my soul's
+            home."</h3>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill"></use>
+              </svg>
+              <small>Mike Freeman</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#calendar3"></use>
+              </svg>
+              <small>Donegal</small>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="container px-4 py-5" id="hanging-icons">
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-        <div class="col d-flex align-items-start">
-            <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><i class="fa-solid fa-camera"></i></svg>
-            </div>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">GALLERY</h3>
-                <p>Discover breathtaking scenes captured by our talented photographers.
-                    Our gallery showcases a stunning collection of photographs, each a work of art. From picturesque
-                    landscapes to captivating moments, you'll find visual stories that will leave you in awe.
-                </p>
-                <br>
-                <a class="cta-btn" href="{% url 'gallery' %}" class="btn btn-primary">
-                    VIEW GALLERY
-                </a>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <div
-                class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em">
-                    <i class="fa-solid fa-comments"></i>
-                </svg>
-            </div>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">BLOG</h3>
-                <p>Engage with captivating insights from our community of writers. Our blog features a rich tapestry of
-                    thought-provoking articles and inspiring narratives. From informative topics to enlightening
-                    stories, you'll discover content that sparks curiosity.</p>
-                <br>
-                <a class="cta-btn" href="{% url 'blog' %}" class="btn btn-primary">
-                    VIEW BLOG
-                </a>
-            </div>
-        </div>
-    </div>
 </div>
 
+<div class="container px-4 py-5" id="hanging-icons">
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+    <div class="col d-flex align-items-start">
+      <div
+        class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><i class="fa-solid fa-camera"></i></svg>
+      </div>
+      <div>
+        <h3 class="fs-2 text-body-emphasis">GALLERY</h3>
+        <p>Discover breathtaking scenes captured by our talented photographers.
+          Our gallery showcases a stunning collection of photographs, each a work of art. From picturesque
+          landscapes to captivating moments, you'll find visual stories that will leave you in awe.
+        </p>
+        <br>
+        <a class="cta-btn" href="{% url 'gallery' %}" class="btn btn-primary">
+          VIEW GALLERY
+        </a>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div
+        class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em">
+          <i class="fa-solid fa-comments"></i>
+        </svg>
+      </div>
+      <div>
+        <h3 class="fs-2 text-body-emphasis">BLOG</h3>
+        <p>Engage with captivating insights from our community of writers. Our blog features a rich tapestry of
+          thought-provoking articles and inspiring narratives. From informative topics to enlightening
+          stories, you'll discover content that sparks curiosity.</p>
+        <br>
+        <a class="cta-btn" href="{% url 'blog' %}" class="btn btn-primary">
+          VIEW BLOG
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {%endblock%}
