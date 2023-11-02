@@ -20,7 +20,7 @@
               <a class="nav-link" href="{% url 'home' %}">HOME</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'gallery' %}">HOTSPOTS</a>
+              <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
@@ -46,81 +46,6 @@
     </div>
   </div>
 </div>
-
-
-<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">navinit</a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-<div class="collapse navbar-collapse" id="navbarCollapse">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">home</a> <span class="sr-only">(current)</span>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="#">news</a> 
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="#">gallery</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="#">contact</a> 
-    </li>
-  </ul>
-</div>
-
-</nav> -->
-
-
-
-
-
-<!-- 
-<div class="container-fluid banner">
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-md">
-                <div class="navbar-brand">
-                    WAV<i class="fa-solid fa-water"></i>S
-                </div>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-                <div class="collapse navbar-collapse" id="mynav">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'gallery' %}">HOTSPOTS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'add_post' %}">ADD POST</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">REGISTER</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-</div> -->
 
 <div class="position-relative p-5 text-center text-bg-dark bg-body">
   <svg class="bi mt-5 mb-3" width="48" height="48">

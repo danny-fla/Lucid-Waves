@@ -83,39 +83,8 @@
             </div>
         </div>
     </div>
+  <hr>
     <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3">
-            <h2>Comments</h2>
-        </div>
-        <div class="card-body">
-            {% if not post.comments.all %}
-            <p>Be the first to <strong><a id="add-comment-link" href="{% url 'add_comment' post.pk %}">Add A Comment</a></strong></p>
-            {% else %}
-                {% for comment in post.comments.all %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        {{ comment.created_on }}
-                        <br>
-                        {{ comment.body | linebreaks }}
-                        <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}"
-                        class="btn-like{% if likedComment %} likedComment{% endif %}">
-                        <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}"
-                            class="text-secondary">{{ comment.number_of_likes }}</strong>
-                    </button>
-                    </p>
-                    <strong><a id="add-comment-link" href="{% url 'add_comment' post.pk %}">Add A Comment</a></strong></p>
-                </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-    </div>
-    <!-- <div class="row">
         <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
@@ -139,7 +108,6 @@
             </div>
         </div>
 
-
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
@@ -162,7 +130,7 @@
                 {% endif %}
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
