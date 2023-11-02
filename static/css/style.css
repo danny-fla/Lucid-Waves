@@ -12,12 +12,12 @@ body {
     font-weight: 800;
 }
 
-.edit-link, #add-comment-link {
+.edit-link, .delete-link {
     text-decoration: none;
     color: rgba(250, 102, 3, 0.87);
 }
 
-.edit-link:hover, #add-comment-link:hover {
+.edit-link:hover, .delete-link:hover{
     color: #445261;
 }
 
@@ -106,7 +106,7 @@ body {
 /*---------------------------------------------------------- Add Post Page */
 
 
-#add-post-page-title, #edit-post-page-title{
+#add-post-page-title, #edit-post-page-title, #delete-post-page-title{
     text-align: center;
 }
 

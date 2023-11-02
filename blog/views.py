@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.contrib.auth import logout
+from django.urls import reverse_lazy
 from .models import Post, Comment, GalleryImage
 from .forms import CommentForm, GalleryImageForm
 
@@ -27,6 +28,12 @@ class EditPostView(UpdateView):
     fields = [
         'title', 'header_image', 'slug', 'featured_image', 'excerpt', 'content'
         ]
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
 
 
 class AddCommentView(UpdateView):

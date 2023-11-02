@@ -40,7 +40,8 @@
                     {{ post.comment_count }}
                     {% if user.is_authenticated %}
                     {% if user.id == post.author.id %}
-                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">(Edit)</a></small>
+                    <small><a class="delete-link" href="{% url 'delete_post' post.pk %}">(Delete)</a></small>
                     {% endif %}
                     {% endif %}
                 </p>
