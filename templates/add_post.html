@@ -11,7 +11,9 @@
         <!-- {{form|crispy }}           **BUG**  -->
         {{ form.media }}
         {{ form.as_p }}
-        <button class="btn btn-secondary">Post</button>
+        <div class="text-center">
+            <button class="btn btn-secondary">Post</button>
+        </div>
     </form>
 </div>
 
@@ -19,7 +21,6 @@
     var name = "{{ user.id }}";
 
     document.getElementById("elder").value = name;
-
 </script>
 
 {% endblock content %}
