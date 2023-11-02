@@ -90,7 +90,6 @@ body {
 /*---------------------------------------------------------- Blog view page */
 #main-content {
     margin: 0.5rem;
-    border: 1px solid;
 }
 
 
@@ -203,6 +202,21 @@ body {
  .gallery-img-container:hover .overlay{
     opacity: 1;
 }
+
+/* ------------------------------------------------------------------- Sign Up Start-----*/
+@media screen and (max-width: 600px) {
+    .register-container{
+        padding: 1rem;
+        text-align: center;
+    }
+}
+/* .register-container{
+    padding: 1rem;
+    text-align: center;
+} */
+
+
+/* ------------------------------------------------------------------- Sign Up End-----*/
 
 .light-bg {
     background-color: #fff;
