@@ -77,7 +77,11 @@
                                 class="text-secondary">{{ post.number_of_likes }}</strong>
                         </button>
                         {% endif %}
-                        <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                        {% if user.is_authenticated %}
+                            {% if user.id == post.author.id %}
+                            <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                            {% endif %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

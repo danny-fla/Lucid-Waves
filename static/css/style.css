@@ -67,7 +67,7 @@ body {
 /*---------------------------------------------------------- Home page */
 
 
-.cta-btn {
+.cta-btn, .btn {
     text-decoration: none;
     display: inline-block;
     font-size: 0.8em;
@@ -81,7 +81,7 @@ body {
     margin-top: 1em;
 }
 
-.cta-btn:hover {
+.cta-btn:hover, .btn:hover {
     background-color: rgba(250, 102, 3, 0.87);
     color: #fff;
 }
@@ -218,6 +218,10 @@ body {
         padding: 1rem;
         text-align: center;
     }
+}
+
+.sign-out-btn-box{
+    margin-left: 0.8rem;
 }
 
 .light-bg {

@@ -10,13 +10,15 @@
             <!-- Image and Title (col-md-5) -->
             <div class="col-md-3 image-container-wrapper">
                 <div class="image-container">
-                    <a href="{% url 'post_detail' post.slug %}"class="post-link">
-                    {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top"
-                        src="https://images.pexels.com/photos/60004/water-splash-flow-drop-of-water-60004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" style="width: 300px; height: 200px;">
-                    {% else %}
-                    <img class="card-img-top" src="{{ post.featured_image.url }}" style="width: 300px; height: 200px;">
-                    {% endif %}
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/60004/water-splash-flow-drop-of-water-60004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            style="width: 300px; height: 200px;">
+                        {% else %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}"
+                            style="width: 300px; height: 200px;">
+                        {% endif %}
                     </a>
                     <div class="image-flash">
                         <p class="author">Author: {{ post.author }}</p>
@@ -36,7 +38,11 @@
                     {{ post.number_of_likes }}
                     <i class="fa-solid fa-comments"></i>
                     {{ post.comment_count }}
+                    {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
                     <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">Edit</a></small>
+                    {% endif %}
+                    {% endif %}
                 </p>
             </div>
         </div>

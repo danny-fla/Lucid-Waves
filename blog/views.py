@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.contrib.auth import logout
 from .models import Post, Comment, GalleryImage
 from .forms import CommentForm, GalleryImageForm
 
@@ -38,6 +39,7 @@ class AddCommentView(UpdateView):
         return super().form_valid(form)
 
     success_url = 'post_detail'
+
 
 
 class GalleryList(generic.ListView):
