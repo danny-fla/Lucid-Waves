@@ -203,20 +203,22 @@ body {
     opacity: 1;
 }
 
-/* ------------------------------------------------------------------- Sign Up Start-----*/
+/* ------------------------------------------------------------------- Sign Up -----*/
 @media screen and (max-width: 600px) {
     .register-container{
         padding: 1rem;
         text-align: center;
     }
 }
-/* .register-container{
-    padding: 1rem;
-    text-align: center;
-} */
 
+/* ------------------------------------------------------------------- Login -----*/
 
-/* ------------------------------------------------------------------- Sign Up End-----*/
+@media screen and (max-width: 600px) {
+    .login-container{
+        padding: 1rem;
+        text-align: center;
+    }
+}
 
 .light-bg {
     background-color: #fff;
