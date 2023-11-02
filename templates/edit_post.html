@@ -3,19 +3,28 @@
 {% load crispy_forms_tags %}
 
 <br>
-<h1 id="edit-post-page-title">Edit Post</h1>
+
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+        <h1 id="edit-post-page-title">Edit Post</h1>
 
 
-<div class="form-group">
-    <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
-        {% csrf_token %}
-        <!-- {{form|crispy }}           **BUG**  -->
-        {{ form.media }}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Update</button>
-    </form>
-</div>
-
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+                {% csrf_token %}
+                <!-- {{form|crispy }}           **BUG**  -->
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Update</button>
+            </form>
+        </div>
+    
+    {% else %}
+        <h1 class="text-center">Oops! Access Denied...</h1>
+    {% endif %}
+{% else %}
+    <h1 class="text-center">Oops! Access Denied...</h1>
+{% endif %}
 <script>
     var name = "{{ user.id }}";
 
