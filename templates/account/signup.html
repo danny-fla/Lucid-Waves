@@ -8,7 +8,7 @@
 <div class="container mt-5 register-container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h3 class="text-center mb-4 text-primary"><strong>{% trans "Sign Up" %}</strong></h3>
+            <h3 class="text-center mb-4"><strong>{% trans "Sign Up" %}</strong></h3>
             <p class="text-center">
                 {% blocktrans %}
                 Welcome back to Lucid Waves. Already have an member? Then please
@@ -25,12 +25,12 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-primary btn-block mt-4">{% trans "Sign Up" %}</button>
+                <a class="cta-btn" href="{% trans 'Sign Up' %}">Register</a>
             </form>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 mb-5">
             {# Add GitHub Sign-up Button Here #}
             <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark btn-block mt-3">
                 Sign up with GitHub <i class="fab fa-github"></i>
