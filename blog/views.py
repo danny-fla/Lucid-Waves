@@ -15,6 +15,13 @@ def landing_page(request):
     return render(request, 'index.html')
 
 
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
+
+
+
 class AddPostView(CreateView):
     model = Post
     # form_class = PostForm

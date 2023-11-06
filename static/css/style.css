@@ -336,16 +336,18 @@ body {
 }
 
 .btn-like {
-    color: red;
+    color: #445261;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #EE1D1D ;
+    color: #9c9ca2 ;
     background: transparent;
     border: none;
+    transform: translateX(2px);
+    transform:  translateY(-2px);
 }
 
 .sign-in-alert {

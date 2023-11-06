@@ -11,7 +11,7 @@
       <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button id="like-button" data-post-id="{{ post.id }}" class="btn-like{% if liked %} liked{% endif %}">
-            <i class="fas fa-heart"></i> <strong id="likes-count"
+            <i class="fa-solid fa-thumbs-up"></i> <strong id="likes-count"
                 class="text-secondary">{{ post.number_of_likes }}</strong>
         </button>
         {% with comments.count as total_comments %}
@@ -32,7 +32,7 @@
                 </p>
                 <div class="row">
                     <div class="col">
-                        {% if liked %}
+                        <!-- {% if liked %}
                         <button id="like-button" data-post-id="{{ post.id }}"
                             class="btn-like{% if liked %} liked{% endif %}">
                             <i class="fas fa-heart"></i> <strong id="likes-count"
@@ -50,7 +50,7 @@
                             <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">(Edit)</a></small>
                             <small><a class="delete-link" href="{% url 'delete_post' post.pk %}">(Delete)</a></small>
                             {% endif %}
-                        {% endif %}
+                        {% endif %} -->
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                     {{ comment.body | linebreaks }}
                     <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}"
                         class="btn-like{% if likedComment %} likedComment{% endif %}">
-                        <i class="fas fa-heart"></i> <strong id="comment-likes-count-{{ comment.id }}"
+                        <i class="fa-solid fa-thumbs-up"></i> <strong id="comment-likes-count-{{ comment.id }}"
                             class="text-secondary">{{ comment.number_of_likes }}</strong>
                     </button>
                 </div>
