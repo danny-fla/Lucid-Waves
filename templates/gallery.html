@@ -24,6 +24,19 @@
         </div>
         {% endfor %}
     </div>
+</div>
+<div class="container my-3">
+    <div class="p-3 text-center bg-body-tertiary rounded-3">
+        {% if user.is_authenticated %}
+        <a class="cta-btn" href="#" class="btn btn-primary">
+            UPLOAD IMAGE
+          </a>
+        {% else %}
+        <a class="cta-btn" href="#" class="btn btn-primary">
+            LOGIN TO UPLOAD
+          </a>
+        {% endif %}
     </div>
+  </div>
 
 {% endblock %}
