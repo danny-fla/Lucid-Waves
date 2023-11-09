@@ -16,9 +16,9 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    updated_on = models.DateField(auto_now_add=True)
     content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
@@ -46,7 +46,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         User, related_name='comment_like', blank=True
@@ -66,6 +66,18 @@ class GalleryImage(models.Model):
     caption = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     image = CloudinaryField('gallery-image', default='placeholder')
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="gallery_image"
+    )
+    created_on = models.DateField(auto_now_add=True)
+    likes = models.ManyToManyField(
+        User, related_name='gallery_image_like', blank=True)
+
+    class Meta:
+        ordering = ['created_on']
 
     def __str__(self):
         return self.caption
+
+    def number_of_likes(self):
+        return self.likes.count()
