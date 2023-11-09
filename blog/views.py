@@ -62,6 +62,13 @@ class GalleryList(generic.ListView):
     paginate_by = 12
 
 
+class AddImageView(CreateView):
+    model = GalleryImage
+    # form_class = PostForm
+    template_name = 'add_image.html'
+    fields = ('__all__')
+
+
 # Display a list of blog posts using a generic ListView
 class PostList(generic.ListView):
     # Display a list of blog posts

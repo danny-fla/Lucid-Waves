@@ -81,3 +81,6 @@ class GalleryImage(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('home')

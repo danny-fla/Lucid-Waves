@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load crispy_forms_tags %}
+<br>
+<h1 id="add-image-page-title">Add A New Image</h1>
+
+
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+        {% csrf_token %}
+        <!-- {{form|crispy }}           **BUG**  -->
+        {{ form.media }}
+        {{ form.as_p }}
+        <div class="text-center">
+            <button class="btn btn-secondary">Post</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    var name = "{{ user.id }}";
+
+    document.getElementById("elder").value = name;
+</script>
+
+{% endblock content %}
