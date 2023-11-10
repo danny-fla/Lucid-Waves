@@ -203,6 +203,10 @@ body {
     opacity: 1;
 }
 
+.image-list {
+    list-style-type: none;
+}
+
 /* ------------------------------------------------------------------- Sign Up -----*/
 @media screen and (max-width: 600px) {
     .register-container{
@@ -335,14 +339,23 @@ body {
     text-decoration: underline;
 }
 
-.btn-like {
+.btn-like, .post-btn-like, .gallery-btn-like {
     color: #445261;
     border: none;
     background: transparent;
 }
 
+.post-btn-like, .gallery-btn-like {
+    color: #445261;
+    border: none;
+    background: transparent;
+}
+
+
 .btn-like:hover,
-.btn-like:active {
+.btn-like:active, 
+.post-btn-like:hover,
+.post-btn-like:active {
     color: #9c9ca2 ;
     background: transparent;
     border: none;

@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.landing_page, name='home'),
     path('blog/', views.PostList.as_view(), name='blog'),
     path('gallery/', views.GalleryList.as_view(), name='gallery'),
+    path('like-image/<int:gallery_id>/', views.like_image, name='like_image'),
     path('add_post/', AddPostView.as_view(), name='add_post'),
     path('blog/edit/<int:pk>', EditPostView.as_view(), name='edit_post'),
     path('blog/<int:pk>/delete', DeletePostView.as_view(), name='delete_post'),

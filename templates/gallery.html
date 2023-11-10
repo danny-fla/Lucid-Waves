@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="row">
-        {% for gallery_image in galleryimage_list %} 
+        {% for gallery_image in galleryimage_list %}
         <div class="col-lg-4 col-sm-6">
             <div class="thumbnail ">
                 <div class="gallery-img-container">
@@ -16,7 +16,22 @@
                     {% else %}
                     <img class="gallery-image" src="{{ gallery_image.image.url}}" loading="lazy">
                     <div class="overlay">
-                        <p class="caption">{{ gallery_image.caption }}</p>
+                        <ul class="image-list">
+                            <li class="caption">{{ gallery_image.caption }}
+                                <hr>
+                                    <button id="gallery-like-button-{{ gallery_image.id }}" data-image-id="{{ gallery_image.id }}"
+                                        class="gallery-btn-like{% if likedImage %} likedImage{% endif %}">
+                                        <i class="fa-solid fa-thumbs-up"></i> 
+                                        <strong id="gallery-likes-count-{{ gallery_image.id }}" class ="text-secondary">{{ gallery_image.number_of_likes }}</strong>
+                                    </button>
+                            <li>{{ gallery_image.user }} <small><a class="edit-link" href="#">Edit</a> <a class="delete-link" href="#">Delete</a></small></li>
+                            {% if user.is_authenticated %}
+                            {% if user.id == gallery_image.user.id %}
+                            
+                            <li> </li>
+                            {% endif %}
+                            {% endif %}
+                        </ul>
                     </div>
                     {% endif %}
                 </div>
@@ -30,13 +45,53 @@
         {% if user.is_authenticated %}
         <a class="cta-btn" href="{% url 'add_image' %}" class="btn btn-primary">
             UPLOAD IMAGE
-          </a>
+        </a>
         {% else %}
         <a class="cta-btn" href="{% url 'account_login' %}" class="btn btn-primary">
             LOGIN TO ADD IMAGE
-          </a>
+        </a>
         {% endif %}
     </div>
-  </div>
+</div>
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+        const galleryLikeButtons = document.querySelectorAll(".gallery-btn-like"); 
 
+        galleryLikeButtons.forEach(function (galleryLikeButton) {
+            galleryLikeButton.addEventListener("click", function () {
+                const imageId = galleryLikeButton.dataset.imageId;
+                const likedImage = galleryLikeButton.classList.contains("likedImage");
+
+                fetch(`/like-image/${imageId}/`, {
+                        method: likedImage ? "DELETE" : "POST",
+                        headers: {
+                            "X-CSRFToken": getCookie("csrftoken"),
+                        },
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            if (likedImage) {
+                                galleryLikeButton.classList.remove("likedImage");
+                            } else {
+                                galleryLikeButton.classList.add("likedImage");
+                            }
+                            // Update the likes count for the specific image
+                            const ImageLikesCount = document.getElementsById(
+                                `gallery-likes-count-${imageId}`);
+                                ImageLikesCount.textContent = data.image_likes_count;
+                        }
+                    })
+                    .catch((error) => console.error("Error:", error));
+            });
+        });
+        
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+    });
+
+</script>
 {% endblock %}

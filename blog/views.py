@@ -198,3 +198,26 @@ def like_comment(request, comment_id):
         return JsonResponse(
             {"success": False, "error": "User is not authenticated"}
             )
+
+
+def like_image(request, gallery_id):
+    # Toggle the like status for the post
+    gallery_image = get_object_or_404(GalleryImage, id=gallery_id)
+    if request.user.is_authenticated:
+        if gallery_image.likes.filter(id=request.user.id).exists():
+            gallery_image.likes.remove(request.user)
+            liked = False
+        else:
+            gallery_image.likes.add(request.user)
+            liked = True
+
+        gallery_image_likes_count = gallery_image.likes.count()
+
+    # Return a JSON response indicating the success and current likes count
+        return JsonResponse({"success": True, "likes_count": gallery_image_likes_count})
+    else:
+        # Return a JSON response indicating authentication failure
+        return JsonResponse(
+            {"success": False, "error": "User is not authenticated"}
+            )
+
