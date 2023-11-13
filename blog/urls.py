@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import AddPostView, EditPostView, AddCommentView, DeletePostView, AddImageView
+from .views import AddPostView, EditPostView, AddCommentView, DeletePostView, AddImageView, EditImageView
 
 
 urlpatterns = [
@@ -15,5 +15,6 @@ urlpatterns = [
     path('blog/<int:pk>/comment', AddCommentView.as_view(), name='add_comment'),
     path('like-post/<int:post_id>/', views.like_post, name='like_post'),
     path('add_image/', AddImageView.as_view(), name='add_image'),
+    path('gallery/edit/<int:pk>', EditImageView.as_view(), name='edit_image'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]

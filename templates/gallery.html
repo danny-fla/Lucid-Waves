@@ -17,20 +17,22 @@
                     <img class="gallery-image" src="{{ gallery_image.image.url}}" loading="lazy">
                     <div class="overlay">
                         <ul class="image-list">
-                            <li class="caption">{{ gallery_image.caption }}
+                            <li class="caption"><small>{{ gallery_image.caption }}</small>
                                 <hr>
-                                    <button id="gallery-like-button-{{ gallery_image.id }}" data-image-id="{{ gallery_image.id }}"
-                                        class="gallery-btn-like{% if likedImage %} likedImage{% endif %}">
-                                        <i class="fa-solid fa-thumbs-up"></i> 
-                                        <strong id="gallery-likes-count-{{ gallery_image.id }}" class ="text-secondary">{{ gallery_image.number_of_likes }}</strong>
-                                    </button>
-                            <li>{{ gallery_image.user }} <small><a class="edit-link" href="#">Edit</a> <a class="delete-link" href="#">Delete</a></small></li>
-                            {% if user.is_authenticated %}
-                            {% if user.id == gallery_image.user.id %}
-                            
-                            <li> </li>
-                            {% endif %}
-                            {% endif %}
+                                <button id="gallery-like-button-{{ gallery_image.id }}"
+                                    data-image-id="{{ gallery_image.id }}"
+                                    class="gallery-btn-like{% if likedImage %} likedImage{% endif %}">
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                    <strong id="gallery-likes-count-{{ gallery_image.id }}"
+                                        class="text-secondary">{{ gallery_image.number_of_likes }}</strong>
+                                </button>
+                            <li>{{ gallery_image.user }}
+                                <small>
+                                    <a class="edit-link" href="{% url 'edit_image' gallery_image.pk %}">Edit</a>
+                                    <a class="delete-link" href="#">Delete</a>
+                                </small>
+                              
+                            </li>
                         </ul>
                     </div>
                     {% endif %}
@@ -54,8 +56,8 @@
     </div>
 </div>
 <script>
-     document.addEventListener("DOMContentLoaded", function () {
-        const galleryLikeButtons = document.querySelectorAll(".gallery-btn-like"); 
+    document.addEventListener("DOMContentLoaded", function () {
+        const galleryLikeButtons = document.querySelectorAll(".gallery-btn-like");
 
         galleryLikeButtons.forEach(function (galleryLikeButton) {
             galleryLikeButton.addEventListener("click", function () {
@@ -77,21 +79,20 @@
                                 galleryLikeButton.classList.add("likedImage");
                             }
                             // Update the likes count for the specific image
-                            const ImageLikesCount = document.getElementsById(
+                            const ImageLikesCount = document.getElementById(
                                 `gallery-likes-count-${imageId}`);
-                                ImageLikesCount.textContent = data.image_likes_count;
+                            ImageLikesCount.textContent = data.image_likes_count;
                         }
                     })
                     .catch((error) => console.error("Error:", error));
             });
         });
-        
+
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(";").shift();
         }
     });
-
 </script>
 {% endblock %}

@@ -62,6 +62,11 @@ class GalleryList(generic.ListView):
     paginate_by = 12
 
 
+class EditImageView(UpdateView):
+    model = GalleryImage
+    template_name = 'edit_image.html'
+    fields = ('__all__')
+
 class AddImageView(CreateView):
     model = GalleryImage
     # form_class = PostForm

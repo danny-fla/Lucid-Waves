@@ -89,7 +89,7 @@ body {
 
 /*---------------------------------------------------------- Blog view page */
 #main-content {
-    margin: 0.5rem;
+    margin: 0rem;
 }
 
 
@@ -216,6 +216,11 @@ body {
 }
 
 /* ------------------------------------------------------------------- Login -----*/
+.alert-container {
+    position: absolute;
+}
+
+
 
 @media screen and (max-width: 600px) {
     .login-container{
@@ -371,7 +376,6 @@ body {
 /* ---------------------------------------------- footer */
 .footer {
     background-color: hsla(0, 2%, 8%, 0.943);
-    margin: 1rem;
 }
 
 .footer a {
