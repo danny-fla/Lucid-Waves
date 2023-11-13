@@ -81,7 +81,7 @@
                             // Update the likes count for the specific image
                             const ImageLikesCount = document.getElementById(
                                 `gallery-likes-count-${imageId}`);
-                            ImageLikesCount.textContent = data.image_likes_count;
+                            ImageLikesCount.textContent = data.likes_count;
                         }
                     })
                     .catch((error) => console.error("Error:", error));

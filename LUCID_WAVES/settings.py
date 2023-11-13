@@ -112,8 +112,8 @@ WSGI_APPLICATION = 'LUCID_WAVES.wsgi.application'
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'APP': {
-            'client_id': 'f1bb1e0347d7b0005163',
-            'secret': 'fb82e7cf6924e40ba0bd5fd2ddd41e75f2e6d09f',
+            'client_id': '5369d13846019e70c68f',
+            'secret': '6f02a323c6ff53e1fc2392861c2454d0cb0e7e6a',
             'key': ''
         },
         'LOGIN_CALLBACK_URL': 'https://8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu105.gitpod.io/accounts/github/login/callback',  # Set your callback URL here
