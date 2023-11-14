@@ -94,3 +94,263 @@ ___
 - Express their views by liking, creating posts, and adding insightful comments to blog posts. Additionally, users can actively participate in the creation, editing, and liking of gallery images.
 
 ___
+
+# Design Choices
+
+## Colour Scheme
+
+The chosen color scheme for this project mirrors the vibrant hues of the site's banner, capturing the essence of a sunset atop a rolling wave. The palette exudes warmth to encapsulate the sun's radiance, coupled with subtle tones of darkness to signify the shadow cast, and touches of white to convey the transparent and fluid nature of water.
+
+## Typography
+
+The main font used is Quicksand, but Tahoma was used for the main logo appears and the call to action buttons.
+
+## Logo and Favicon
+
+The logo was created using an online logo creator - [Brandcrowd](https://www.brandcrowd.com/)
+
+## Wireframes
+
+- Mobile Homepage Wireframe
+
+![Mobile Homepage Wireframe]()
+
+- Mobile Post Detail Wireframe
+
+![Mobile Post Detail Wireframe]()
+
+- Desktop Homepage Wireframe
+
+![Desktop Homepage Wireframe]()
+
+- Desktop Post Detail Wireframe
+
+![Desktop Post Detail Wireframe]()
+
+## Flow Diagram
+
+Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
+
+![Site Flow Diagram]()
+
+## Database Plan
+
+The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
+
+![Database plan]()
+
+# Features
+
+## Registration
+
+The user can create an account
+
+![Create an Account](documentation/images/create_account.png)
+
+View Blog Posts on Blog Page
+
+![View Blog Posts on Blog Page](documentation/images/home.png)
+
+Browse by Gallery images
+
+![Browse by Gallery Images](documentation/images/browse_by_category.png)
+
+Comment on Blog Posts.
+
+*Also shown here is the trashcan which allows users to delete their own comments should they wish.*
+
+![Comment on Blog Posts](documentation/images/commenting.png)
+
+## Future Features
+
+-
+
+## Features Not Included
+
+- 
+
+___
+
+# Technologies Used
+
+Here are the technologies used to build this project:
+
+- [GitPod](https://gitpod.io/) To build and create this project
+- [Github](https://github.com) To host and store the data for the site.
+- [GitPod](https://www.gitpod.io) the IDE where the site was built.
+- [PEP8 Validator](https://pep8ci.herokuapp.com/) Used to check python code for errors
+- [ElephandSQL](https://www.elephantsql.com/) Used to store PostgreSQL database.
+- [Cloudinary](https://cloudinary.com/) Used as cloud storage for images uploaded as part of the blog posts
+- [Heroku](https://id.heroku.com/) Used to deploy the project
+
+# Programming Languages, Frameworks and Libraries Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Bootstrap](https://getbootstrap.com/)
+
+# Agile
+
+This project was designed using Agile methodology, utilising the Project Board and Issues sections in GitHub
+
+- [Project Board]()
+
+# Testing
+
+As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling.
+
+## Manual Testing
+
+*For any Fails, there is a more detailed description below the table*
+
+## ADMIN
+
+#### Login and Authentication:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Log in with valid admin credentials.|Successful login, and the admin dashboard is displayed.|Pass|
+| Log in with invalid credentials.|Appropriate error message displayed.|Pass|
+
+
+
+#### Post Management:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Create a new blog post.|Post is successfully created and listed in the admin interface.|Pass|
+|Edit an existing blog post.|Changes are saved, and the post is updated.|Pass|
+| Delete a blog post.|Post is removed from the system.|Pass|
+|Like a post|The like count is incremented, and the user's like is recorded.|Pass|
+|Unlike a post.|The like count is decremented, and the user's like is removed.|Pass|
+
+
+
+#### Comment Management:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|View a list of comments.| All comments are displayed in the admin interface.|Pass|
+| Approve a pending comment.|Comment status changes to approved.|Pass|
+|Delete a comment.|Comment is removed from the system.|Pass|
+|Like a comment|The like count is incremented, and the user's like is recorded.|Pass|
+|Unlike a comment.|The like count is decremented, and the user's like is removed.|Pass|
+
+
+
+####  Gallery Management:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Upload a new image to the gallery.| Image is successfully uploaded and listed in the admin interface.|Pass|
+| Edit details of an existing gallery image.|Changes are saved, and the image details are updated.|Pass|
+|Delete a gallery image.|Image is removed from the system.|Pass|
+|Like a gallery image.|The like count is incremented, and the user's like is recorded.|Pass|
+|Unlike a gallery image.|The like count is decremented, and the user's like is removed.|Pass|
+
+
+
+#### User Management:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|View a list of users.|All users are displayed in the admin interface.|Pass|
+|Edit user details.| Changes are saved, and user details are updated.|Pass|
+|Suspend a user account.|User account is suspended.|Pass|
+
+
+
+#### Settings
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Modify general site settings.|Changes are saved, and settings are updated.|Pass|
+|Change the admin password.|Password is successfully updated.|Pass|
+|:---:|:---:|:---:|
+
+
+
+#### Security
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Access admin URLs without authentication.|Access should be denied, and the user redirected to the login page.|Pass|
+| Log out from the admin interface.|User is logged out, and the login page is displayed.|Pass|
+
+
+
+
+#### Overall Assessment
+
+- The admin site should handle CRUD operations effectively for posts, comments, the gallery and users.
+- Authentication and authorization mechanisms should be robust to ensure secure access to admin functionalities.
+- All actions should result in the expected outcomes as defined in the "Expected Output" sections.
+
+
+## User
+
+| TEST | OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+| Create Account | Created successfully | Pass |
+| Error Check - Error page when signing up with email address | Unable to replicate(*) | Closed |
+| Login | Login Successful | Pass |
+| Logout | Logout Successful | Pass |
+| Read Full Blog Post | PostDetail page loaded successfully | Pass |
+| Add Comment under Blogpost | Comment Added Successfully | Pass |
+| Delete Comment | Comment Deleted | Pass |
+| Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
+| Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
+
+(*) See Bugs below
+
+## Bugs
+
+One of my users reported that they were unable to sign up when including an email address (although the inclusion of an email address is not required), but myself and others were unable to replicate this issue so the bug was marked as closed.
+
+At different points throughout this project, I encountered various bugs involving the styling. These usually appeared after adding a new section or template page. These were all fixed using Bootstrap classes or custom CSS to override any issues caused by Bootstrap itself.
+
+Towards the end of completion, I had an issue with the database, where I had made a change to the Post Model, but hadn't migrated the changes after undoing the changes in the code relating to that change. This required me to reset the database, which was done with help from Rebecca via the Code Institute's Tutor Support. The changes related to the Category Model and the choices available when creating an account.
+
+To enable me to reset the database, I first had to comment out the code (related to "choices" in the model) to stop the code being run and causing an error. Once this was done, the database was reset, seemingly without issue.
+
+Then I had a problem with the "Create a Post" page. When adding a new blog post via the browser, the images were not being sent to cloudinary for cloud storage, and the ElephantSQL cloud database was also not recieving any data. This was a very simple fix as I needed to add ```enctype="multipart/form-data"``` into the form element.
+
+## Lighthouse
+
+The performance scores appear to be low, and I believe this is due to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
+
+Mobile
+
+![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
+
+Desktop
+
+![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
+
+## Validation Testing
+
+### HTML & CSS
+
+HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
+
+When validating the code, I had the error shown below. this was fixed by removing the button and using Bootstrap styles to display the link as a button instead
+
+![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+
+Fixed:
+
+![HTML Validation Complete- base.html](documentation/testing_documentation/validation/index.html_validation_complete.png)
+
+## Python Testing
+
+Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+
