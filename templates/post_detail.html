@@ -11,8 +11,8 @@
       <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %}">
-            <i class="fa-solid fa-thumbs-up"></i> <strong id="likes-count"
-                class="text-secondary">{{ post.number_of_likes }}</strong>
+            <i class="fa-solid fa-thumbs-up"></i> <small id="likes-count"
+                class="text-secondary">{{ post.number_of_likes }}</small>
         </button>
         {% with comments.count as total_comments %}
         <strong class="text-secondary"><i class="far fa-comments"></i>
@@ -73,7 +73,7 @@
                     <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}"
                         class="btn-like{% if likedComment %} likedComment{% endif %}">
                         <i class="fa-solid fa-thumbs-up"></i> 
-                        <strong id="comment-likes-count-{{ comment.id }}" class="text-secondary">{{ comment.number_of_likes }}</strong>
+                        <small id="comment-likes-count-{{ comment.id }}" class="text-secondary">{{ comment.number_of_likes }}</small>
                     </button>
                 </div>
                 

@@ -23,13 +23,13 @@
                                     data-image-id="{{ gallery_image.id }}"
                                     class="gallery-btn-like{% if likedImage %} likedImage{% endif %}">
                                     <i class="fa-solid fa-thumbs-up"></i>
-                                    <strong id="gallery-likes-count-{{ gallery_image.id }}"
-                                        class="text-secondary">{{ gallery_image.number_of_likes }}</strong>
+                                    <small id="gallery-likes-count-{{ gallery_image.id }}"
+                                        class="text-secondary">{{ gallery_image.number_of_likes }}</small>
                                 </button>
                             <li>{{ gallery_image.user }}
                                 <small>
-                                    <a class="edit-link" href="{% url 'edit_image' gallery_image.pk %}">Edit</a>
-                                    <a class="delete-link" href="#">Delete</a>
+                                    <a class="edit-link" href="{% url 'edit_image' gallery_image.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a class="delete-link" href="#"><i class="fa-solid fa-trash"></i></a>
                                 </small>
                               
                             </li>

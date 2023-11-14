@@ -6,84 +6,91 @@ Contents
 
 Portfolio Project 4 - Waves. This project is a Full-Stack website using the Django framework to build. Waves is a health and fitness website with sea and wellness theme where users can view stunning landscapes and join the community of like-minded people. Users can view posts, comments and the gallery, while registered users can upload posts, create comments and like posts/comments.
    
-- User Experience - UX
-    - User Stories
-    - Agile Methodologies
-    - Scope
-        - Main Site Goals
+## CONTENTS
 
-- Design
-    - Colours
-    - Typography
-    - Imagery
-    - Wireframes
+- [Introduction](#introduction)
+  - [CONTENTS](#contents)
+  - [Site Objectives](#site-objectives)
+- [User Experience/UX](#user-experienceux)
+  - [Target Audience](#target-audience)
+  - [User Stories](#user-stories)
+    - [New Visitor Goals](#new-visitor-goals)
+    - [Existing Visitor Goals](#existing-visitor-goals)
+- [Design Choices](#design-choices)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Logo and Favicon](#logo-and-favicon)
+  - [Wireframes](#wireframes)
+  - [Flow Diagram](#flow-diagram)
+  - [Database Plan](#database-plan)
+- [Features](#features)
+  - [Registration](#registration)
+  - [Future Features](#future-features)
+  - [Features Not Included](#features-not-included)
+- [Technologies Used](#technologies-used)
+- [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
+- [Agile](#agile)
+- [Testing](#testing)
+  - [Manual Testing](#manual-testing)
+  - [User](#user)
+  - [Bugs](#bugs)
+  - [Lighthouse](#lighthouse)
+  - [Validation Testing](#validation-testing)
+    - [HTML \& CSS](#html--css)
+  - [Python Testing](#python-testing)
+  - [Deployment](#deployment)
+    - [Github Deployment](#github-deployment)
+    - [Creating a Fork or Copying](#creating-a-fork-or-copying)
+    - [Clone](#clone)
+    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+    - [Deployment of the app](#deployment-of-the-app)
+  - [Credits](#credits)
+  - [Media](#media)
+  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
-- Database Diagram
+___
 
-- Features
-    - Home Page
-    - Home Page - "Features"
-    - Gallery Page
-    - Blog Page
-    - Post Detail Page - Top
-    - Post Detail Page - Steps
-    - Post Detail Page - Comments
-    - Edit Comments Page
-    - Contact Page
-    - Add Post Page
-    - Search Box
-    - Search Results Page
-    - Search Results - Input Empty
-    - Search Results - No Results Found
-    - Signup Page
-    - Login Page
-    - Logout Page
-    - Navbar
-    - Footer
+## Site Objectives
 
-- Messages and User Interaction
-    - Sign Up
-    - Login
-    - Logout
-    - Like Post
-    - Unlike Post
-    - Comment Post
-    - Delete Comment
-    - Edit Comment
-    - Add Post
-    - Edit Post
-    - Delete Post
-    - Empty Search
-    - No Search Found
+Design and create a blog site to demonstrate an increasing understanding of the libraries and frameworks available to developers.
 
-- Admin Panel
+My three main objectives were:
 
-- Technologies Used
-    - Languages Used
-        - Django Packages
-    - Frameworks - Libraries
-    - Testing
+- ### Develop an Engaging and Responsive User Interface
 
-- Creating Django App
+    The objective was to craft a visually appealing and user-friendly interface. Leveraging the power of Django and Bootstrap, the aim was to ensure readability and ease of navigation for all users.
 
-- Deployment of Project
+- ### Implement Robust Backend Functionality
 
-- Final Deployment
+  Utilizing the capabilities of the backend framework, the project aimed to provide users with a seamless experience. Users, whether authenticated through all-auth or alternative methods, could explore posts, comments, and a gallery of images. Additionally, they were empowered to create, edit, and delete their own posts and gallery images.
 
-- Forking the Project
+- ### Utilize External Cloud Database for Data Storage
 
-- Cloning the Project
-
-- Credits
-    - Content
-    - Information Sources / Resources
-
-- Acknowledgments
+  To ensure efficient data management, ElephantSQL was employed as the external cloud database, specifically handling the PostgreSQL database for the project. This decision was made to enhance scalability and data accessibility.
 
 
-- User Experience - UX
-    - As a website user, I can:
-        1. Navigate easily around the site and easily view the desired content.
-        2. View a list of posts and select one to read.
-        3. Search keywords to find content relating to it.
-        4. 
+By achieving these objectives, the project aimed to showcase an adept understanding of various libraries and frameworks available to developers, delivering a comprehensive and dynamic blog platform.
+
+___
+
+# User Experience/UX
+
+## Target Audience
+
+- Users that are interested in surf, sea and overall wellbeing.
+
+## User Stories
+
+### New Visitor Goals
+
+- Gain a clear understanding of the website's purpose and content.
+- Navigate the site effortlessly to explore its features and offerings.
+- Create an account to actively engage with the content, other users, and the site owner.
+
+### Existing Visitor Goals
+
+- Log in and out of their account seamlessly.
+- Read insightful blog posts, comments and explore the site's gallery.
+- Express their views by liking, creating posts, and adding insightful comments to blog posts. Additionally, users can actively participate in the creation, editing, and liking of gallery images.
+
+___
