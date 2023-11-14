@@ -274,7 +274,7 @@ As each section or Function/Model was built during this project, I was testing f
 |:---:|:---:|:---:|
 | Modify general site settings.|Changes are saved, and settings are updated.|Pass|
 |Change the admin password.|Password is successfully updated.|Pass|
-|:---:|:---:|:---:|
+
 
 
 
@@ -298,17 +298,116 @@ As each section or Function/Model was built during this project, I was testing f
 
 ## User
 
-| TEST | OUTCOME | PASS/FAIL|
+
+#### Home Page:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
-| Create Account | Created successfully | Pass |
-| Error Check - Error page when signing up with email address | Unable to replicate(*) | Closed |
-| Login | Login Successful | Pass |
-| Logout | Logout Successful | Pass |
-| Read Full Blog Post | PostDetail page loaded successfully | Pass |
-| Add Comment under Blogpost | Comment Added Successfully | Pass |
-| Delete Comment | Comment Deleted | Pass |
-| Filter Posts by category | Posts marked as selected category displayed successfully | Pass |
-| Create User Account to check access to restricted pages (add_post, add_category)| Page displayed correct error message, with no access to restricted content | Pass |
+|Access the home page|Home page is displayed with a welcoming message and featured content|Pass|
+|Navigate to the gallery|Gallery page is accessible from the home page|Pass|
+|Navigate to the blog|Blog page is accessible from the home page|Pass|
+
+
+
+
+#### Gallery:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|View gallery images|Gallery displays a grid of images with captions|Pass|
+|Hover over an image|Image overlay displays image owner, edit & delete options, caption and like button & counter|Pass|
+|Like an image|Like count increments, and the user's like is recorded|Pass|
+|Unlike an image|Like count decrements, and the user's like is removed|Pass|
+
+
+
+
+#### Blog:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|View blog posts|Blog page displays a list of posts with titles and excerpts|Pass|
+|Click on a post|Full post is displayed with details, author, and comments|Pass|
+|Like a post|Like count increments, and the user's like is recorded|Pass|
+|Unlike a post|Like count decrements, and the user's like is removed|Pass|
+|Add a comment|Comment is added to the post|Pass|
+
+
+
+
+#### User Account:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Register a new account|Account is created successfully, and the user is logged in|FAIL|
+|Log in with existing credentials|Successful login, and the user is redirected to the home page|FAIL|
+|Log out from the account|User is logged out, and the login page is displayed|FAIL|
+
+
+
+
+#### Navigation:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Navigate using the menu bar|Menu items lead to the respective pages (Home, Gallery, Blog, Login, Register)|Pass|
+|Use pagination on blog page|Clicking on page numbers displays the corresponding posts|Pass|
+|Use pagination on gallery page|Clicking on page numbers displays the corresponding iamges|FAIL|
+
+
+
+
+#### Responsiveness:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Access the site from various devices (desktop, tablet, mobile)|Site content adapts appropriately to different screen sizes|FAIL|
+
+
+
+
+
+#### Overall Site Functionality:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Check for broken links|All links navigate to the correct pages|Pass|
+|Test social media sharing buttons|Buttons allow users to share content on social media|FAIL|
+|Test overall site performance|Pages load within a reasonable time frame|Pass|
+
+
+
+
+#### Security:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|Access user-specific pages without authentication|Access should be denied, and the user redirected to the login page|Pass|
+|Log out from the user interface|User is logged out, and the login page is displayed|Pass|
+
+
+
+
+
+#### Home Page:
+
+
+| TEST | EXPECTED OUTCOME | PASS/FAIL|
+|:---:|:---:|:---:|
+|:---:|:---:|:---:|
+|:---:|:---:|:---:|
+|:---:|:---:|:---:|
+
+
+
 
 (*) See Bugs below
 
