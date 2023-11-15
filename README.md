@@ -396,32 +396,52 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
-#### Home Page:
-
-
-| TEST | EXPECTED OUTCOME | PASS/FAIL|
-|:---:|:---:|:---:|
-|:---:|:---:|:---:|
-|:---:|:---:|:---:|
-|:---:|:---:|:---:|
-
-
-
-
-(*) See Bugs below
-
 ## Bugs
 
-One of my users reported that they were unable to sign up when including an email address (although the inclusion of an email address is not required), but myself and others were unable to replicate this issue so the bug was marked as closed.
+### Problem Description:
 
-At different points throughout this project, I encountered various bugs involving the styling. These usually appeared after adding a new section or template page. These were all fixed using Bootstrap classes or custom CSS to override any issues caused by Bootstrap itself.
+I encountered a major issue during a recent database update for my web project "Lucid Waves," developed using Django. The primary key, acting as a unique ID for database entries, started displaying a date and time instead of a regular number. This unexpected behavior disrupted database updates and led to malfunctions on the website.
 
-Towards the end of completion, I had an issue with the database, where I had made a change to the Post Model, but hadn't migrated the changes after undoing the changes in the code relating to that change. This required me to reset the database, which was done with help from Rebecca via the Code Institute's Tutor Support. The changes related to the Category Model and the choices available when creating an account.
+### Troubleshooting Steps:
 
-To enable me to reset the database, I first had to comment out the code (related to "choices" in the model) to stop the code being run and causing an error. Once this was done, the database was reset, seemingly without issue.
+1. Review of Model Definitions:
+    - Carefully examined the model definitions, especially focusing on the 'GalleryImage' model where the issue occurred.
+    - Ensured that the primary key field was correctly defined as an AutoField for the 'id'.
 
-Then I had a problem with the "Create a Post" page. When adding a new blog post via the browser, the images were not being sent to cloudinary for cloud storage, and the ElephantSQL cloud database was also not recieving any data. This was a very simple fix as I needed to add ```enctype="multipart/form-data"``` into the form element.
+2. Examination of Migration Files:
+    - Checked the migration files to identify any custom operations or changes that might affect the primary key field.
+    - Ensured that the migration files were in sync with the model definitions.
+
+### Further Interaction with Tutor:
+
+1. Database Reset Suggestion:
+    - Based on the observed error and actions taken, the tutor suggested there might be corrupted or conflicting data in the database.
+    - Together, we considered the option of a database reset, involving the deletion of all posts, comments, etc.
+
+2. Migrations Deletion Guidance:
+    - Tutor guided on deleting all migration files, excluding the __init__.py file, to address potential migration-related issues.
+
+3. Database Reset Execution:
+    - Implemented the tutor's guidance, resetting the database using ElephantSQL, and subsequently running makemigrations and migrate commands.
+
+### Collaborative Resolution:
+
+The issue was effectively resolved through a collaborative effort, with both parties actively contributing to the troubleshooting process. The collaborative approach ensured a shared understanding of the problem and the implementation of solutions, fostering a sense of joint accomplishment.
+
+### Key Takeaways:
+
+1. Shared Troubleshooting:
+    - The collaborative effort underscored the importance of jointly reviewing and addressing issues for a more comprehensive resolution.
+
+2. Effective Communication:
+    - Clear and effective communication between both parties facilitated a better understanding of the problem and the actions taken.
+
+3. Skill Development:
+    - The collaborative resolution process served as a valuable learning experience, contributing to the development of debugging and troubleshooting skills.
+
+### Conclusion:
+
+The collaborative resolution of the primary key issue reflects the effectiveness of teamwork in problem-solving. This experience not only led to a successful outcome but also contributed to a shared learning journey in maintaining and debugging Django projects.
 
 ## Lighthouse
 

@@ -312,6 +312,10 @@ body {
     color: rgba(250, 102, 3, 0.87);
 }
 
+.page-link:hover {
+    color: #445261;
+}
+
 .post-title {
     margin-top: 20%;
     margin-left: 5%;
