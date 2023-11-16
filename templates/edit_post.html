@@ -11,10 +11,8 @@
 
 <div class="form-group">
     <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+        {{form|crispy }}  
         {% csrf_token %}
-        <!-- {{form|crispy }}           **BUG**  -->
-        {{ form.media }}
-        {{ form.as_p }}
         <div class="text-center">
             <button class="btn btn-secondary">Update</button>
         </div>
