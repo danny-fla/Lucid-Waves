@@ -7,7 +7,7 @@
 {% if user.is_authenticated %}
 {% if user.id == post.author.id %}
 <h1 id="edit-post-page-title">Edit Post</h1>
-<h1> post author id = {{post.author.id}} </h1>
+
 
 <div class="form-group">
     <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
