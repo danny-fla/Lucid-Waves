@@ -35,12 +35,13 @@ class EditPostView(UpdateView):
     fields = [
         'title', 'header_image', 'slug', 'featured_image', 'excerpt', 'content'
         ]
+    success_url = reverse_lazy('gallery')
 
 
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blog')
 
 
 class AddCommentView(UpdateView):

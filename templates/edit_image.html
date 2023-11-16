@@ -4,9 +4,11 @@
 
 <br>
 {% if user.is_authenticated %}
-{% if gallery_image.user.id == gallery_image.user.id %}
+<h1>  authenticated user id = {{user.id}} |  gallery image object id = {{ object.user.id }} | </h1>
+{% if user.id == object.user.id %}
 
 <h1 id="edit-image-page-title" class="text-center">Edit Image</h1>
+
 
 
 <div class="form-group">
@@ -22,16 +24,16 @@
 </div>
 
 {% else %}
-<h1 class="text-center">Oops! 1st wall...</h1>
+<h1 class="text-center">Oops! 1st wall... </h1>
 {% endif %}
 {% else %}
 <h1 class="text-center">Oops! 2nd wall...</h1>
 {% endif %}
-<!-- <script>
+<script>
     var name = "{{ user.id }}";
 
     document.getElementById("elder").value = name;
-</script> -->
+</script>
 
 
 {% endblock content %}
