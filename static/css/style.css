@@ -218,8 +218,18 @@ body {
 /* ------------------------------------------------------------------- Login -----*/
 .alert-container {
     position: absolute;
+    
 }
 
+.msg-alert {
+    background-color: transparent !important;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.alert-btn {
+    color: #fff;
+}
 
 
 @media screen and (max-width: 600px) {

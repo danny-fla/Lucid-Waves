@@ -71,9 +71,9 @@
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
                 <br>
-                <div class="alert {{ message.tags }} alert-dismissible fade show msg sign-in-alert" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="msg-alert alert {{ message.tags }} alert-dismissible fade show msg sign-in-alert" role="alert">
+                    <strong>{{ message | safe }}</strong>
+                    <button type="button" class="btn-close alert-btn" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endfor %}
             </div>
