@@ -418,11 +418,21 @@ body {
 }
 
 /* --------------------------------------------------- media styles */
+@media screen and (max-width: 663px) {
+    .waves {
+        font-size: 4rem;
+    }
+}
+
 
 @media screen and (max-width: 599px) {
 
     .banner {
         height: 200px;
+    }
+
+    .waves {
+        display: none;
     }
 
     .add-text-form {
