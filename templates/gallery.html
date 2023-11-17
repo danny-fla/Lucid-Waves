@@ -29,7 +29,7 @@
                             <li>{{ gallery_image.user }}
                                 <small>
                                     <a class="edit-link" href="{% url 'edit_image' gallery_image.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a class="delete-link" href="#"><i class="fa-solid fa-trash"></i></a>
+                                    <a class="delete-link" href="{% url 'delete_image' gallery_image.pk %}"><i class="fa-solid fa-trash"></i></a>
                                 </small>
                               
                             </li>

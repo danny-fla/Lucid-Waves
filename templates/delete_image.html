@@ -5,10 +5,10 @@
 <br>
 
 {% if user.is_authenticated %}
-{% if user.id == post.author.id %}
-<h1 class="mt-3" id="delete-post-page-title">Delete Post</h1>
+{% if user.id == object.user.id %}
+<h1 class="mt-3" id="delete-post-page-title">Delete Image</h1>
 <div class="container mt-5 text-center" >
-<strong>Delete: {{ post.title }}? </strong>
+<strong>Delete: {{ object.caption }}? </strong>
 
 
 <div class="form-group">

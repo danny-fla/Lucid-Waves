@@ -63,16 +63,23 @@ class GalleryList(generic.ListView):
     paginate_by = 12
 
 
-class EditImageView(UpdateView):
-    model = GalleryImage
-    template_name = 'edit_image.html'
-    fields = ('__all__')
-
 class AddImageView(CreateView):
     model = GalleryImage
     # form_class = PostForm
     template_name = 'add_image.html'
     fields = ('__all__')
+
+
+class EditImageView(UpdateView):
+    model = GalleryImage
+    template_name = 'edit_image.html'
+    fields = ('__all__')
+
+
+class DeleteImageView(DeleteView):
+    model = GalleryImage
+    template_name = 'delete_image.html'
+    success_url = reverse_lazy('gallery')
 
 
 # Display a list of blog posts using a generic ListView
