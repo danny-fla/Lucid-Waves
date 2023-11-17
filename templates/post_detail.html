@@ -2,14 +2,15 @@
 
 {% load crispy_forms_tags %}
 
-<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="col-10 col-sm-8 col-lg-6">
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5" style="background-color: ;">
+    <div class="col-10 col-sm-8 col-lg-6 p-5" style="background-color: ;">
       <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="300" loading="lazy">
     </div>
     <div class="col-lg-5">
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
       <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <p>
         <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %}">
             <i class="fa-solid fa-thumbs-up"></i> <small id="likes-count"
                 class="text-secondary">{{ post.number_of_likes }}</small>
@@ -19,6 +20,7 @@
             <!-- Our total_comments variable goes before the closing strong tag -->
             {{ total_comments }}</strong>
         {% endwith %}
+        </p>
       </div>
     </div>
   </div>

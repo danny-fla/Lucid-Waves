@@ -126,6 +126,7 @@ body {
     margin: 10rem;
 }
 
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -416,3 +417,17 @@ body {
     
 }
 
+/* --------------------------------------------------- media styles */
+
+@media screen and (max-width: 599px) {
+
+    .banner {
+        height: 200px;
+    }
+
+    .add-text-form {
+        margin: 1rem;
+    }
+
+    
+}
