@@ -130,13 +130,14 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 
 Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
 
-![Site Flow Diagram]()
+![Admin Flow Diagram](static/images/admin-flowchart.png)
+
+
+![User Flow Diagram](static/images/user-flowchart.png)
 
 ## Database Plan
 
-The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
-
-![Database plan]()
+![Database plan](static/images/db-diagram.png)
 
 # Features
 
