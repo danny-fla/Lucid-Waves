@@ -142,268 +142,179 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 
 # Features
 
-### Home Page
+### Home Page Top
 
-![Home Page](./assets/readme/features/tasty_blog_home-page.jpg)
+![Home Page](static/images/homepage.png)
 
-* The hero image welcomes the user with a short message advertising what the website is about. These
-are 3 carousel images with a button. When the button is pressed, it brings the user down to the highlighted recipes.<br>
+#### Logo Section:
 
-### Home Page - Highlight Posts
+- Displays the WAVES logo in a visually appealing manner.
+- Utilizes a water-themed font and iconography to reinforce the ocean theme.<br>
 
-![Home Page - Highlight Posts](./assets/readme/features/tasty_blog_home_page_highilights-.jpg)
+ #### Navigation Bar:
 
-* In the highlighted posts, users can see a selection of 6 recipes. These recipes are
-chosen by the site admin by clicking the featured box in the post database.<br>
+- Provides easy navigation with links to the Home, Gallery, and Blog sections.
+- Dynamically adjusts for user authentication, showing login and registration options when the user is not logged in, and logout when they are.
 
-### About Page
 
-![About Page](./assets/readme/features/tasty_blog_about_page.jpg)
+### Home Page Bottom
 
-* The About Page gives, users information about the Tasty Blog website. It introduces the users to the
-website. It also details the main purpose and the goal of the blog.<br>
+![Home Page Bottom](static/images/homepage-testimonials-page-nav.png)
 
-### Blog Page
+#### Testimonial Cards:
 
-![Blog Page](./assets/readme/features/tasty_blog_page.jpg)
+- Presents testimonials from individuals with immersive background images.
+- Each card includes a compelling quote, the speaker's name, and their location for authenticity.
 
-* On the Blog Page, users have access to the full recipes posts available on the website.
-The user can choose to see the recipe detail by clicking on the recipe card.<br>
+ ####  Hanging Icons Section:
 
-### Post Detail Page - Top
-
-![Post Detail Page - Top](./assets/readme/features/tasty_blog_post_detail_1_page.jpg)
-
-* At the top of the Post Details Page, users can see the post's main
-image and they can also have access to information about the post. The
-post information includes category, recipe name, rating stars,
-time to prepare, author name and image, posted date and the
-option to like/unlike the post. It will also show how many likes and
-comments the post has received.<br>
-
-### Post Detail Page - Steps
-
-![Post Detail Page - Steps](./assets/readme/features/tasty_blog_post_detail_2_page.jpg)
-
-* In this page section, users can read the ingredients and follow the steps to complete the recipe.<br>
-
-### Post Detail Page - Comments
-
-![Post Detail Page - Comments](./assets/readme/features/tasty_blog_post_detail_comments_page.jpg)
-
-* At the bottom of this page, users can read the comments posted by other users. If the user is logged in or is a 
-superuser they have access to the buttons for deleting or updating comments.
-
-### Edit Comments Page
-
-![Edit Comments Page](./assets/readme/features/tasty_blog_edit_comments_page.jpg)
-
-* On this page, users are allowed to comment, delete and edit their own post comments. The website superuser can 
-  delete or update any comments on the blog without having to access the admin panel.
-
-### Contact Page
-
-![Contact Page](./assets/readme/features/tasty_blog_contact_page.jpg)<br><br>
-
-* The Contact Page allows users to have access to the Tasty blog
-contact details. Users can also send an email to info@tastyblog by
-using the contact form available on this page.
-
-### Categories Page
-
-![Categories Page ](./assets/readme/features/tasty_blog_categories_page.jpg)<br><br>
-
-* On the Categories Page, users can see the categories available in the blog and filter the posts by category.
-
-### Categories Results
-
-![Categories Results Page](./assets/readme/features/tasty_blog_categories_results_page.jpg)
-
-* On the Categories Results Page, users can access the post filtered by the chosen category.
-  
-### Books Page
-
-![Books Page](./assets/readme/features/tasty_blog_books_page.jpg)
-
-* On this page, registered users can see favourite books posted by other users. If they had already published 
-  a post they are allowed to edit or delete their own posts
-
-### Add/Edit Books Page
-
-![Add/Edit Book Page](./assets/readme/features/tasty_blog_add_book_page.jpg)
-
-On this page, registered users can fill out the form to add or edit a post with their favourite cookbooks.
-
-### Search Box
-
-![Search Box](./assets/readme/features/tasty_blog_search_page.jpg)
-
-* In this box, the users can search by inputting a keyword in the search tool. This allows the user to try and find 
-  the recipe they are looking for.
-
-### Search Results Page
-
-![Search Results Page](./assets/readme/features/tasty_blog_search_results_page.jpg)
-
-* On the Search Results Page, users can see the recipes found by their search.  When their recipe is located, the user can go to the 
-  Post Details Page by clicking on the card result.
-
-### Search Results - Input Empty
-
-![Search Results - Input Empty](./assets/readme/features/tasty_blog_search_results_empty_page.jpg)
-
-* On the Search Results Page - Input Empty, users will see this message if their search returns with an empty input.
-
-### Search Results - No Results Found
-
-![Search Results - No Results Found](./assets/readme/features/tasty_blog_search_results_null_page.jpg)
-
-* On the Search Results Page - No Results Found, users will see this message if there is nothing found for the search.
-
-### Signup Page
-
-![Signup Page](./assets/readme/features/tasty_blog_signup_page.jpg)
-
-* On the Signup Page, a new user can sign up for the Tasty Blog website by filling out and then submitting the form.
-
-### Login Page
-
-![Login Page](./assets/readme/features/tasty_blog_login_page.jpg)
-
-* On the Login Page, users can log in to the website by inputting the username and password and have access 
-  to website services for a user registered.
-
-### Logout Page
-
-![Logout Page](./assets/readme/features/tasty_blog_logout_page.jpg)
-
-* On the Logout Page, users can confirm that they wish to exit the website.
-
-### User Profile Page
-
-![User Profile Page](./assets/readme/features/tasty_blog_user_profile_page.jpg)
-
-* On the Profile Page, users have access to their own information and can update their user name, email and profile image.
-
-### Navbar
-
-![Navbar](./assets/readme/features/tasty_blog_navbar.jpg)
-
-* The navigation bar is present at the top of every page and houses all links to the various other pages.
-* The options to Register or Log in will change to the option to log out once a user has logged in.
-* Once a user has signed in, more options such as profile page and user image will be available in the navbar.
-* A search icon is nested in the navbar and once clicked it will open the search box.
-* The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
-
-![Navbar](./assets/readme/features/tasty_blog_navbar_dropdown_menu.jpg)
-* In the navbar users can access the categories list by clicking on the dropdown menu.
+- Highlights key sections (Gallery and Blog) with icons and informative text.
+- Provides a brief description of each section's content and encourages users to explore further.
 
 ### Footer
 
-![Footer](./assets/readme/features/tasty_blog_footer.jpg)
-* On the website footer, users can see basic information about the blog such as contact, social media, 
-  copyright, and a quote about food recipes.
+![Footer](static/images/footer.png)
 
-## Messages and Interaction With Users
+#### Footer:
 
-* Some interactive messages were added to the project to make the navigation on the website easier and to improve the
-user's experience.
+- Contains closing information and links.
 
-### Sign up
+### Gallery
 
-![Sign up](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_signup.jpg)
+![Gallery](static/images/gallery-top.png)
 
-* When users sign up to the website they will see a message at the top of the page saying "Successfully signed in as
-(username)".<br>
+#### Thumbnail Grid:
 
-### Login
+- Dynamically generates a responsive grid of gallery images.
+- Iterates through the list of galleryimage_list and displays each image in a card-like structure.
 
-![Login](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_login.jpg)
+ #### Overlay
 
-* When users sign in to the website they will see a message at the top of the page saying "Successfully signed in as
-(username)".<br>
+![Gallery](static/images/gallery-overlay.png)
 
-### Logout
+- Presents an overlay on each image with a caption, user information, and interactive buttons.
+- The "Like" button allows users to express appreciation, and the count updates dynamically.
+- Provides quick access to edit and delete functionalities for each image.
 
-![Logout](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_logout.jpg)
+#### Gallery Pagination & Upload
 
-* When users log out of the website they will see a message at the top of the page saying "You have signed out".<br>
-  
-### Profile Update
+![Gallery Pagination & Upload](static/images/gallery-pagination-upload.png)
 
-![Profile Update](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_profile_update.jpg)
+- If the gallery is paginated, a navigation bar is included for easy movement between pages.
+- Displays a button to upload new images, guiding users to contribute to the gallery.
+- If the user is not logged in, encourages them to log in before contributing.
 
-* When users update their profile they will see a message at the top of the page saying that their account has been updated.<br>
 
-### Like Post
+### Upload Image Page
 
-![Like Post](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_like_post.jpg)
-* *When users are logged in to the website they can like a post and they will see a message at the top of the page 
-  saying "You have liked this post".<br>
+![Upload Image Page ](static/images/upload-image.png)
 
-### Unlike Post
+- Displays the "Add A New Image" title, indicating that the form is for creating a new image entry.
+- Renders a form for adding a new image entry.
+- Displays input fields for providing information about the new image.
+- Includes a "Post" button for submitting the new image details.
 
-![Unlike Post](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_unlike_post.jpg)
+### Edit Image Page
 
-* When users are logged in to the website they can unlike a post that has been liked by the user and they will see a message 
-  at the top of the page saying "You have unliked this post".<br>
+![Edit Image Page ](static/images/edit-image.png)
 
-### Comment Post
+- Displays the "Edit Image" title, indicating that the form is for editing an existing image.
+- Renders a form for editing image details.
+- Displays input fields for updating image information.
+- IIncludes a "Update" button for submitting the edited image details.
 
-![Comment Post](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_sent_1.jpg)
+### Blog List
 
-* When users are logged in to the website they can comment on a post and after they submit the comment they will see a 
-  message at the top of the page saying "Your comment was sent successfully and is awaiting approval".<br>
+![Blog List View](static/images/blog-page.png)
 
-### Comment Post - 2
+- Utilizes a featurette layout to display blog posts in an engaging and visually appealing 
+- Each post is presented in a separate container, allowing for a clear distinction between different posts.
+- Features the post's featured image (or a placeholder if not available) along with the post title.
+- Utilizes an image container to house the featured image, ensuring a consistent and visually pleasing display.
+- Includes a flash overlay displaying the author's name.
+- Presents the post's excerpt, creation date, number of likes, and comments.
+- Incorporates icons for thumbs-up (likes) and speech bubble (comments).
+- Offers edit and delete links for authenticated users who are the authors of the respective posts.
 
-![Comment Post - 2](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_sent_2.jpg)
+ #### Blog Pagination & Upload:
 
-* After a user submits a comment, they will see a message over the input comment saying "Thanks (username). Your 
-  comment is awaiting approval! <br>
+![Blog Pagination & Upload](static/images/blog-pagination-upload.png)
 
-### Delete/Edit Comment
+- If the blog list view is paginated, a navigation bar is included for easy movement between pages.
+- Displays a button to upload new posts, guiding users to contribute to the blog.
+- If the user is not logged in, encourages them to log in before contributing.
 
-![Delete Comment](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_1.jpg)
+### Post Detail Page:
 
-* When users are logged in to the website and they have previously posted a comment or if the user is a superuser they will see the 
-Delete and Edit buttons at the bottom of comments.<br>
+![Post Detail Page](static/images/post-detail.png)
 
-### Delete Comment - 1
+- Uses a responsive header section with a background image or color.
+- Displays the post's featured image, providing a visual representation of the content.
+- Presents essential information about the post, including the title, author, creation date, and social engagement buttons.
+- The like button has a dynamic state (liked or not liked), and the count updates accordingly.
+- The main content section is organized into rows and columns for a structured layout.
 
-![Delete Comment - 2](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_2.jpg)
 
-* If they wish to delete their comment, they can press the button Delete and a Bootstrap box model will pop up with the message 
-  "Are you sure you want to delete your comment?".<br>
+#### Comment Section:
 
-### Delete Comment - 2
+![Comment Section](static/images/comment-section.png)
 
-![Delete Comment - 3](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_3.jpg)
+- Displays comments in a separate column, allowing for a clear distinction from the post content.
+- Each comment is presented with the commenter's name, timestamp, and body.
+- The like button is provided for each comment, with a dynamic state (liked or not liked) and an updated like count.
+- Authenticated users see a form to submit comments, including the user's username and a submission button.
+- Users are informed if their comment is awaiting approval (commented) or prompted to leave a comment.
 
-* After pressing the Delete button again inside the Bootstrap box model they will see a message on the 
-  top of the page, "Your comment was deleted successfully".<br>
 
-### Edit Comment
+### Upload Post Page
 
-![Edit Comment](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_edit.jpg)
+![Upload Post Page ](static/images/upload-post.png)
 
-* After pressing the Update, users will see a message on the top of the page, "The comment was successfully updated".<br>
+- Displays the "Create a new post" title, indicating that the form is for creating a new blog post.
+- Renders a form for creating a new blog post.
+- Provides input fields or text areas for entering the content of the new post.
+- Includes a "Post" button for submitting the new post.
 
-### Email Sent - Success
 
-![Email Sent - Success](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_email_sent_2.jpg)
+### Edit Post Page
 
-* After users submit the form to info@tastyblog successfully, they will see the message, "Thanks for your email! 
-  We will contact you as soon as possible".<br>
+![Upload Post Page ](static/images/edit-post.png)
 
-### Email Sent - Failed
+- Displays the "Edit Post" title if the authenticated user is the author of the post.
+- Renders an edit form for updating the post's content.
+- Provides a text area or input fields for modifying the post content.
+- Includes a "Update" button for submitting the edited content.
 
-![Email Sent - Failed](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_email_sent.jpg)
+ #### :
 
-* If the email was not submitted successfully, users will see the message, "Sorry, something went wrong! 
-  Try to submit the email again".<br>
+- 
+- 
 
-### Add Book
+### 
+
+![](static/images/)
+
+#### :
+
+- 
+- 
+
+ #### :
+
+- 
+- 
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Add Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_add_book.jpg)  
 

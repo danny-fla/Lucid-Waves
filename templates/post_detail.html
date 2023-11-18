@@ -32,29 +32,6 @@
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
-                <div class="row">
-                    <div class="col">
-                        <!-- {% if liked %}
-                        <button id="like-button" data-post-id="{{ post.id }}"
-                            class="btn-like{% if liked %} liked{% endif %}">
-                            <i class="fas fa-heart"></i> <strong id="likes-count"
-                                class="text-secondary">{{ post.number_of_likes }}</strong>
-                        </button>
-                        {% else %}
-                        <button id="like-button" data-post-id="{{ post.id }}"
-                            class="btn-like{% if liked %} liked{% endif %}">
-                            <i class="far fa-heart"></i> <strong id="likes-count"
-                                class="text-secondary">{{ post.number_of_likes }}</strong>
-                        </button>
-                        {% endif %}
-                        {% if user.is_authenticated %}
-                            {% if user.id == post.author.id %}
-                            <small><a class="edit-link" href="{% url 'edit_post' post.pk %}">(Edit)</a></small>
-                            <small><a class="delete-link" href="{% url 'delete_post' post.pk %}">(Delete)</a></small>
-                            {% endif %}
-                        {% endif %} -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
