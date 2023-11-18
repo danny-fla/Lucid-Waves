@@ -35,7 +35,7 @@ class EditPostView(UpdateView):
     fields = [
         'title', 'header_image', 'slug', 'featured_image', 'excerpt', 'content'
         ]
-    success_url = reverse_lazy('gallery')
+    success_url = reverse_lazy('blog')
 
 
 class DeletePostView(DeleteView):
@@ -68,12 +68,14 @@ class AddImageView(CreateView):
     # form_class = PostForm
     template_name = 'add_image.html'
     fields = ('__all__')
+    success_url = reverse_lazy('gallery')
 
 
 class EditImageView(UpdateView):
     model = GalleryImage
     template_name = 'edit_image.html'
     fields = ('__all__')
+    success_url = reverse_lazy('gallery')
 
 
 class DeleteImageView(DeleteView):

@@ -128,10 +128,11 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 
 ## Flow Diagram
 
-Here is a diagram showing the possible flow through the site. There are 2 sections shown here. On the left it shows the Admin and the right shows a site user.
+### Admin Flowchart
 
 ![Admin Flow Diagram](static/images/admin-flowchart.png)
 
+### User Flowchart
 
 ![User Flow Diagram](static/images/user-flowchart.png)
 
