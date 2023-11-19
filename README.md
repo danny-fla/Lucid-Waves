@@ -608,7 +608,7 @@ The collaborative resolution of the primary key issue reflects the effectiveness
 
 Mobile
 
-![Lighthouse Mobile Score](documentation/images/lighthouse_mobile.png)
+![Lighthouse Mobile Score](static/images/lighthouse-mobile.png)
 
 Desktop
 
