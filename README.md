@@ -605,7 +605,6 @@ The collaborative resolution of the primary key issue reflects the effectiveness
 
 ## Lighthouse
 
-The performance scores appear to be low, and I believe this is due to the images uploaded for each blog post being hosted on a third-party cloud-based platform.
 
 Mobile
 
@@ -613,7 +612,7 @@ Mobile
 
 Desktop
 
-![Lighthouse Desktop Score](documentation/images/lighthouse_desktop.png)
+![Lighthouse Desktop Score](static/images/lighthouse.png)
 
 ## Validation Testing
 

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 body {
     margin: 0;
     background-color: #F9FAFC;
@@ -111,9 +109,6 @@ body {
 
 /*---------------------------------------------------------- Post detail page */
 
-#add-comment-link {
-
-}
 
 /*---------------------------------------------------------- Add Post Page */
 
@@ -135,9 +130,6 @@ body {
 }
 
 /*---------------------------------------------------------- Landing Page */
-.testimonial {
-    
-}
 
 .testimonial-title {
     font-size: 1rem;
@@ -268,11 +260,6 @@ body {
     background-color: #F9FAFC;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-}
-
 .image-container {
     position: relative;
 }
@@ -291,39 +278,6 @@ body {
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
 
 .post-link {
     text-decoration: none;
@@ -339,15 +293,6 @@ body {
     color: #445261;
 }
 
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
 
 .btn-signup {
     background-color: rgba(250, 102, 3, 0.87);
