@@ -223,6 +223,15 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 - Displays input fields for updating image information.
 - IIncludes a "Update" button for submitting the edited image details.
 
+### Delete Image Page
+
+![Delete Image Page ](static/images/delete-image.png)
+
+- Displays the "Delete Image" title, indicating the purpose of the page.
+- Displays the Image title for reference.
+- Presents a form for confirming the deletion of the image.
+- Provides a "Delete" button for submitting the deletion request.
+
 ### Blog List
 
 ![Blog List View](static/images/blog-page.png)
@@ -285,88 +294,32 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 - Provides a text area or input fields for modifying the post content.
 - Includes a "Update" button for submitting the edited content.
 
- #### :
+### Delete Post Page
 
-- 
-- 
+![Delete Post Page ](static/images/delete-post.png)
 
-### 
-
-![](static/images/)
-
-#### :
-
-- 
-- 
-
- #### :
-
-- 
-- 
+- Displays the "Delete Post" title, indicating the purpose of the page.
+- Displays the post title for reference.
+- Presents a form for confirming the deletion of the post.
+- Provides a "Delete" button for submitting the deletion request.
 
 
+### Sign in Page
 
+![User Sign in ](static/images/sign-in.png)
 
+- Displays a heading "Sign In" at the center of the container.
+- Presents a form with the ID "login_form" for user login.
+- The "Sign In" button triggers form submission.
+- Displays a button that allows users to sign in with GitHub using the OAuth2 method.
 
+### Sign in Page
 
+![Social Account Sign in ](static/images/sign-in-github.png)
 
-
-
-
-
-
-
-![Add Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_add_book.jpg)  
-
-* When users are logged in to the website they can publish a post with a favourite cookbook and after they submit the 
-post they will see a message at the top of the page saying "Your post was sent successfully and is awaiting approval".<br>
-
-### Edit Book
-
-![Edit Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_edit.jpg)  
-* When users are logged in to the website they can edit their own previously published posts and they will see the message 
-  "The post was successfully updated" after pressing the Submit button.<br>
-
-### Delete Book 1 
-
-![Delete Book 1](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_delete_2.jpg)
-When users are logged in to the website and they wish to delete their posts, they can press the button Delete and a 
-Bootstrap box model will pop up with the message "Are you sure you want to delete your post?".<br>  
-
-### Delete Book 2
-
-![Delete Book 2](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_delete.jpg)  
-
-* After pressing the Delete button again inside the Bootstrap box model they will see a message on the 
-  top of the page, "Your post was deleted successfully".<br>
-
-### Empty Search
-
-![Empty Search](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_profile_empty_search.jpg)
-
-* Any user can search for a keyword using the input search and if the search is done with an empty input they will see a
-  message saying, "You forgot to search a recipe. Please try searching again.".<br>
-
-### No Search Found
-
-![No Search Found](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_profile_no_search_found.jpg)
-
-* And if there are no results matching or similar to the keyword, the user will see the following message, "We are sorry. 
-  There are no searches for (keyword) on the website. Try the search again".<br>
-
-## Admin Panel/Superuser
-![No Search Found](./assets/readme/extras/tasty_blog_superuser.jpg)
-
-* On the Admin Panel, as an admin/superuser I have full access to CRUD functionality so I can view, create, edit and
-delete the following ones:
-1. Posts
-2. Comments
-3. Author
-4. Categories
-5. Profiles
-6. Books
-   
-*As admin/superuser I can also approve comments, approve posts and change the status and give other permissions to the users.<br>
+- Displays a heading at the center of the container, dynamically generated based on the third-party provider name.
+- Provides a text paragraph informing the user about the action they are about to perform (connecting or signing in) and mentions the third-party provider.
+- The form allows the user to continue the sign-in or connection process.
 
 ## Future Features
 
@@ -402,15 +355,13 @@ Here are the technologies used to build this project:
 
 This project was designed using Agile methodology, utilising the Project Board and Issues sections in GitHub
 
-- [Project Board]()
+- [Project Board](https://github.com/users/danny-fla/projects/5/views/1)
 
 # Testing
 
-As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling.
+As each section, function, or model was developed throughout this project, I conducted thorough testing to identify and address any functionality or styling issues that arose (refer to the table below). Corrections or fixes were promptly implemented before proceeding. Additionally, I enlisted the assistance of friends to test the site extensively. They engaged in activities such as signing up, adding, and deleting comments using a variety of devices and platforms, including IOS, Android, mobile phones, tablets, etc. Any reported issues related to functionality or styling were carefully reviewed and resolved.
 
 ## Manual Testing
-
-*For any Fails, there is a more detailed description below the table*
 
 ## ADMIN
 
@@ -484,7 +435,6 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 #### Security
 
 
@@ -492,7 +442,6 @@ As each section or Function/Model was built during this project, I was testing f
 |:---:|:---:|:---:|
 |Access admin URLs without authentication.|Access should be denied, and the user redirected to the login page.|Pass|
 | Log out from the admin interface.|User is logged out, and the login page is displayed.|Pass|
-
 
 
 
@@ -517,7 +466,6 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 #### Gallery:
 
 
@@ -527,7 +475,6 @@ As each section or Function/Model was built during this project, I was testing f
 |Hover over an image|Image overlay displays image owner, edit & delete options, caption and like button & counter|Pass|
 |Like an image|Like count increments, and the user's like is recorded|Pass|
 |Unlike an image|Like count decrements, and the user's like is removed|Pass|
-
 
 
 
@@ -544,7 +491,6 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 #### User Account:
 
 
@@ -553,7 +499,6 @@ As each section or Function/Model was built during this project, I was testing f
 |Register a new account|Account is created successfully, and the user is logged in|FAIL|
 |Log in with existing credentials|Successful login, and the user is redirected to the home page|FAIL|
 |Log out from the account|User is logged out, and the login page is displayed|FAIL|
-
 
 
 
@@ -568,15 +513,12 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 #### Responsiveness:
 
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
 |Access the site from various devices (desktop, tablet, mobile)|Site content adapts appropriately to different screen sizes|FAIL|
-
-
 
 
 
@@ -591,7 +533,6 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 #### Security:
 
 
@@ -602,14 +543,18 @@ As each section or Function/Model was built during this project, I was testing f
 
 
 
-
 ## Bugs
+
 
 ### Problem Description:
 
+
 I encountered a major issue during a recent database update for my web project "Lucid Waves," developed using Django. The primary key, acting as a unique ID for database entries, started displaying a date and time instead of a regular number. This unexpected behavior disrupted database updates and led to malfunctions on the website.
 
+
+
 ### Troubleshooting Steps:
+
 
 1. Review of Model Definitions:
     - Carefully examined the model definitions, especially focusing on the 'GalleryImage' model where the issue occurred.
@@ -619,7 +564,9 @@ I encountered a major issue during a recent database update for my web project "
     - Checked the migration files to identify any custom operations or changes that might affect the primary key field.
     - Ensured that the migration files were in sync with the model definitions.
 
+
 ### Further Interaction with Tutor:
+
 
 1. Database Reset Suggestion:
     - Based on the observed error and actions taken, the tutor suggested there might be corrupted or conflicting data in the database.
@@ -631,11 +578,14 @@ I encountered a major issue during a recent database update for my web project "
 3. Database Reset Execution:
     - Implemented the tutor's guidance, resetting the database using ElephantSQL, and subsequently running makemigrations and migrate commands.
 
+
 ### Collaborative Resolution:
+
 
 The issue was effectively resolved through a collaborative effort, with both parties actively contributing to the troubleshooting process. The collaborative approach ensured a shared understanding of the problem and the implementation of solutions, fostering a sense of joint accomplishment.
 
 ### Key Takeaways:
+
 
 1. Shared Troubleshooting:
     - The collaborative effort underscored the importance of jointly reviewing and addressing issues for a more comprehensive resolution.
@@ -646,9 +596,12 @@ The issue was effectively resolved through a collaborative effort, with both par
 3. Skill Development:
     - The collaborative resolution process served as a valuable learning experience, contributing to the development of debugging and troubleshooting skills.
 
+
 ### Conclusion:
 
+
 The collaborative resolution of the primary key issue reflects the effectiveness of teamwork in problem-solving. This experience not only led to a successful outcome but also contributed to a shared learning journey in maintaining and debugging Django projects.
+
 
 ## Lighthouse
 
