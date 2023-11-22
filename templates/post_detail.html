@@ -2,9 +2,9 @@
 
 {% load crispy_forms_tags %}
 
-<div class="row flex-lg-row-reverse align-items-center g-5 py-5" style="background-color: ;">
-    <div class="col-10 col-sm-8 col-lg-6 p-5" style="background-color: ;">
-      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="300" loading="lazy">
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6 p-5">
+      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Header Image" loading="lazy">
     </div>
     <div class="col-lg-5">
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
@@ -20,6 +20,14 @@
             <!-- Our total_comments variable goes before the closing strong tag -->
             {{ total_comments }}</strong>
         {% endwith %}
+        {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+        <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
+                    class="fa-solid fa-pen-to-square"></i></a></small>
+        <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
+                    class="fa-solid fa-trash"></i></a></small>
+        {% endif %}
+        {% endif %}
         </p>
       </div>
     </div>
@@ -31,6 +39,26 @@
             <div class="card-body">
                 <p class="card-text ">
                     {{ post.content | safe }}
+                </p>
+                <br>
+                <p>
+                    <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %}">
+                        <i class="fa-solid fa-thumbs-up"></i> <small id="likes-count"
+                            class="text-secondary">{{ post.number_of_likes }}</small>
+                    </button>
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+                        <!-- Our total_comments variable goes before the closing strong tag -->
+                        {{ total_comments }}</strong>
+                    {% endwith %}
+                    {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
+                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
+                                class="fa-solid fa-pen-to-square"></i></a></small>
+                    <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
+                                class="fa-solid fa-trash"></i></a></small>
+                    {% endif %}
+                    {% endif %}
                 </p>
             </div>
         </div>
@@ -60,8 +88,8 @@
             </div>
         </div>
 
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
+        <div class="col-md-4 card mb-4 mt-3 comment-section">
+            <div class="card-body" style="background-color: blue;">
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval.
@@ -73,8 +101,10 @@
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
+                    <div style="background-color: green;">
+                    {{ comment_form | crispy}}
                     {% csrf_token %}
+                    </div>
                     <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>

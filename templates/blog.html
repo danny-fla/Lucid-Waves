@@ -3,8 +3,8 @@
 {% block content %}
 
 <br>
-<div class="row featurette m-1">
-    {% for post in post_list %}
+{% for post in post_list %}
+<div class="row featurette m-2">
     <div class="col-md-12 mb-4">
         <div class="row">
             <!-- Image and Title (col-md-5) -->
@@ -14,11 +14,10 @@
                         {% if "placeholder" in post.featured_image.url %}
                         <img class="card-img-top"
                             src="https://images.pexels.com/photos/4271933/pexels-photo-4271933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            alt="upload-error"
-                            style="width: 300px; height: 200px;">
+                            alt="upload-error" class="img-fluid"loading="lazy">
                         {% else %}
                         <img class="card-img-top" src="{{ post.featured_image.url }}"
-                            style="width: 300px; height: 200px;">
+                        class="img-fluid" loading="lazy">
                         {% endif %}
                     </a>
                     <div class="image-flash">
@@ -41,14 +40,17 @@
                     {{ post.comment_count }}
                     {% if user.is_authenticated %}
                     {% if user.id == post.author.id %}
-                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i class="fa-solid fa-pen-to-square"></i></a></small>
-                    <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i class="fa-solid fa-trash"></i></a></small>
+                    <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
+                                class="fa-solid fa-pen-to-square"></i></a></small>
+                    <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
+                                class="fa-solid fa-trash"></i></a></small>
                     {% endif %}
                     {% endif %}
                 </p>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% if forloop.counter|divisibleby:3 %}
@@ -79,12 +81,12 @@
         {% if user.is_authenticated %}
         <a class="cta-btn" href="{% url 'add_post' %}" class="btn btn-primary">
             ADD POST
-          </a>
+        </a>
         {% else %}
         <a class="cta-btn" href="{% url 'account_login' %}" class="btn btn-primary">
             LOGIN TO ADD POST
-          </a>
+        </a>
         {% endif %}
     </div>
-  </div>
+</div>
 {%endblock%}

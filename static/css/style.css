@@ -368,13 +368,17 @@ body {
     .waves {
         font-size: 4rem;
     }
+    
 }
 
 
 @media screen and (max-width: 599px) {
+    .alert-container {
+        margin: 4rem;
+    }
 
     .banner {
-        height: 200px;
+        height: 300px;
     }
 
     .waves {
@@ -384,6 +388,11 @@ body {
     .add-text-form {
         margin: 1rem;
     }
+}
 
-    
+.custom-comment-input {
+    /* Your custom styling properties */
+    width: 100%;
+    color: pink;
+    /* Add more styles as needed */
 }

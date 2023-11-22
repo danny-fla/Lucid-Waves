@@ -323,12 +323,14 @@ The main font used is Quicksand, but Tahoma was used for the main logo appears a
 
 ## Future Features
 
--
+#### Subscription and Newsletter:
 
-## Features Not Included
+- Allow users to subscribe to the blog for updates.
+- Implement a newsletter system for regular content distribution.
 
-- 
+#### E-commerce Integration:
 
+- Add an e-commerce section for selling products related to the blog.
 ___
 
 # Technologies Used
@@ -359,7 +361,7 @@ This project was designed using Agile methodology, utilising the Project Board a
 
 # Testing
 
-As each section, function, or model was developed throughout this project, I conducted thorough testing to identify and address any functionality or styling issues that arose (refer to the table below). Corrections or fixes were promptly implemented before proceeding. Additionally, I enlisted the assistance of friends to test the site extensively. They engaged in activities such as signing up, adding, and deleting comments using a variety of devices and platforms, including IOS, Android, mobile phones, tablets, etc. Any reported issues related to functionality or styling were carefully reviewed and resolved.
+Throughout the course of this project, as individual sections, functions, or models were developed, I performed comprehensive testing to detect and rectify any issues related to functionality or styling (refer to the table below). Immediate corrections or fixes were applied before progressing further. Furthermore, I sought the support of friends to conduct thorough site testing. They actively participated in activities like sign-ups and the creating/updating/ deleting of posts, comments, gallery using diverse devices and platforms such as IOS, Android, mobile phones, tablets, etc. Any concerns reported regarding functionality or styling underwent meticulous review and resolution.
 
 ## Manual Testing
 
@@ -620,15 +622,20 @@ Desktop
 
 HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 
-When validating the code, I had the error shown below. this was fixed by removing the button and using Bootstrap styles to display the link as a button instead
 
-![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+![HTML Validation](static/images/html-validator.png)
 
-Fixed:
+![CSS3 Validation](static/images/css-validator.png)
 
-![HTML Validation Complete- base.html](documentation/testing_documentation/validation/index.html_validation_complete.png)
+### JavaScript Testing
+
+JavaScript testing was completed using [JSHint](https://jshint.com/)
+
+![JavaScript Validation](static/images/js-hint.png)
 
 ## Python Testing
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+
+![Python Validation](static/images/python-validator.png)
 

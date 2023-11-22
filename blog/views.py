@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 from .models import Post, Comment, GalleryImage
-from .forms import CommentForm, GalleryImageForm
+from .forms import CommentForm, GalleryImageForm, PostForm
 
 
 def landing_page(request):
@@ -24,9 +24,9 @@ def LikeView(request, pk):
 
 class AddPostView(CreateView):
     model = Post
-    # form_class = PostForm
+    form_class = PostForm
     template_name = 'add_post.html'
-    fields = ('__all__')
+    # fields = ('__all__')
 
 
 class EditPostView(UpdateView):
