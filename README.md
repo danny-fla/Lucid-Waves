@@ -44,7 +44,7 @@ Portfolio Project 4 - Waves. This project is a Full-Stack website using the Djan
     - [Deployment of the app](#deployment-of-the-app)
   - [Credits](#credits)
   - [Media](#media)
-  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
+  - [Acknowledgments](#acknowledgments)
 
 ___
 
@@ -633,9 +633,22 @@ JavaScript testing was completed using [JSHint](https://jshint.com/)
 
 ![JavaScript Validation](static/images/js-hint.png)
 
-## Python Testing
+### Python Testing
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
 ![Python Validation](static/images/python-validator.png)
 
+
+
+## Acknowledgments:
+
+I extend my heartfelt thanks to AJ, my mentor, for the invaluable guidance and mentorship provided throughout the development of this project. Your insights have been instrumental in shaping its success.
+
+A special acknowledgment goes to the tutor support team for their timely assistance and constructive feedback, contributing significantly to the project's improvement.
+
+To my fellow students within the Slack community, thank you for fostering a collaborative learning environment through engaging discussions and shared knowledge.
+
+I am deeply grateful to my friends and family for their unwavering support and encouragement. Your understanding has been a driving force behind the successful creation of this project.
+
+Each of you has played a crucial role, and I am truly appreciative of the collaborative and supportive network that has surrounded this endeavor.
