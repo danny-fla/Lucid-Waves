@@ -6,7 +6,7 @@ from .models import Post, Comment, GalleryImage
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'slug', 'author', 'excerpt', 'content')
+        fields = ('title', 'header_image', 'slug', 'author', 'featured_image', 'excerpt', 'content')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
@@ -21,11 +21,6 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-
-        widgets = {
-            'body': SummernoteWidget(),  # Use SummernoteWidget directly
-        }
-
 
 class GalleryImageForm(forms.ModelForm):
     class Meta:

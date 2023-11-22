@@ -4,7 +4,7 @@
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6 p-5">
-      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Header Image" loading="lazy">
+      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Header Image" loading="lazy" style="border: 5px solid rgba(0, 0, 0, 0.1)">
     </div>
     <div class="col-lg-5">
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="col-md-4 card mb-4 mt-3 comment-section">
-            <div class="card-body" style="background-color: blue;">
+            <div class="card-body">
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval.
@@ -96,8 +96,8 @@
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    <div style="background-color: green;">
+                <form method="post" style="margin-top: 1.3em;" class="text-center">
+                    <div>
                     {{ comment_form | crispy}}
                     {% csrf_token %}
                     </div>
