@@ -2,6 +2,7 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from .models import Post, Comment, GalleryImage
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -15,6 +16,7 @@ class PostForm(forms.ModelForm):
             'content': SummernoteWidget(),  # Use SummernoteWidget directly
         }
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -23,6 +25,7 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'body': SummernoteWidget(),  # Use SummernoteWidget directly
         }
+
 
 class GalleryImageForm(forms.ModelForm):
     class Meta:

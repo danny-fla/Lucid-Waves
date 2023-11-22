@@ -120,7 +120,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -21,7 +21,6 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 
-
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
@@ -54,7 +53,6 @@ class AddCommentView(UpdateView):
         return super().form_valid(form)
 
     success_url = 'post_detail'
-
 
 
 class GalleryList(generic.ListView):
@@ -229,10 +227,11 @@ def like_image(request, gallery_id):
         gallery_image_likes_count = gallery_image.likes.count()
 
     # Return a JSON response indicating the success and current likes count
-        return JsonResponse({"success": True, "likes_count": gallery_image_likes_count})
+        return JsonResponse(
+                {"success": True, "likes_count": gallery_image_likes_count}
+            )
     else:
         # Return a JSON response indicating authentication failure
         return JsonResponse(
             {"success": False, "error": "User is not authenticated"}
             )
-
