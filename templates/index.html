@@ -2,19 +2,23 @@
 
 {% block content %}
 
+<!-- Header Section -->
 <div class="container">
   <div class="row">
-      <div class="col-12 text-center">
-          <div class="waves display-4 display-md-3 display-lg-2">
-              WAV<i class="fa-solid fa-water"></i>S
-          </div>
+    <div class="col-12 text-center">
+      <!-- Logo -->
+      <div class="waves display-4 display-md-3 display-lg-2">
+        WAV<i class="fa-solid fa-water"></i>S
       </div>
+    </div>
   </div>
 </div>
 
+<!-- Navigation Bar Section -->
 <div class="container-fluid banner">
   <div class="row">
     <div class="col-md-12">
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-md navbar-dark">
         <div class="navbar-brand">
           WAV<i class="fa-solid fa-water"></i>S
@@ -25,6 +29,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
+            <!-- Navigation Links -->
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">HOME</a>
             </li>
@@ -35,10 +40,12 @@
               <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
             </li>
             {% if user.is_authenticated %}
+            <!-- Authentication Links for Logged In User -->
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
             </li>
             {% else %}
+            <!-- Authentication Links for Guest User -->
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'account_login' %}">LOGIN</a>
             </li>
@@ -53,11 +60,13 @@
   </div>
 </div>
 
+<!-- Mission Section -->
 <div class="misson position-relative p-5 text-center text-bg-dark bg-body">
   <svg class="bi mt-5 mb-3" width="48" height="48">
     <use xlink:href="#check2-circle"></use>
   </svg>
   <h1 class="logo">Our Mission</h1>
+  <!-- Mission Statement -->
   <p class="col-lg-6 mx-auto mb-4 lead">
     "We want to guide you in discovering the ocean's benefits, its picturesque landscapes, and the
     exhilarating world of surf. Whether you seek relaxation, inspiration, or knowledge, 'Waves' is your portal
@@ -65,18 +74,20 @@
   </p>
 </div>
 
-
+<!-- Testimonials Section -->
 <div class="container px-4 py-5" id="custom-cards">
-
+  <!-- Testimonials Cards -->
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <!-- Testimonial Card 1 -->
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
         style="background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/5043637/pexels-photo-5043637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-4">
+          <!-- Testimonial Quote -->
           <p class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"The ocean has been my refuge for years. Every visit is a
             reminder that nature's embrace is the best medicine."</p>
+          <!-- Testimonial Author Info -->
           <ul class="d-flex list-unstyled mt-auto">
-
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em">
                 <use xlink:href="#geo-fill"></use>
@@ -93,14 +104,16 @@
         </div>
       </div>
     </div>
-
+    <!-- Testimonial Card 2 -->
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
         style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/4319752/pexels-photo-4319752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <!-- Testimonial Quote -->
           <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"Studying the ocean's mysteries has revealed its incredible
             potential for medicine, food, and renewable
             energy."</h3>
+          <!-- Testimonial Author Info -->
           <ul class="d-flex list-unstyled mt-auto">
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em">
@@ -118,14 +131,16 @@
         </div>
       </div>
     </div>
-
+    <!-- Testimonial Card 3 -->
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg testimonial-img"
         style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://images.pexels.com/photos/3876426/pexels-photo-3876426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-">
+          <!-- Testimonial Quote -->
           <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">"As a surfer, the ocean is my playground and my sanctuary.
             The ocean isn't just water; it's my soul's
             home."</h3>
+          <!-- Testimonial Author Info -->
           <ul class="d-flex list-unstyled mt-auto">
             <li class="d-flex align-items-center me-3">
               <svg class="bi me-2" width="1em" height="1em">
@@ -146,8 +161,10 @@
   </div>
 </div>
 
+<!-- Hanging Icons Section -->
 <div class="container px-4 py-5" id="hanging-icons">
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+    <!-- Gallery Section -->
     <div class="col d-flex align-items-start">
       <div
         class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
@@ -155,27 +172,33 @@
       </div>
       <div>
         <h3 class="fs-2 text-body-emphasis">GALLERY</h3>
+        <!-- Gallery Description -->
         <p>Discover breathtaking scenes captured by our talented photographers.
           Our gallery showcases a stunning collection of photographs, each a work of art. From picturesque
           landscapes to captivating moments, you'll find visual stories that will leave you in awe.
         </p>
         <br>
+        <!-- View Gallery Button -->
         <a class="cta-btn btn btn-primary" href="{% url 'gallery' %}">
           VIEW GALLERY
         </a>
       </div>
     </div>
+    <!-- Blog Section -->
     <div class="col d-flex align-items-start">
       <div
-        class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"> <br>
+        class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <br>
         <i class="fa-solid fa-comments"></i>
       </div>
       <div>
         <h3 class="fs-2 text-body-emphasis">BLOG</h3>
+        <!-- Blog Description -->
         <p>Engage with captivating insights from our community of writers. Our blog features a rich tapestry of
           thought-provoking articles and inspiring narratives. From informative topics to enlightening
           stories, you'll discover content that sparks curiosity.</p><br>
         <br>
+        <!-- View Blog Button -->
         <a class="cta-btn btn btn-primary" href="{% url 'blog' %}">
           VIEW BLOG
         </a>

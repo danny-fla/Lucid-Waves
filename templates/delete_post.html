@@ -1,36 +1,45 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
+<!-- Add some vertical space for better visual separation -->
 <br>
 
 {% if user.is_authenticated %}
-{% if user.id == post.author.id %}
-<h1 class="mt-3" id="delete-post-page-title">Delete Post</h1>
-<div class="container mt-5 text-center" >
-<strong>Delete: {{ post.title }}? </strong>
+    {% if user.id == post.author.id %}
+        <!-- Display the title for the Delete Post page -->
+        <h1 class="mt-3" id="delete-post-page-title">Delete Post</h1>
 
+        <!-- Container for the Delete Post form -->
+        <div class="container mt-5 text-center">
+            <!-- Display the post title to be deleted -->
+            <strong>Delete: {{ post.title }}?</strong>
 
-<div class="form-group">
-    <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
-        {% csrf_token %}
-        <br>
-        <em>Are you sure?</em>
-        <br>
-        <div class="text-center mt-3">
-            <button class="btn btn-secondary">Delete</button>
-        </div>
-    </form>
-</div>
+            <!-- Form for confirming post deletion -->
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+                    {% csrf_token %}
+                    <br>
+                    <!-- Confirmation message -->
+                    <em>Are you sure?</em>
+                    <br>
+                    <!-- Submission button with centered alignment -->
+                    <div class="text-center mt-3">
+                        <button class="btn btn-secondary">Delete</button>
+                    </div>
+                </form>
+            </div>
 
+    {% else %}
+        <!-- Display an error message for unauthorized access -->
+        <h1 class="text-center">Oops! Access Denied...</h1>
+    {% endif %}
 {% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
-{% endif %}
-{% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
+    <!-- Display an error message for unauthenticated users -->
+    <h1 class="text-center">Oops! Access Denied...</h1>
 {% endif %}
 </div>
-
-
 
 {% endblock content %}

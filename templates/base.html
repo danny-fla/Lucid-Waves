@@ -4,42 +4,56 @@
 <html class="h-100" lang="en">
 
 <head>
+    <!-- Page title and metadata -->
     <title>Waves</title>
     <meta name="description" content="Ocean themed health and wellness blog and community">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Preload Google Fonts for better performance -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Viewport settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
     <div class="container-fluid banner">
-        {% if request.path != '/' %}  {# Check if it's NOT the homepage #}
+        <!-- Check if it's NOT the homepage -->
+        {% if request.path != '/' %}
         <div class="row">
             <div class="col-md-12">
+                <!-- Navbar with brand, links, and toggle button for smaller screens -->
                 <nav class="navbar navbar-expand-md navbar-dark">
                     <div class="navbar-brand">
                         WAV<i class="fa-solid fa-water"></i>S
                     </div>
-                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav ml-auto">
+                            <!-- Navigation links -->
                             <li class="nav-item active">
                                 <a class="nav-link" href="{% url 'home' %}">HOME</a>
                             </li>
@@ -49,6 +63,7 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
                             </li>
+                            <!-- Display login/logout and register links based on user authentication status -->
                             {% if user.is_authenticated %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{% url 'account_logout' %}">LOGOUT</a>
@@ -69,11 +84,13 @@
         {% endif %}
     </div>
 
+    <!-- Display alerts for messages -->
     <div class="container-fluid alert-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
                 <br>
+                <!-- Alert message with close button -->
                 <div class="msg-alert alert {{ message.tags }} alert-dismissible fade show msg sign-in-alert" role="alert">
                     <strong>{{ message | safe }}</strong>
                     <button type="button" class="btn-close alert-btn" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -83,6 +100,7 @@
         </div>
     </div>
 
+    <!-- Main content -->
     <main class="flex-shrink-0 main-bg" id="main-content">
         {% block content %}
         <!-- Content Goes here -->
@@ -94,11 +112,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 text-md-start text-center">
+                    <!-- Logo linking to the home page -->
                     <a href="{% url 'home' %}">
                         <h1 class="logo">WAV<i class="fa-solid fa-water"></i>S</h1>
                     </a>
                 </div>
                 <div class="col-md-6">
+                    <!-- Social media icons with links -->
                     <div class="social-icons text-md-end text-center">
                         <a href="https://www.instagram.com/" class="social-link" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/" class="social-link" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
@@ -110,6 +130,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap and custom scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

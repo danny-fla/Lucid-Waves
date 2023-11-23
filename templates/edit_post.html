@@ -1,28 +1,36 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
+<!-- Add some vertical space for better visual separation -->
 <br>
 
 {% if user.is_authenticated %}
-{% if user.id == post.author.id %}
-<h1 id="edit-post-page-title">Edit Post</h1>
+    {% if user.id == post.author.id %}
+        <!-- Display the title for the Edit Post page -->
+        <h1 id="edit-post-page-title">Edit Post</h1>
 
-
-<div class="form-group">
-    <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
-        {{form|crispy }}  
-        {% csrf_token %}
-        <div class="text-center">
-            <button class="btn btn-secondary">Update</button>
+        <!-- Form for editing the post content -->
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+                {{form|crispy }}
+                {% csrf_token %}
+                <!-- Submission button with a centered alignment -->
+                <div class="text-center">
+                    <button class="btn btn-secondary">Update</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
 
+    {% else %}
+        <!-- Display an error message for unauthorized access -->
+        <h1 class="text-center">Oops! Access Denied...</h1>
+    {% endif %}
 {% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
+    <!-- Display an error message for unauthenticated users -->
+    <h1 class="text-center">Oops! Access Denied...</h1>
 {% endif %}
-{% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
-{% endif %}
+
 {% endblock content %}

@@ -2,21 +2,26 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
 <div class="container mt-5 register-container">
+    <!-- Header Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h3 class="text-center mb-4"><strong>{% trans "Sign Up" %}</strong></h3>
+            <!-- Sign Up Information Message -->
             <p class="text-center">
                 {% blocktrans %}
-                Welcome back to Lucid Waves. Already have an member? Then please
+                Welcome back to Lucid Waves. Already have a member? Then please
                 <a class="link" href="{{ login_url }}">sign in</a> instead.
                 {% endblocktrans %}
             </p>
         </div>
     </div>
+
+    <!-- Sign Up Form Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -25,13 +30,15 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
+                <!-- Sign Up Button -->
                 <button type="submit" class="cta-btn">Register</button>
             </form>
         </div>
     </div>
+
+    <!-- Social Media Sign Up Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3 mb-5">
-            {# Add GitHub Sign-up Button Here #}
             <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark btn-block mt-3">
                 Sign up with GitHub <i class="fab fa-github"></i>
             </a>

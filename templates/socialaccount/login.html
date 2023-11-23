@@ -5,8 +5,11 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+<!-- Container for the sign-in page -->
 <div class="container mt-5 login-container">
+
   {% if process == "connect" %}
+  <!-- Section for connecting a third-party account -->
   <div class="row">
     <div class="col-md-6 offset-md-3">
         <h3 class="text-center mb-4"><strong>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</strong></h3>
@@ -16,25 +19,29 @@
     </div>
   </div>
   {% else %}
+  <!-- Section for signing in via a third-party account -->
   <div class="row">
     <div class="col-md-6 offset-md-3">
         <h3 class="text-center mb-4"><strong>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</strong></h3>
         <p class="text-center">
-          {% blocktrans with provider.name as provider %} You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}
+          {% blocktrans with provider.name as provider %} You are about to sign in using a third-party account from {{ provider }}.{% endblocktrans %}
         </p>
     </div>
   </div>
-{% endif %}
+  {% endif %}
 
-<div class="row">
-  <div class="col-md-6 offset-md-3 mt-3 mb-5 text-center">
-    <form method="post">
-      {% csrf_token %}
-      <button type="submit" class="btn">{% trans "Continue" %}</button>
-    </form>
+  <!-- Row with the "Continue" button -->
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mt-3 mb-5 text-center">
+      <!-- Form for submitting the sign-in request -->
+      <form method="post">
+        {% csrf_token %}
+        <!-- Button to continue the sign-in process -->
+        <button type="submit" class="btn">{% trans "Continue" %}</button>
+      </form>
+    </div>
   </div>
-</div>
-
 
 </div>
+<!-- End of the sign-in container -->
 {% endblock %}

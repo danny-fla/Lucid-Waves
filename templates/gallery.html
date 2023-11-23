@@ -9,16 +9,20 @@
         <div class="col-lg-4 col-sm-6">
             <div class="thumbnail ">
                 <div class="gallery-img-container">
+                     <!-- Display a default image if the gallery image has a placeholder URL -->
                     {% if "placeholder" in gallery_image.image.url %}
                     <img class="gallery-image"
                         src="https://images.pexels.com/photos/4271933/pexels-photo-4271933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt="upload-error">
                     {% else %}
+                       <!-- Display the actual gallery image -->
                     <img class="gallery-image" src="{{ gallery_image.image.url}}" loading="lazy">
                     <div class="overlay">
                         <ul class="image-list">
+                              <!-- Display the caption of the gallery image -->
                             <li class="caption"><small>{{ gallery_image.caption }}</small>
                                 <hr>
+                                 <!-- Like button with the number of likes -->
                                 <button id="gallery-like-button-{{ gallery_image.id }}"
                                     data-image-id="{{ gallery_image.id }}"
                                     class="gallery-btn-like{% if likedImage %} likedImage{% endif %}">
@@ -26,8 +30,10 @@
                                     <small id="gallery-likes-count-{{ gallery_image.id }}"
                                         class="text-secondary">{{ gallery_image.number_of_likes }}</small>
                                 </button>
+                            <!-- Display the user who uploaded the image -->
                             <li>{{ gallery_image.user }}
                                 <small>
+                                     <!-- Links to edit and delete the image -->
                                     <a class="edit-link" href="{% url 'edit_image' gallery_image.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a class="delete-link" href="{% url 'delete_image' gallery_image.pk %}"><i class="fa-solid fa-trash"></i></a>
                                 </small>
@@ -42,6 +48,7 @@
         {% endfor %}
     </div>
 </div>
+<!-- Pagination for gallery images -->
 {% if is_paginated %}
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center mt-5">
@@ -55,6 +62,7 @@
     </ul>
 </nav>
 {% endif %}
+<!-- Container for adding new images with a conditional button based on user authentication -->
 <div class="container my-3">
     <div class="p-3 text-center bg-body-tertiary rounded-3">
         {% if user.is_authenticated %}
@@ -68,5 +76,6 @@
         {% endif %}
     </div>
 </div>
+<!-- Include the JavaScript file for additional functionality -->
 <script src="{% static 'script.js' %}"></script>
 {% endblock %}

@@ -3,25 +3,29 @@
 {% load crispy_forms_tags static %}
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <!-- Header Image Section -->
     <div class="col-10 col-sm-8 col-lg-6 p-5">
       <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Header Image" loading="lazy" style="border: 5px solid rgba(0, 0, 0, 0.1)">
     </div>
+    <!-- Post Information Section -->
     <div class="col-lg-5">
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
       <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <p>
+        <!-- Like and Comment Buttons -->
         <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %}">
             <i class="fa-solid fa-thumbs-up"></i> <small id="likes-count"
                 class="text-secondary">{{ post.number_of_likes }}</small>
         </button>
         {% with comments.count as total_comments %}
         <strong class="text-secondary"><i class="far fa-comments"></i>
-            <!-- Our total_comments variable goes before the closing strong tag -->
+            <!-- Total Comments Count -->
             {{ total_comments }}</strong>
         {% endwith %}
         {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
+        <!-- Edit and Delete Links for Author -->
         <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
                     class="fa-solid fa-pen-to-square"></i></a></small>
         <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
@@ -37,6 +41,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
+                <!-- Post Content -->
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
@@ -44,11 +49,12 @@
                 <p>
                     {% with comments.count as total_comments %}
                     <strong class="text-secondary"><i class="far fa-comments"></i>
-                        <!-- Our total_comments variable goes before the closing strong tag -->
+                        <!-- Total Comments Count (Repeated for consistency) -->
                         {{ total_comments }}</strong>
                     {% endwith %}
                     {% if user.is_authenticated %}
                     {% if user.id == post.author.id %}
+                    <!-- Edit and Delete Links for Author (Repeated for consistency) -->
                     <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
                                 class="fa-solid fa-pen-to-square"></i></a></small>
                     <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
@@ -66,13 +72,16 @@
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
+                    <!-- Comment Information -->
                     <p class="font-weight-bold">
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
+                    <!-- Comment Body -->
                     {{ comment.body | linebreaks }}
+                    <!-- Like Button for Comment -->
                     <button id="comment-like-button-{{ comment.id }}" data-comment-id="{{ comment.id }}"
                         class="btn-like{% if likedComment %} likedComment{% endif %}">
                         <i class="fa-solid fa-thumbs-up"></i> 
@@ -87,13 +96,14 @@
         <div class="col-md-4 card mb-4 mt-3 comment-section">
             <div class="card-body">
                 {% if commented %}
+                <!-- Success Message for Comment Submission -->
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval.
                 </div>
                 {% else %}
 
                 {% if user.is_authenticated %}
-
+                <!-- Comment Form Section -->
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;" class="text-center">

@@ -667,7 +667,7 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 
 ## Acknowledgments:
 
-I extend my heartfelt thanks to AJ, my mentor, for the invaluable guidance and mentorship provided throughout the development of this project. Your insights have been instrumental in shaping its success.
+I extend my heartfelt thanks to Jubril Akolade, my mentor, for the invaluable guidance and mentorship provided throughout the development of this project. Your insights have been instrumental in shaping its success.
 
 A special acknowledgment goes to the tutor support team for their timely assistance and constructive feedback, contributing significantly to the project's improvement.
 

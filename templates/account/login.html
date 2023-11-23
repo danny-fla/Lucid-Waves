@@ -7,9 +7,11 @@
 
 {% block content %}
 <div class="container mt-5 login-container">
+    <!-- Header Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h3 class="text-center mb-4"><strong>{% trans "Sign In" %}</strong></h3>
+            <!-- Login Information -->
             <p class="text-center">
                 {% blocktrans %}
                 To leave a comment or like a post, please log in. If you have not created an account yet, then
@@ -18,6 +20,8 @@
             </p>
         </div>
     </div>
+
+    <!-- Login Form Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <form class="signup" id="login_form" method="post" action="{% url 'account_login' %}">
@@ -26,13 +30,16 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
+                <!-- Button to submit the login form -->
                 <button class="cta-btn" form="login_form" type="submit">{% trans "Sign In" %}</button>
             </form>
-
         </div>
     </div>
+
+    <!-- Third-Party Login Section -->
     <div class="row">
         <div class="col-md-6 offset-md-3 mt-3 mb-5">
+            <!-- Button to sign in with GitHub -->
             <a href="{% provider_login_url 'github' method='oauth2' %}" class="btn btn-dark">
                 Sign in with <i class="fab fa-github"></i>
             </a>

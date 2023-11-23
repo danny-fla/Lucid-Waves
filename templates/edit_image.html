@@ -1,41 +1,53 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
+
+<!-- Container fluid for full-width content -->
 <div class="container-fluid">
-<br>
-{% if user.is_authenticated %}
-{% if user.id == object.user.id %}
+    <!-- Add some vertical space for better visual separation -->
+    <br>
 
-<div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-        <h1 id="edit-image-page-title" class="text-center">Edit Image</h1>
+    {% if user.is_authenticated %}
+        {% if user.id == object.user.id %}
+            <!-- Edit Image Section for Authenticated User and Image Owner -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <!-- Display the title for the Edit Image page -->
+                    <h1 id="edit-image-page-title" class="text-center">Edit Image</h1>
 
-        <div class="form-group">
-            <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
-                {{ form|crispy }}  
-                {% csrf_token %}
-                <div class="text-center">
-                    <button class="btn btn-secondary">Update</button>
+                    <!-- Form for editing the image details -->
+                    <div class="form-group">
+                        <form method="POST" enctype="multipart/form-data" style="margin-top: 1em;" class="add-text-form">
+                            {{ form|crispy }}
+                            {% csrf_token %}
+                            <!-- Submission button with centered alignment -->
+                            <div class="text-center">
+                                <button class="btn btn-secondary">Update</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
 
-    </div>
+        {% else %}
+            <!-- Display an error message for unauthorized access -->
+            <h1 class="text-center">Oops! Access Denied...</h1>
+        {% endif %}
+    {% else %}
+        <!-- Display an error message for unauthenticated users -->
+        <h1 class="text-center">Oops! Access Denied...</h1>
+    {% endif %}
 </div>
 
-{% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
-{% endif %}
-{% else %}
-<h1 class="text-center">Oops! Access Denied...</h1>
-{% endif %}
-</div>
-
+<!-- JavaScript to set the value of an element based on the user's ID -->
 <script>
+    // Retrieve user ID from the context and assign it to the 'name' variable
     var name = "{{ user.id }}";
 
+    // Set the value of an element with the ID 'elder' to the user's ID
     document.getElementById("elder").value = name;
 </script>
-
 
 {% endblock content %}
