@@ -34,7 +34,7 @@ Portfolio Project 4 - Waves. This project is a Full-Stack website using the Djan
   - [Lighthouse](#lighthouse)
   - [Validation Testing](#validation-testing)
     - [HTML \& CSS](#html--css)
-    - [JavaScript] 
+    - [JavaScript](#javascript)
     - [Python](#python-testing)
     - [Deployment](#deployment)
   - [Github Deployment](#github-deployment)
