@@ -65,7 +65,7 @@ My three main objectives were:
   To ensure efficient data management, ElephantSQL was employed as the external cloud database, specifically handling the PostgreSQL database for the project. This decision was made to enhance scalability and data accessibility.
 
 
-By achieving these objectives, the project aimed to showcase an adept understanding of various libraries and frameworks available to developers, delivering a comprehensive and dynamic blog platform.
+By achieving these objectives, the project aimed to showcase a depth of understanding of various libraries and frameworks available to developers, delivering a comprehensive and dynamic blog platform.
 
 ___
 
@@ -260,7 +260,7 @@ The website's favicon, featuring an orange color palette, is intentionally desig
 
 ![Blog List View](static/images/blog-page.png)
 
-- Utilizes a featurette layout to display blog posts in an engaging and visually appealing 
+- Utilizes a featurette layout to display blog posts in an engaging and visually appealing manner.
 - Each post is presented in a separate container, allowing for a clear distinction between different posts.
 - Features the post's featured image (or a placeholder if not available) along with the post title.
 - Utilizes an image container to house the featured image, ensuring a consistent and visually pleasing display.
@@ -296,7 +296,7 @@ The website's favicon, featuring an orange color palette, is intentionally desig
 - Each comment is presented with the commenter's name, timestamp, and body.
 - The like button is provided for each comment, with a dynamic state (liked or not liked) and an updated like count.
 - Authenticated users see a form to submit comments, including the user's username and a submission button.
-- Users are informed if their comment is awaiting approval (commented) or prompted to leave a comment.
+- Users are informed if their comment is awaiting approval or prompted to leave a comment.
 
 
 ### Upload Post Page
@@ -374,7 +374,7 @@ Here are the technologies used to build this project:
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) Essential markup language for web content.
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics) Styling language for web design basics.
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) Versatile programming language for web development.
-- [Django](https://www.djangoproject.com/)High-level Python web framework for robust applications.
+- [Django](https://www.djangoproject.com/) High-level Python web framework for robust applications.
 - [Bootstrap](https://getbootstrap.com/) Front-end framework for responsive and modern web design.
 
 # Agile
@@ -522,9 +522,9 @@ Throughout the course of this project, as individual sections, functions, or mod
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
-|Register a new account|Account is created successfully, and the user is logged in|FAIL|
-|Log in with existing credentials|Successful login, and the user is redirected to the home page|FAIL|
-|Log out from the account|User is logged out, and the login page is displayed|FAIL|
+|Register a new account|Account is created successfully, and the user is logged in|Pass|
+|Log in with existing credentials|Successful login, and the user is redirected to the home page|Pass|
+|Log out from the account|User is logged out, and the login page is displayed|Pass|
 
 
 
@@ -534,8 +534,8 @@ Throughout the course of this project, as individual sections, functions, or mod
 | TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
 |Navigate using the menu bar|Menu items lead to the respective pages (Home, Gallery, Blog, Login, Register)|Pass|
-|Use pagination on blog page|Clicking on page numbers displays the corresponding posts|Pass|
-|Use pagination on gallery page|Clicking on page numbers displays the corresponding iamges|FAIL|
+|Use pagination on blog page|Clicking on pagination button displays the corresponding posts|Pass|
+|Use pagination on gallery page|Clicking on pagination button displays the corresponding images|Pass|
 
 
 
@@ -544,7 +544,7 @@ Throughout the course of this project, as individual sections, functions, or mod
 
 | TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
-|Access the site from various devices (desktop, tablet, mobile)|Site content adapts appropriately to different screen sizes|FAIL|
+|Access the site from various devices (desktop, tablet, mobile)|Site content adapts appropriately to different screen sizes|Pass|
 
 
 
@@ -554,7 +554,7 @@ Throughout the course of this project, as individual sections, functions, or mod
 | TEST | EXPECTED OUTCOME | PASS/FAIL|
 |:---:|:---:|:---:|
 |Check for broken links|All links navigate to the correct pages|Pass|
-|Test social media sharing buttons|Buttons allow users to share content on social media|FAIL|
+|Test social media sharing buttons|Buttons allow users to share content on social media|Pass|
 |Test overall site performance|Pages load within a reasonable time frame|Pass|
 
 
@@ -640,8 +640,8 @@ Desktop
 
 ## Validation Testing:
 
-### HTML & CSS
-:
+### HTML & CSS:
+
 HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 
 
@@ -663,7 +663,7 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 
 ### Setting Up the Django App:
 
-1. Navigate to the Code Institute Gitpod Full Template Template.
+1. Navigate to the Code Institute Gitpod Full Template.
 2. Click on "Use This Template" to create a new repository based on the template.
 3. Once the template is available in your repository, open Gitpod.
 4. When both the template image and Gitpod are ready, open a new terminal to initiate a new Django App.
