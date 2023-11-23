@@ -1,8 +1,8 @@
+/* Reset styles and common styles */
 body {
     margin: 0;
     background-color: #F9FAFC;
     font-family: 'quicksand', sans-serif;
-    
 }
 
 .logo {
@@ -10,18 +10,17 @@ body {
     font-weight: 800;
 }
 
+/* Links */
 .edit-link, .delete-link {
     text-decoration: none;
     color: rgba(250, 102, 3, 0.87);
 }
 
-.edit-link:hover, .delete-link:hover{
+.edit-link:hover, .delete-link:hover {
     color: #445261;
 }
 
-/*---------------------------------------------------------- navbar start */
-
-
+/* Navbar styles */
 .banner {
     color: #fff;
     height: 100vh;
@@ -32,7 +31,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 .banner .navbar {
     margin-top: 5%;
@@ -46,7 +44,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -57,7 +55,6 @@ body {
     font-family: Tahoma, sans-serif;
     font-weight: 800;
 }
-
 
 .banner .nav {
     margin-right: 5%;
@@ -71,12 +68,9 @@ body {
 .navbar-toggler {
     border-color: #fff;
     margin-right: 6%;
-    
 }
 
-/*---------------------------------------------------------- Home page */
-
-
+/* Common button styles */
 .cta-btn, .btn {
     text-decoration: none;
     display: inline-block;
@@ -96,35 +90,28 @@ body {
     color: #fff;
 }
 
-
-/*---------------------------------------------------------- Blog view page */
+/* Content styling */
 #main-content {
     margin: 0rem;
 }
-
 
 .image-container-wrapper {
     margin-left: 0px; /* Adjust the value to control the amount of whitespace */
 }
 
-/*---------------------------------------------------------- Post detail page */
-
+/* Hide label for body in post detail page */
 label[for="id_body"] {
-    /* Your styles go here */
-    display: none; /* For example, change the text color to red */
+    display: none;
 }
 
-/*---------------------------------------------------------- Add Post Page */
-
-
-#add-post-page-title, #edit-post-page-title, #delete-post-page-title, #edit-image-page-title{
+/* Add Post Page styling */
+#add-post-page-title, #edit-post-page-title, #delete-post-page-title, #edit-image-page-title {
     text-align: center;
 }
 
 .add-text-form {
     margin: 10rem;
 }
-
 
 .brand {
     font-family: Lato, sans-serif;
@@ -133,41 +120,15 @@ label[for="id_body"] {
     color: #4A4A4F;
 }
 
-/*---------------------------------------------------------- Landing Page */
-
-.testimonial-title {
-    font-size: 1rem;
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .register-container, .login-container {
+        padding: 1rem;
+        text-align: center;
+    }
 }
 
-.features {
-    text-align: center;
-}
-
-.feature-col {
-    border: 1px solid black;
-    padding: 1rem;
-}
-
-.features  a {
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.8em;
-    color: #fff;
-    border: 1.5px solid #fff;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 50px;
-    padding: 0.8em 3em;
-    font-family: Tahoma, sans-serif;
-    font-weight: 800;
-    margin-top: 1em;
-}
-
-.features a:hover {
-    background-color: rgba(250, 102, 3, 0.87);
-}
-
-/* ------------------------------------------------------------------- Gallery-----*/
-
+/* Gallery styles */
 .container {
     padding: 0rem;
 }
@@ -195,20 +156,19 @@ label[for="id_body"] {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .thumbnail:hover {
     transform: translateY(4px);
-    
 }
 
-.gallery-img-container{
+.gallery-img-container {
     position: relative;
 }
 
- .gallery-img-container:hover .overlay{
+.gallery-img-container:hover .overlay {
     opacity: 1;
 }
 
@@ -216,18 +176,9 @@ label[for="id_body"] {
     list-style-type: none;
 }
 
-/* ------------------------------------------------------------------- Sign Up -----*/
-@media screen and (max-width: 600px) {
-    .register-container{
-        padding: 1rem;
-        text-align: center;
-    }
-}
-
-/* ------------------------------------------------------------------- Login -----*/
+/* Sign Up and Login page styles */
 .alert-container {
     position: absolute;
-    
 }
 
 .msg-alert {
@@ -240,15 +191,7 @@ label[for="id_body"] {
     color: #fff;
 }
 
-
-@media screen and (max-width: 600px) {
-    .login-container{
-        padding: 1rem;
-        text-align: center;
-    }
-}
-
-.sign-out-btn-box{
+.sign-out-btn-box {
     margin-left: 0.8rem;
 }
 
@@ -282,14 +225,12 @@ label[for="id_body"] {
     text-transform: uppercase;
 }
 
-
 .post-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
-.page-link {
+.post-link:hover, .page-link {
     color: rgba(250, 102, 3, 0.87);
 }
 
@@ -297,14 +238,12 @@ label[for="id_body"] {
     color: #445261;
 }
 
-
 .btn-signup {
     background-color: rgba(250, 102, 3, 0.87);
     color: #fff;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
+.btn-signup:hover, .btn-signup:active {
     background-color: #fff;
     color: rgba(250, 102, 3, 0.87);
 }
@@ -314,8 +253,7 @@ label[for="id_body"] {
     text-decoration: none;
 }
 
-.link:hover,
-.link:active {
+.link:hover, .link:active {
     color: #445261;
     text-decoration: underline;
 }
@@ -332,24 +270,19 @@ label[for="id_body"] {
     background: transparent;
 }
 
-
-.btn-like:hover,
-.btn-like:active, 
-.post-btn-like:hover,
-.post-btn-like:active {
+.btn-like:hover, .btn-like:active, .post-btn-like:hover, .post-btn-like:active {
     color: #9c9ca2 ;
     background: transparent;
     border: none;
     transform: translateX(2px);
-    transform:  translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .sign-in-alert {
     background-color: #fff;
 }
 
-
-/* ---------------------------------------------- footer */
+/* Footer styles */
 .footer {
     background-color: hsla(0, 2%, 8%, 0.943);
 }
@@ -358,23 +291,19 @@ label[for="id_body"] {
     text-decoration: none;
     color: #fff;
     font-size: 2rem;
-    
 }
 
 .social-link {
     padding: 1rem;
     color: #fff;
-    
 }
 
-/* --------------------------------------------------- media styles */
+/* Media Queries */
 @media screen and (max-width: 663px) {
     .waves {
         font-size: 4rem;
     }
-    
 }
-
 
 @media screen and (max-width: 599px) {
     .alert-container {
@@ -393,10 +322,3 @@ label[for="id_body"] {
         margin: 1rem;
     }
 }
-
-/* .custom-comment-input {
-    
-    width: 100%;
-    color: pink;
-   
-} */

@@ -6,11 +6,12 @@ from .models import Post, Comment, GalleryImage
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'header_image', 'slug', 'author', 'featured_image', 'excerpt', 'content')
+        exclude = ['slug']
+        fields = ('title', 'header_image', 'author', 'featured_image', 'excerpt', 'content')
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'slug': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'excerpt': SummernoteWidget(),
             'content': SummernoteWidget(),  # Use SummernoteWidget directly
@@ -25,6 +26,7 @@ class CommentForm(forms.ModelForm):
 class GalleryImageForm(forms.ModelForm):
     class Meta:
         model = GalleryImage
+        exclude = ['slug']
         fields = ('image', 'caption')
 
         widgets = {

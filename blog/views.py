@@ -10,39 +10,40 @@ from django.urls import reverse_lazy
 from .models import Post, Comment, GalleryImage
 from .forms import CommentForm, GalleryImageForm, PostForm
 
-
+# View for landing page
 def landing_page(request):
     return render(request, 'index.html')
 
-
+# Handle liking a post
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
     return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
-
+# Handle adding a post
 class AddPostView(CreateView):
     model = Post
-    form_class = PostForm
     template_name = 'add_post.html'
-    # fields = ('__all__')
+    fields = [
+        'title', 'header_image', 'author', 'status', 'featured_image', 'excerpt', 'content'
+        ]
 
-
+# Handle upadating a post
 class EditPostView(UpdateView):
     model = Post
     template_name = 'edit_post.html'
     fields = [
-        'title', 'header_image', 'slug', 'featured_image', 'excerpt', 'content'
+        'title', 'header_image', 'featured_image', 'excerpt', 'content'
         ]
     success_url = reverse_lazy('blog')
 
-
+# Handle Deleting a post
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('blog')
 
-
+# Handle adding a comment
 class AddCommentView(UpdateView):
     model = Comment
     form_class = CommentForm
@@ -54,28 +55,27 @@ class AddCommentView(UpdateView):
 
     success_url = 'post_detail'
 
-
+# View for gallery
 class GalleryList(generic.ListView):
     model = GalleryImage
     template_name = 'gallery.html'
     paginate_by = 12
 
-
+# Handle adding a new image
 class AddImageView(CreateView):
     model = GalleryImage
-    # form_class = PostForm
     template_name = 'add_image.html'
-    fields = ('__all__')
+    fields = ['caption', 'image', 'user']
     success_url = reverse_lazy('gallery')
 
-
+# Handle updating gallery image
 class EditImageView(UpdateView):
     model = GalleryImage
     template_name = 'edit_image.html'
-    fields = ('__all__')
+    fields = ['caption', 'image', 'user']
     success_url = reverse_lazy('gallery')
 
-
+# Handle deleting gallery image
 class DeleteImageView(DeleteView):
     model = GalleryImage
     template_name = 'delete_image.html'

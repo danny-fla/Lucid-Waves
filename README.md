@@ -37,11 +37,11 @@ Portfolio Project 4 - Waves. This project is a Full-Stack website using the Djan
     - [JavaScript](#javascript)
     - [Python](#python-testing)
     - [Deployment](#deployment)
-  - [Github Deployment](#github-deployment)
-  - [Creating a Fork or Copying](#creating-a-fork-or-copying)
-    - [Clone](#clone)
-  - [Repository deployment via Heroku](#repository-deployment-via-heroku)
-  - [Deployment of the app](#deployment-of-the-app)
+  - [Setting Up the Django App](#setting-up-the-django-app)
+  - [Deployment Procedure for This Project](#deployment-procedure-for-this-project)
+  - [Finalizing Deployment](#finalizing-deployment)
+  - [Project Forking Instructions](#project-forking-instructions)
+  - [Cloning The Project](#cloning-the-project)
   - [Acknowledgments](#acknowledgments)
 
 ___
@@ -622,14 +622,12 @@ The issue was effectively resolved through a collaborative effort, with both par
 3. Skill Development:
     - The collaborative resolution process served as a valuable learning experience, contributing to the development of debugging and troubleshooting skills.
 
-
 ### Conclusion:
-
 
 The collaborative resolution of the primary key issue reflects the effectiveness of teamwork in problem-solving. This experience not only led to a successful outcome but also contributed to a shared learning journey in maintaining and debugging Django projects.
 
 
-## Lighthouse
+## Lighthouse:
 
 
 Mobile
@@ -640,10 +638,10 @@ Desktop
 
 ![Lighthouse Desktop Score](static/images/lighthouse.png)
 
-## Validation Testing
+## Validation Testing:
 
 ### HTML & CSS
-
+:
 HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 
 
@@ -651,19 +649,74 @@ HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 
 ![CSS3 Validation](static/images/css-validator.png)
 
-### JavaScript
+### JavaScript:
 
 JavaScript testing was completed using [JSHint](https://jshint.com/)
 
 ![JavaScript Validation](static/images/js-hint.png)
 
-### Python
+### Python:
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
 ![Python Validation](static/images/python-validator.png)
 
+### Setting Up the Django App:
 
+1. Navigate to the Code Institute Gitpod Full Template Template.
+2. Click on "Use This Template" to create a new repository based on the template.
+3. Once the template is available in your repository, open Gitpod.
+4. When both the template image and Gitpod are ready, open a new terminal to initiate a new Django App.
+5. Install Django and gunicorn using the command: pip3 install django gunicorn.
+6. Install supporting database libraries, namely dj_database_url and psycopg2, using the command: pip3 install dj_database_url psycopg2.
+7. Create a requirements file: In the terminal, input pip freeze --local > requirements.txt.
+8. Create a new Django project: In the terminal, type django-admin startproject your_project_name.
+9. Create a new app within the project: In the terminal, type python3 manage.py startapp your_app_name.
+10. Add the app to the list of installed apps in the settings.py file: your_app_name.
+11. Apply migrations: In the terminal, type python3 manage.py migrate.
+12. Test the app installation by running the server: In the terminal, type python3 manage.py runserver.
+13. If the app is installed correctly, the terminal will display the message: "The install worked successfully! Congratulations!"
+
+### Deployment Procedure for This Project:
+
+1. Log in to Heroku or create a new account.
+2. On the main page, click the "New" button in the top right corner. From the drop-down menu, select "Create New App."
+3. Provide a unique app name and select your region.
+4. Click on the "Create App" button.
+5. Navigate to "Resources" and choose "Heroku Postgres" for the database.
+6. Click "Reveal Config Vars" and add new records for "SECRET_KEY," "CLOUDINARY_URL," and "DISABLE_COLLECTSTATIC" with a value of 1.
+7. Move to the project's "Deploy" tab. Access the "Settings" tab and scroll down to "Config Vars."
+8. Scroll further down to the "Buildpack" section, click "Add Buildpack," select "python," and save changes.
+9. Return to the top of the page and select the "Deploy" tab.
+10. Choose GitHub as the deployment method.
+11. Confirm your desire to connect to GitHub.
+12. Search for the repository name and click the "Connect" button.
+13. Scroll to the bottom of the deploy page and choose the preferred deployment type.
+14. Opt for either "Enable Automatic Deploys" to automatically deploy updates when pushing changes to GitHub.
+
+### Finalizing Deployment:
+
+1. Create a runtime.txt file with the content python-3.8.13.
+2. Generate a Procfile with the command web: gunicorn your_project_name.wsgi.
+3. After completing development, set the debug setting to DEBUG = False in settings.py.
+4. If utilizing the Summernote editor, include X_FRAME_OPTIONS = SAMEORIGIN in settings.py for proper functionality on Heroku.
+5. In Heroku settings, remove the configuration variables for DISABLE_COLLECTSTATIC = 1.
+
+### Project Forking Instructions:
+
+1. Open GitHub.
+2. Locate the 'Fork' button at the top right of the page.
+3. Click the 'Fork' button, and the forked project will be added to your repository.
+
+### Cloning The Project:
+
+1. Open GitHub.
+2. Choose from three options: HTTPS, SSH, or GitHub CLI. Click the clipboard icon to copy the URL.
+3. The fork will now be in your repository.
+4. Open a new terminal.
+5. Change the current working directory to the desired location for the cloned directory.
+6. Type 'git clone' and paste the URL copied in step 2.
+7. Press 'Enter,' and the project will be successfully cloned.
 
 ## Acknowledgments:
 
