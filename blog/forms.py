@@ -11,10 +11,9 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            # 'slug': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.Select(attrs={'class': 'form-control'}),
             'excerpt': SummernoteWidget(),
-            'content': SummernoteWidget(),  # Use SummernoteWidget directly
+            'content': SummernoteWidget(), 
         }
 
 
@@ -30,5 +29,5 @@ class GalleryImageForm(forms.ModelForm):
         fields = ('image', 'caption')
 
         widgets = {
-            'caption': SummernoteWidget(),  # Use SummernoteWidget directly
+            'caption': SummernoteWidget(),
         }

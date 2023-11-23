@@ -96,10 +96,9 @@ body {
 }
 
 .image-container-wrapper {
-    margin-left: 0px; /* Adjust the value to control the amount of whitespace */
+    margin-left: 0px;
 }
 
-/* Hide label for body in post detail page */
 label[for="id_body"] {
     display: none;
 }
