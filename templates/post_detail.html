@@ -5,30 +5,30 @@
 <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <!-- Header Image Section -->
     <div class="col-10 col-sm-8 col-lg-6 p-5">
-      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid" alt="Header Image" loading="lazy" style="border: 5px solid rgba(0, 0, 0, 0.1)">
+      <img src="{{ post.header_image.url }}" class="d-block mx-lg-auto img-fluid mr-7" alt="Header Image" loading="lazy" style="border: 5px solid rgba(0, 0, 0, 0.1)">
     </div>
     <!-- Post Information Section -->
     <div class="col-lg-5">
-      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ post.title }}</h1>
-      <p class="lead">{{ post.author }} | {{ post.created_on }}</p>
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 m-3">{{ post.title }}</h1>
+      <p class="lead m-4">{{ post.author }} | {{ post.created_on }}</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <p>
         <!-- Like and Comment Buttons -->
-        <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %}">
+        <button id="like-button" data-post-id="{{ post.id }}" class="post-btn-like{% if liked %} liked{% endif %} m-3">
             <i class="fa-solid fa-thumbs-up"></i> <small id="likes-count"
                 class="text-secondary">{{ post.number_of_likes }}</small>
         </button>
         {% with comments.count as total_comments %}
-        <strong class="text-secondary"><i class="far fa-comments"></i>
+        <strong class="text-secondary m-3"><i class="far fa-comments"></i>
             <!-- Total Comments Count -->
             {{ total_comments }}</strong>
         {% endwith %}
         {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
         <!-- Edit and Delete Links for Author -->
-        <small><a class="edit-link" href="{% url 'edit_post' post.pk %}"><i
+        <small><a class="edit-link m-3" href="{% url 'edit_post' post.pk %}"><i
                     class="fa-solid fa-pen-to-square"></i></a></small>
-        <small><a class="delete-link" href="{% url 'delete_post' post.pk %}"><i
+        <small><a class="delete-link m-3" href="{% url 'delete_post' post.pk %}"><i
                     class="fa-solid fa-trash"></i></a></small>
         {% endif %}
         {% endif %}
