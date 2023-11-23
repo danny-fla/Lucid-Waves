@@ -109,6 +109,10 @@ body {
 
 /*---------------------------------------------------------- Post detail page */
 
+label[for="id_body"] {
+    /* Your styles go here */
+    display: none; /* For example, change the text color to red */
+}
 
 /*---------------------------------------------------------- Add Post Page */
 
