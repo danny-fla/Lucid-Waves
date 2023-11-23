@@ -7,7 +7,7 @@ Portfolio Project 4 - Waves. This project is a Full-Stack website using the Djan
 ## Contents
 
 - [Introduction](#introduction)
-  - [CONTENTS](#contents)
+  - [Contents](#contents)
   - [Site Objectives](#site-objectives)
 - [User Experience/UX](#user-experienceux)
   - [Target Audience](#target-audience)
@@ -103,28 +103,54 @@ The chosen color scheme for this project mirrors the vibrant hues of the site's 
 
 ## Typography
 
-The main font used is Quicksand, but Tahoma was used for the main logo appears and the call to action buttons.
+The primary typeface employed across our website is Quicksand, chosen for its clean and modern aesthetic. However, for specific design elements such as the main logo and call-to-action buttons, Tahoma was strategically selected. This deliberate use of fonts serves to enhance visual hierarchy and maintain a professional and cohesive brand presentation throughout our digital platform.
 
 ![Font](static/images/font.png)
 
+## Favicon 
+
+The website's favicon, featuring an orange color palette, is intentionally designed to align with the overall theme of our site. The vibrant orange hues not only enhance the visual appeal but also symbolize the beauty of a sunset, creating a harmonious connection to the essence of our content and the atmosphere we aim to convey on our platform.
+
+![Favicon](static/images/favicon-readme.png)
 
 ## Wireframes
 
-- Mobile Homepage Wireframe
+### Desktop Homepage Wireframe
 
-![Mobile Homepage Wireframe]()
+![Desktop Homepage Wireframe](static/images/Waves%20-%20Homepage%20-%20Desktop.png)
 
-- Mobile Post Detail Wireframe
 
-![Mobile Post Detail Wireframe]()
+### Mobile Homepage Wireframe
 
-- Desktop Homepage Wireframe
+![Mobile Homepage Wireframe](static/images/Waves%20-%20Homepage%20-Mobile.png)
 
-![Desktop Homepage Wireframe]()
+### Desktop Gallery Wireframe
 
-- Desktop Post Detail Wireframe
+![Desktop Gallery Wireframe](static/images/Waves%20-%20Gallery%20-%20Desktop.png)
 
-![Desktop Post Detail Wireframe]()
+
+### Mobile Gallery Wireframe
+
+![Mobile Gallery Wireframe](static/images/Waves%20-%20Gallery-%20Mobile%20.png)
+
+### Desktop Blog List Wireframe
+
+![Desktop Blog List Wireframe](static/images/Waves%20-%20Blog%20-%20Desktop.png)
+
+
+### Mobile Blog List Wireframe
+
+![Mobile Blog List Wireframe](static/images/Waves%20-%20Blog%20-%20Mobile%20.png)
+
+### Desktop Blog Detail Wireframe
+
+![Desktop Blog Detail Wireframe](static/images/Waves%20-%20Blog%20Detail%20-%20Desktop.png)
+
+
+### Mobile Blog Detail Wireframe
+
+![Mobile Blog Detail Wireframe](static/images/Waves%20-%20Blog%20Detail%20-%20Mobile%20.png)
+
 
 ## Flow Diagram
 
