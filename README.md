@@ -22,28 +22,26 @@ Portfolio Project 4 - Waves. This project is a Full-Stack website using the Djan
   - [Flow Diagram](#flow-diagram)
   - [Database Plan](#database-plan)
 - [Features](#features)
-  - [Registration](#registration)
   - [Future Features](#future-features)
-  - [Features Not Included](#features-not-included)
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Agile](#agile)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
+  - [Admin](#admin)
   - [User](#user)
   - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
   - [Validation Testing](#validation-testing)
     - [HTML \& CSS](#html--css)
-  - [Python Testing](#python-testing)
-  - [Deployment](#deployment)
-    - [Github Deployment](#github-deployment)
-    - [Creating a Fork or Copying](#creating-a-fork-or-copying)
+    - [JavaScript] 
+    - [Python](#python-testing)
+    - [Deployment](#deployment)
+  - [Github Deployment](#github-deployment)
+  - [Creating a Fork or Copying](#creating-a-fork-or-copying)
     - [Clone](#clone)
-    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
-    - [Deployment of the app](#deployment-of-the-app)
-  - [Credits](#credits)
-  - [Media](#media)
+  - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+  - [Deployment of the app](#deployment-of-the-app)
   - [Acknowledgments](#acknowledgments)
 
 ___
@@ -373,11 +371,11 @@ Here are the technologies used to build this project:
 
 # Programming Languages, Frameworks and Libraries Used
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-- [Django](https://www.djangoproject.com/)
-- [Bootstrap](https://getbootstrap.com/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) Essential markup language for web content.
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics) Styling language for web design basics.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) Versatile programming language for web development.
+- [Django](https://www.djangoproject.com/)High-level Python web framework for robust applications.
+- [Bootstrap](https://getbootstrap.com/) Front-end framework for responsive and modern web design.
 
 # Agile
 
@@ -653,13 +651,13 @@ HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 
 ![CSS3 Validation](static/images/css-validator.png)
 
-### JavaScript Testing
+### JavaScript
 
 JavaScript testing was completed using [JSHint](https://jshint.com/)
 
 ![JavaScript Validation](static/images/js-hint.png)
 
-### Python Testing
+### Python
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
