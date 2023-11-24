@@ -36,9 +36,9 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-CSRF_TRUSTED_ORIGINS = ['https://lucid-waves-cc5bf11c12dd.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://lucid-waves-cc5bf11c12dd.herokuapp.com']
 
-ALLOWED_HOSTS = ['LUCID_WAVES.herokuapp.com', 'localhost',  '8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu106.gitpod.io', 'lucid-waves-cc5bf11c12dd.herokuapp.com/']
+ALLOWED_HOSTS = ['LUCID_WAVES.herokuapp.com', 'localhost',  '8000-dannyfla-lucidwaves-kpxwlunb6wf.ws-eu106.gitpod.io', 'lucid-waves-cc5bf11c12dd.herokuapp.com']
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
