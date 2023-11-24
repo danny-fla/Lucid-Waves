@@ -15,48 +15,7 @@ setTimeout(function () {
 // -------------------------------------------------------------------------------------- post_detail.html
 
 // This code is executed when the DOM (Document Object Model) is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-    
-    // Get the like button and likes count element from the DOM
-    const likeButton = document.getElementById("like-button");
-    const likesCount = document.getElementById("likes-count");
 
-    // Add a click event listener to the like button
-    likeButton.addEventListener("click", function () {
-       
-        // Get the post ID and check if the button is currently liked
-        const postId = likeButton.dataset.postId;
-        const liked = likeButton.classList.contains("liked");
-
-        // Perform a fetch request to like/unlike the post
-        fetch(`/like-post/${postId}/`, {
-            method: liked ? "DELETE" : "POST",
-            headers: {
-                "X-CSRFToken": getCookie("csrftoken"),
-            },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            // Update the UI based on the response data
-            if (data.success) {
-                if (liked) {
-                    likeButton.classList.remove("liked");
-                } else {
-                    likeButton.classList.add("liked");
-                }
-                likesCount.textContent = data.likes_count;
-            }
-        })
-        .catch((error) => console.error("Error:", error));
-    });
-
-    // Function to get CSRF token from cookies
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(";").shift();
-    }
-});
 
 // Another event listener for when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
@@ -66,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Iterate over each comment like button and add a click event listener
     commentLikeButtons.forEach(function (commentLikeButton) {
+        console.log("comment button:", commentLikeButtons);
         commentLikeButton.addEventListener("click", function () {
             // Get the comment ID and check if the button is currently liked
             const commentId = commentLikeButton.dataset.commentId;
@@ -108,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Execute the code when the DOM (Document Object Model) is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("hello from gallery scipt.js")
     
     // Get all elements with the class 'gallery-btn-like' (like buttons in a gallery)
     const galleryLikeButtons = document.querySelectorAll(".gallery-btn-like");
