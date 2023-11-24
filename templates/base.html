@@ -37,11 +37,7 @@
 
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <div class="container-fluid banner" style="background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dsi5hhbty/image/upload/v1700774932/waves_kqcrq0.webp'); background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;height: 100vh;
-    width: 100%;">
+    <div class="container-fluid banner">
         <!-- Check if it's NOT the homepage -->
         {% if request.path != '/' %}
         <div class="row">
@@ -138,6 +134,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="{% static 'script.js' %}"></script>
+    <script>
+        setTimeout(function () {
+    // Get all elements with the class 'msg' (assuming these are Bootstrap alert elements)
+    let messages = document.getElementsByClassName('msg');
+
+    // Create a new Bootstrap Alert using the first 'msg' element
+    // (assuming there may be multiple alerts and you want to close the first one)
+    let alert = new bootstrap.Alert(messages[0]);
+
+    // Close the Bootstrap Alert after it has been displayed for 2.5 seconds
+    alert.close();
+}, 2500);
+    </script>
 </body>
 </html>
